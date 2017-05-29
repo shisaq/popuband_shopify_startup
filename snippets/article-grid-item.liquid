@@ -1,0 +1,38 @@
+{% assign article_has_image = false %}
+{% if article.image and section.settings.show_featured_image %}
+  {% assign article_has_image = true %}
+{% endif %}
+<article class="blog-post article-grid-item {% if article_has_image %}article-has-image{% endif %}">
+
+  <header class="post-meta meta">
+    <span class="blog-post-date">
+      {{ article.published_at | date: format: 'short_month' }}
+    </span>
+
+    {% if article_has_image %}
+      <a href="{{ article.url }}">
+        <img class="post-image" src="{{ article.image | img_url: '1024x1024' }}" alt="{{ article.title }}">
+      </a>
+    {% endif %}
+
+    <h1 class="blog-post-title"><a href="{{ article.url }}">{{ article.title }}</a></h1>
+
+    {% if article.tags.size > 0 and section.settings.show_tags %}
+      <p class="blog-post-tags">{{ 'blogs.article_item.tags' | t }}
+        {% for tag in article.tags %}
+          <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %},&nbsp;{% endunless %}
+        {% endfor %}
+      </p>
+    {% endif %}
+  </header>
+
+  <div class="rte post-content">
+    {% if article.excerpt == blank %}
+      <p>{{ article.content | strip_html | truncatewords: 40 }}</p>
+    {% else %}
+      {{ article.excerpt }}
+    {% endif %}
+    <p class="blog-read-more"><a href="{{ article.url }}">{{ 'blogs.article_item.read_more' | t }}</a></p>
+  </div>
+
+</article>

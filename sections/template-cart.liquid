@@ -1,0 +1,290 @@
+<h1 class="page-title">{{ 'cart.general.header' | t }}</h1>
+
+{% if cart.item_count > 0 %}
+
+  <form action="/cart" method="post">
+
+    <table class="cart-items clean">
+      <thead>
+        <tr>
+          <th class="first" colspan="2">{{ 'general.general.price' | t }}</th>
+          <th>{{ 'general.general.quantity' | t }}</th>
+          <th class="last">{{ 'general.general.total' | t }}</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for item in cart.items %}
+          <tr
+            class="cart-item variant-{{ item.variant.id }} {% include 'for-looper' %}"
+            data-variant="{{ item.variant.id }}"
+            data-title="{{ item.product.title }}"
+            data-url="{{ item.url }}">
+            <td class="cart-item-product first">
+              <a
+                class="cart-image"
+                href="{{ item.url }}">
+                <img
+                  src="{{ item | img_url: '100x100' }}"
+                  alt="{{ item.product.title }}">
+              </a>
+
+              <div class="cart-item-product-wrap">
+                <span class="cart-title">
+                  <a href="{{ item.url }}">{{ item.product.title }}</a>
+                </span>
+
+                {% if section.settings.product_show_vendor and item.vendor != blank %}
+                  <span class="cart-vendor vendor">{{ item.vendor }}</span>
+                {% endif %}
+
+                {% unless item.variant.title == 'Default Title' %}
+                  <span class="cart-variant">{{ item.variant.title }}</span>
+                {% endunless %}
+
+                {% if item.properties %}
+                  <div class="cart-item-properties">
+                    {% for property in item.properties %}
+                      {% unless property.last == blank %}
+                        <div class="cart-item-property">
+                          <span class="cart-item-property-label">
+                            {{ property.first }}:
+                          </span>
+                          {% if property.last contains '/uploads/' %}
+                            <a
+                              class="cart-item-property-image"
+                              href="{{ property.last }}">
+                              {{ property.last | split: '/' | last }}
+                            </a>
+                          {% else %}
+                            <span class="cart-item-property-value">
+                              {{ property.last }}
+                            </span>
+                          {% endif %}
+                        </div>
+                      {% endunless %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                <a
+                  class="cart-item-remove"
+                  href="/cart/change?line={{ forloop.index }}&amp;quantity=0">
+                  {{ 'general.general.remove' | t }}
+                </a>
+              </div>
+            </td>
+            <td class="cart-item-price">
+              <span class="money">{{ item.price | money }}</span>
+            </td>
+            <td
+              class="cart-item-quantity"
+              {% unless item.variant.inventory_management == blank or item.variant.inventory_policy == 'continue' %}
+                data-max="{{ item.variant.inventory_quantity }}"
+              {% endunless %}>
+              <input
+                type="text"
+                name="updates[]"
+                class="input-field cart-item-quantity-display"
+                value="{{ item.quantity }}" size="1">
+              <span class="cart-item-decrease icon">&#57364;</span>
+              <span class="cart-item-increase icon">&#57365;</span>
+            </td>
+            <td class="cart-item-total last">
+              <span class="money">{{ item.quantity | times: item.price | money }}</span>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+
+    <div class="cart-tools">
+
+      {% if section.settings.enable_order_notes %}
+        <div class="cart-instructions">
+          <p>{{ 'cart.general.instructions_title' | t }}</p>
+          <textarea
+            class="input-field-textarea"
+            rows="6"
+            name="note"
+            placeholder="{{ 'cart.general.instructions_placeholder' | t }}">{{ cart.note }}</textarea>
+        </div>
+      {% endif %}
+
+      <div class="cart-totals">
+        <p class="cart-price">
+          <span class="money">{{ cart.total_price | money }}</span>
+        </p>
+        <p class="cart-message meta">{{ 'cart.general.tax_and_shipping' | t }}</p>
+
+        <input class="cart-button-update button secondary" type="submit" name="update" value="{{ 'cart.general.update_button' | t }}">
+        <input class="cart-button-checkout button" type="submit" name="checkout" value="{{ 'cart.general.submit' | t }}">
+
+        {% if additional_checkout_buttons %}
+          <div class="cart-additional-checkout-buttons">
+            {{ content_for_additional_checkout_buttons }}
+          </div>
+        {% endif %}
+
+        {% if settings.show-currency-switcher %}
+          <p class="cart-currency-note meta">
+            {{ 'cart.general.currency_note_html' | t: currency: shop.currency }}
+          </p>
+        {% endif %}
+      </div>
+
+    </div>
+
+  </form>
+
+  <div class="cart-modal-wrapper">
+    <div class="cart-modal">
+      <h3 class="section-title"></h3>
+
+      <div class="cart-modal-message"></div>
+
+      <div class="cart-modal-action"></div>
+    </div>
+  </div>
+
+  {% if section.settings.show_shipping_calculator and cart.requires_shipping %}
+    <div
+      class="cart-shipping-calculator-wrapper"
+      data-shipping-calculator>
+      <div id="shipping-calculator" class="cart-shipping-calculator">
+
+        <p>{{ 'cart.shipping_calculator.header' | t }}</p>
+        {% assign default_country = '' %}
+        {% assign default_province = '' %}
+        {% assign default_zip = '' %}
+
+        {% if section.settings.shipping_calculator_default_country != '' %}
+          {% assign default_country = section.settings.shipping_calculator_default_country | escape %}
+        {% endif %}
+
+        {% if customer %}
+          {% if customer.default_address.country != '' %}
+            {% assign default_country = customer.default_address.country %}
+          {% endif %}
+
+          {% if customer.default_address.province != '' %}
+            {% assign default_province = customer.default_address.province %}
+          {% endif %}
+
+          {% if customer.default_address.zip != '' %}
+            {% assign default_zip = customer.default_address.zip %}
+          {% endif %}
+        {% endif %}
+
+        <div class="shipping-country-wrapper hide-labels">
+          <div class="country-select select-wrapper">
+            <div class="selected-text" data-default="{{ 'cart.shipping_calculator.country' | t }}">{{ 'cart.shipping_calculator.country' | t }}</div>
+            <select
+              class="styled-select address-country"
+              id="address_country"
+              name="address[country]"
+              data-default="{{ default_country }}">
+              {{ country_option_tags }}
+            </select>
+          </div>
+        </div>
+
+        <div id="address_province_container" class="shipping-province-wrapper">
+          <div class="province-select select-wrapper">
+            <div class="selected-text" data-default="{{ 'cart.shipping_calculator.province' | t }}">{{ 'cart.shipping_calculator.province' | t }}</div>
+            <select
+              class="styled-select address-province"
+              id="address_province"
+              name="address[province]"
+              data-default="{{ default_province }}">
+              </select>
+          </div>
+        </div>
+
+        <div class="cart-shipping-zip-code input-wrapper">
+          <input
+            class="address-zip input-field"
+            id="address_zip"
+            name="address[zip]"
+            type="text"
+            size="12"
+            placeholder="{{ 'customer.addresses.zip' | t }}"
+            {% if default_zip != blank %}value="{{ default_zip }}"{% endif %}>
+
+          <input
+            type="button"
+            class="cart-shipping-calculate get-rates button"
+            value="{{ 'cart.shipping_calculator.submit' | t }}" >
+        </div>
+      </div>
+
+      <div class="cart-shipping-calculator-response">
+      </div>
+    </div>
+
+    <script type="application/json" data-shipping-calculator-strings>
+      {
+        "customerCountry": {{ customer.default_address | default: false | json }},
+        "submitButton": {{ 'cart.shipping_calculator.submit' | t | json }},
+        "submitButtonProcessing": {{ 'cart.shipping_calculator.working' | t | json }},
+        "errorMessage": {{ 'cart.shipping_calculator.error' | t: error_message: '** error_message **' | json }},
+        "multiRates": {{ 'cart.shipping_calculator.rates_html' | t: address: '** address **', number_of_rates: '** number_of_rates **', rate: '** rate **' | json }},
+        "oneRate": {{ 'cart.shipping_calculator.rate' | t: address: '** address **' | json }},
+        "noRates": {{ 'cart.shipping_calculator.no_rates' | t | json }},
+        "rateValues": {{ 'cart.shipping_calculator.rate_values_html' | t: rate_title: '** rate_title **', rate: '** rate **' | json }}
+      }
+    </script>
+
+  {% endif %}
+
+  <script type="application/json" data-cart-strings>
+    {
+      "notAvailableText": {{ 'cart.general.not_available'| t | json }},
+      "stockLevelText": {{ 'cart.general.stock_level' | t: stock_count: '** stock_count **' | json }},
+      "okayText": {{ 'cart.general.okay' | t | json }}
+    }
+  </script>
+
+{% else %}
+
+  <p class="empty">{{ 'cart.general.empty' | t }} <a href="{{ shop.url }}/collections/all">{{ 'cart.general.continue' | t }}</a></p>
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "Cart page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "product_show_vendor",
+      "label": "Show names of vendors",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_order_notes",
+      "label": "Enable order notes",
+      "info": "This feature gives your customers the ability to attach a note to the order.",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Shipping rate calculator"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_shipping_calculator",
+      "label": "Enable"
+    },
+    {
+      "type": "text",
+      "id": "shipping_calculator_default_country",
+      "label": "Default country",
+      "default": "United States",
+      "info": "If a customer is logged in to their account, their default shipping address country will be selected."
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,51 @@
+{% if template contains 'index' %}
+<div class="home-module-wrapper {{ settings.home-mailing-list-style }}">
+{% endif %}
+
+<div class="mailing-list-signup {% if template contains 'index' %}home-module{% endif %}">
+  {% if settings.mailing-list-title.size > 0 %}
+    <h3 class="section-title">{{ settings.mailing-list-title }}</h3>
+  {% endif %}
+
+  {% if settings.mailing-list-blurb.size > 0 %}
+    <p>{{ settings.mailing-list-blurb }}</p>
+  {% endif %}
+
+  {% if settings.mailing-list-platform != 'none' and settings.mailing-list-action-url != blank  %}
+
+    <form action="{{ settings.mailing-list-action-url }}" method="post" name="{% if settings.mailing-list-platform == 'mailchimp' %}mc-embedded-subscribe-form{% endif %}" target="_blank">
+
+      {% if settings.mailing-list-platform == 'mailchimp' %}
+      <input class="mailing-list-email" name="EMAIL" type="email" placeholder="{{ 'general.general.email_placeholder' | t }}" value="">
+      {% endif %}
+
+      {% if settings.mailing-list-platform == 'campaign-monitor' %}
+      <input id="fieldEmail" class="mailing-list-email" name="{{ settings.campaign-monitor-name }}" type="email" placeholder="{{ 'general.general.email_placeholder' | t }}" required />
+      {% endif %}
+
+      <div class="mailing-list-submit">
+        <input class="submit secondary" name="subscribe" type="submit" value="{{ 'general.general.subscribe' | t }}">
+      </div>
+
+    </form>
+
+  {% else %}
+
+    {% form 'customer' %}
+      {% if form.posted_successfully? %}
+        <p class="mailing-list-message">{{ 'general.mailing_list.message' | t }}</p>
+      {% else %}
+        <input class="mailing-list-email" name="contact[email]" type="email" placeholder="{{ 'general.general.email_placeholder' | t }}" value="">
+        <input type="hidden" id="contact_tags" name="contact[tags]" value="prospect,newsletter"/>
+        <div class="mailing-list-submit">
+          <input class="submit secondary" name="subscribe" type="submit" value="{{ 'general.general.subscribe' | t }}">
+        </div>
+      {% endif %}
+    {% endform %}
+
+  {% endif %}
+</div>
+
+{% if template contains 'index' %}
+</div>
+{% endif %}

@@ -1,0 +1,134 @@
+<section
+  class="module-container {{ section.settings.style }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="inline-feature">
+  <div class="module-inner module-inline-items home-inline-features">
+
+    {% if section.settings.title != blank %}
+      <h3 class="section-title">{{ section.settings.title | escape }}</h3>
+    {% endif %}
+
+    {% for block in section.blocks %}
+      {% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+      {% assign feature_image = block.settings.image %}
+
+      <div class="module-inline-item home-inline-feature" {{ block.shopify_attributes }}>
+        {% if feature_image -%}
+          <img
+            class="home-inline-image"
+            alt="{{ feature_image.alt | escape }}"
+            src="{{ feature_image | img_url: '660x275' }}">
+        {% else %}
+          {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg home-inline-image' }}
+        {% endif %}
+
+        <article class="home-inline-text">
+          {% if block.settings.title != blank %}
+            <h1 class="feature-title">{{ block.settings.title | escape }}</h1>
+          {% endif %}
+
+          {% if block.settings.caption != blank%}
+            <div class="rte">
+              <p>{{ block.settings.caption }}</p>
+            </div>
+          {% endif %}
+
+          {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+            <p class="home-inline-cta">
+              <a href="{{ block.settings.button_link }}">{{ block.settings.button_text | escape }}</a>
+            </p>
+          {% endif %}
+        </article>
+      </div>
+    {% endfor %}
+
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Text columns with images",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Text columns with images"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Feature title"
+        },
+        {
+          "type": "richtext",
+          "id": "caption",
+          "label": "Text",
+          "default": "<p>Display up to six features with an option to toggle images on or off, and add unique calls to action.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "660 x 275px .png recommended"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Text columns with images",
+      "blocks": [
+        {
+          "type": "text_column"
+        },
+        {
+          "type": "text_column"
+        },
+        {
+          "type": "text_column"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

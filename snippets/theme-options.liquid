@@ -1,0 +1,20 @@
+<script type="text/javascript">
+  Theme = {};
+  Theme.version = "7.2.3";
+  Theme.currency = '{{ shop.currency }}';
+  shopCurrency = '{{ shop.currency }}'; /* used by shipping calculator */
+  Theme.moneyFormat = {{ shop.money_format | strip_html | json }};
+  Theme.moneyFormatCurrency = {{ shop.money_with_currency_format | strip_html | json }};
+
+  {% if settings.show-currency-switcher %}
+  Theme.currencySwitcher = true;
+    {% if settings.currency-switcher-format %}
+    Theme.currencySwitcherFormat = '{{ settings.currency-switcher-format }}';
+    Theme.moneyFormat = {{ shop.[settings.currency-switcher-format] | json }};
+    {% endif %}
+
+    {% if settings.currency-switcher-default.size > 0 %}
+    Theme.defaultCurrency = '{{ settings.currency-switcher-default }}';
+    {% endif %}
+  {% endif %}
+</script>

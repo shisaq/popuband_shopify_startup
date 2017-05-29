@@ -1,0 +1,32 @@
+{% unless product.options.size == 1 and product.variants[0].title == 'Default Title' %}
+  {% for option in product.options_with_values %}
+    {% assign option_index = forloop.index0 %}
+    {%- capture option_id -%}
+      single-option-{{ form_id }}-{{ option_index }}
+    {%- endcapture -%}
+
+    <div class="inline-field-wrapper js-required">
+      <div class="select-wrapper">
+        <label
+          class="select-text"
+          for="{{ option_id }}"
+          data-select-text>
+          <strong>{{ option.name }}:</strong> <span data-selected-option></span>
+        </label>
+        <select
+          class="single-option-selector"
+          id="{{ option_id }}"
+          data-option-select="{{ form_id }}"
+          data-option-index="{{ option_index }}">
+          {% for value in option.values %}
+            <option
+              value="{{ value | escape }}"
+              {% if option.selected_value == value %}selected="selected"{% endif %}>
+              {{ value }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+    </div>
+  {% endfor %}
+{% endunless %}

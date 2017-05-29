@@ -1,0 +1,54 @@
+{% if section.settings.newsletter_enable or template contains 'password' %}
+  <div class="module-container newsletter-section {% unless template contains 'password' %}{{ section.settings.newsletter_style }}{% endunless %}">
+
+    <div class="module-inner">
+      {% unless template contains 'password' %}
+        {% if section.settings.newsletter_title != blank %}
+          <h3 class="section-title">{{ section.settings.newsletter_title }}</h3>
+        {% endif %}
+
+        {% if section.settings.newsletter_caption != blank %}
+          <div class="newsletter-message">
+            {{ section.settings.newsletter_caption }}
+          </div>
+        {% endif %}
+      {% endunless %}
+
+      {% form 'customer' %}
+
+        {{ form.errors | default_errors }}
+
+        {% if form.posted_successfully? %}
+          <div class="newsletter-message">
+            <p>{{ 'general.mailing_list.message' | t }}</p>
+          </div>
+        {% else %}
+          {%- capture tags -%}
+            {%- unless template contains 'password' %}
+              newsletter
+            {%- else -%}
+              prospect, password page
+            {%- endunless -%}
+          {%- endcapture -%}
+
+          <input type="hidden" id="contact_tags" name="contact[tags]" value="{{ tags | strip }}">
+
+          <input
+            class="input-field inline-field-input"
+            name="contact[email]"
+            type="email"
+            placeholder="{{ 'general.general.email_placeholder' | t }}">
+
+          <input
+              class="inline-field-submit button secondary"
+              name="subscribe"
+              type="submit"
+              value="{{ 'general.general.subscribe' | t }}">
+        {% endif %}
+
+      {% endform %}
+
+    </div>
+
+  </div>
+{% endif %}

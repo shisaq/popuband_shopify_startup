@@ -1,0 +1,46 @@
+{% comment %}
+  @param add_to_cart_text {string}
+    Sets the button text for the Product button
+
+  @param id {number}
+    Sets the ID of the JSON fields for ProduceView to parse
+
+  @param section_onboarding {boolean}
+    Used to prevent onboarding content from activating ProductView
+
+  @param enable_history {boolean}
+    Used to allow deeplinking on product variants
+{% endcomment %}
+
+{% unless id %}
+  {% assign id = product.id %}
+{% endunless %}
+
+{%- capture cart_link -%}
+  <a href="/cart">{{ 'products.product.cart_link' | t }}</a>
+{%- endcapture -%}
+{%- capture continue_link -%}
+  <a href="/collections/all">{{ 'products.product.continue_link' | t }}</a>
+{%- endcapture -%}
+{%- capture checkout_link -%}
+  <a href="/checkout">{{ 'products.product.checkout_link' | t }}</a>
+{%- endcapture -%}
+
+<script type="application/json" data-product-settings-{{ id }}>
+  {
+    "addToCartText": {{ add_to_cart_text | json }},
+    "enableHistory": {{ enable_history | json }},
+    "imageZoom": {{ section.settings.enable_zoom }},
+    "linkedOptions": {{ section.settings.linked_options }},
+    "processingText": {{ 'products.product.processing' | t | json }},
+    "cartRedirect": {{ section.settings.product_cart_redirect }},
+    "setQuantityText": {{ 'products.product.set_quantity' | t | json }},
+    "soldOutText": {{ 'products.product.sold_out' | t | json }},
+    "successMessage": {{ 'products.product.success_html' | t: cart_link: cart_link, continue_link: continue_link, checkout_link: checkout_link | json }},
+    "unavailableText": {{ 'products.product.unavailable' | t | json }}
+  }
+</script>
+
+{% unless section_onboarding %}
+  <script type="application/json" data-product-json-{{ id }}>{{ product | json }}</script>
+{% endunless %}

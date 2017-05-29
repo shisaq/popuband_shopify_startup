@@ -1,0 +1,173 @@
+
+{% assign collection_image = false %}
+{% if collection.image and section.settings.show_featured_image %}
+  {% assign collection_image = collection.image.src | collection_img_url: '1024x1024' %}
+{% endif %}
+
+<div
+  class="collection-header-wrapper {% if collection_image %}collection-header-has-image{% endif %}"
+  {% if collection_image %}
+    style="background-image: url({{ collection_image }});"
+  {% endif %}>
+  <div class="collection-header">
+    <h1 class="page-title">
+      {% if collection.handle == 'all' %}
+        {{ 'collections.collection.all_products' | t }}
+      {% else %}
+        {{ collection.title }}
+      {% endif %}
+    </h1>
+
+    {% if collection.description != blank and section.settings.show_description %}
+      <div class="collection-description rte">
+        {{ collection.description }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% assign products_per_page = section.settings.products_per_row | times: section.settings.number_of_rows %}
+{% paginate collection.products by products_per_page %}
+
+  {% if collection.all_tags.size > 0 and section.settings.tag_filtering %}
+    <div class="collection-tag-selector">
+
+      {% assign fallback = '' %}
+      {% if collection.handle %}
+        {% capture link %}/collections/{{ collection.handle }}{% endcapture %}
+        {% assign fallback = link %}
+      {% elsif collection.products.first.type == collection.title %}
+        {% capture link %}{{ collection.title | url_for_type }}{% endcapture %}
+        {% assign fallback = link %}
+      {% elsif collection.products.first.vendor == collection.title %}
+        {% capture link %}{{ collection.title | url_for_vendor }}{% endcapture %}
+        {% assign fallback = link %}
+      {% endif %}
+
+      <div class="select-wrapper">
+        <div class="selected-text">
+          {% if current_tags %}
+            {{ current_tags.first }}
+          {% else %}
+            {{ 'collections.collection.browse' | t }}
+          {% endif %}
+        </div>
+        <select data-fallback-url="{{ fallback }}">
+          {% if current_tags %}
+            <option name="reset">-- {{ 'collections.collection.clear' | t }} --</option>
+          {% else %}
+            <option name="browse" selected disabled>{{ 'collections.collection.browse' | t }}</option>
+          {% endif %}
+          {% for tag in collection.all_tags %}
+            {% if current_tags contains tag %}
+              <option name="{{ tag | handle }}" selected>{{ tag }}</option>
+            {% else %}
+              <option name="{{ tag | handle }}">{{ tag }}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+
+    </div>
+  {% endif %}
+
+  <div class="collection-products products-per-row-{{ section.settings.products_per_row }}">
+    {% for product in collection.products %}
+      {% include 'product-list-item' %}
+    {% else %}
+      <p class="empty">{{ 'collections.collection.no_products' | t }}</p>
+    {% endfor %}
+  </div>
+
+
+  {% if paginate.previous or paginate.next %}
+    {% include 'pagination' %}
+  {% endif %}
+
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Collection pages",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_featured_image",
+      "label": "Show collection image",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show description",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "tag_filtering",
+      "label": "Enable tag filtering",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "products_per_row",
+      "label": "Number of products per row",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "select",
+      "id": "number_of_rows",
+      "label": "Number of rows",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "5",
+          "label": "5"
+        },
+        {
+          "value": "8",
+          "label": "8"
+        },
+        {
+          "value": "10",
+          "label": "10"
+        },
+        {
+          "value": "12",
+          "label": "12"
+        }
+      ],
+      "default": "5"
+    }
+  ]
+}
+{% endschema %}

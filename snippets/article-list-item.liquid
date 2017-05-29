@@ -1,0 +1,61 @@
+{% assign index = false %}
+{% if template == 'blog' %}{% assign index = true %}{% endif %}
+
+<article class="blog-post article-list-item clearfix" data-blog-list-item>
+
+  {% if index %}
+    <h1 class="blog-post-title"><a href="{{ article.url }}">{{ article.title }}</a></h1>
+  {% else %}
+    <h1 class="page-title">{{ article.title }}</h1>
+  {% endif %}
+
+  {% if index == false and article.image %}
+    <img
+      class="featured-image {% if section.settings.show_full_width_image %}full-bleed-featured-image{% else %}contained-featured-image{% endif %}"
+      src="{{ article.image | img_url: '1024x1024' }}"
+      alt="{{ article.title }}">
+  {% endif %}
+
+  <div class="post-meta meta">
+    <p class="post-date">{{ article.published_at | date: format: 'short_month' }}</p>
+
+    {% if section.settings.show_author %}
+      <p class="post-author">{{ 'blogs.article_item.posted_by' | t }}: {{ article.author }}</p>
+    {% endif %}
+
+    {% if article.tags.size > 0 and section.settings.show_tags %}
+    <p><strong>{{ 'blogs.article_item.filed_under' | t }}</strong>:
+      {% for tag in article.tags %}
+        <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>{% unless forloop.last %},&nbsp;{% endunless %}
+      {% endfor %}
+    </p>
+    {% endif %}
+
+    {% if index and article.comments_enabled? and article.comments.size > 0 and section.settings.show_comment_count %}
+      <p class="post-comment-count"><a href="{{ article.url }}#comments">{{ article.comments_count }} {{ 'blogs.article_item.comment_count' | t: count: article.comments_count }}</a></p>
+    {% endif %}
+
+    {% if section.settings.show_share_buttons %}
+      {% include 'share-buttons' %}
+    {% endif %}
+  </div>
+
+  <div class="rte post-content">
+    {% if index and article.image and section.settings.show_featured_image %}
+      <a href="{{ article.url }}">
+        <img class="post-image" src="{{ article.image | img_url: '1024x1024' }}" alt="{{ article.title }}">
+      </a>
+    {% endif %}
+    {% if index %}
+      {% if article.excerpt == blank %}
+        <p>{{ article.content | strip_html | truncatewords: 40 }}</p>
+      {% else %}
+        {{ article.excerpt }}
+      {% endif %}
+      <p class="blog-read-more"><a href="{{ article.url }}">{{ 'blogs.article_item.read_more' | t }}</a></p>
+    {% else %}
+      {{ article.content }}
+    {% endif %}
+  </div>
+
+</article>

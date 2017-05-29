@@ -1,0 +1,258 @@
+{% assign selected_variant = product.selected_or_first_available_variant | default: product %}
+
+{% assign single_column_product = false %}
+{% if section.settings.single_column_product and product.variants.size == 1 %}
+  {% assign single_column_product = true %}
+{% endif %}
+
+{% assign is_slideshow = false %}
+{% if template contains 'slideshow' %}
+  {% assign is_slideshow = true %}
+{% endif %}
+
+{%- capture product_classes -%}
+  clearfix
+
+  {% if section.settings.center_product_details %}product-title-centered{% endif %}
+  {%- if single_column_product -%}
+    product-details-centered
+  {%- else -%}
+    product-details-inline
+  {%- endif -%}
+{%- endcapture -%}
+
+<div class="{{ product_classes | strip }}">
+  {%- capture product_title -%}
+    <h1 class="page-title product-title">{{ product.title }}</h1>
+  {%- endcapture -%}
+
+  {% if is_slideshow == false and single_column_product == true %}
+    {% include 'product-images' %}
+  {% endif %}
+
+  {%
+    include
+    'product-details',
+    product_title: product_title,
+    title_in_details: true
+  %}
+
+  {% if is_slideshow == false and single_column_product == false %}
+    {% include 'product-images' %}
+  {% endif %}
+
+  <div class="product-wrap" data-product-id="{{ product.id }}">
+
+    {% include 'product-form' %}
+
+    {% if product.description.size > 0 %}
+    <div class="product-description rte">
+      {{ product.description }}
+    </div>
+    {% endif %}
+
+    {% include 'product-additional-information' %}
+
+    {% if section.settings.show_share_buttons %}
+      {% include 'share-buttons' %}
+    {% endif %}
+
+  </div>
+</div>
+
+{% assign add_to_cart_text = 'products.product.add_to_cart' | t %}
+
+{%
+  include 'product-json',
+  id: product.id,
+  add_to_cart_text: add_to_cart_text,
+  enable_history: true
+%}
+
+{% if section.settings.show_related_products %}
+
+  {% assign number_of_related_products_to_show = 4 %}
+
+  {% capture number_of_related_products_to_fetch %}
+    {{ number_of_related_products_to_show | plus: 1 }}
+  {% endcapture %}
+
+  {% if collection == null or collection.handle == 'frontpage' or collection.handle == 'all' %}
+    {% assign found_a_collection = false %}
+    {% for c in product.collections %}
+      {% if found_a_collection == false and c.handle != 'frontpage' and c.handle != 'all' %}
+        {% assign found_a_collection = true %}
+        {% assign collection = c %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+
+  {% if collection.products.size > 1 %}
+    <div class="related-products">
+
+      <h3 class="section-title">
+        {{ 'products.related_products.header' | t }}
+      </h3>
+
+      <div class="collection-products">
+      {% assign current_product_found = false %}
+      {% for prod in collection.products limit: number_of_related_products_to_fetch %}
+        {% if prod.title == product.title %}
+          {% assign current_product_found = true %}
+        {% else %}
+          {% unless current_product_found == false and forloop.last %}
+              {% include 'product-list-item' %}
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+      </div>
+
+    </div>
+  {% endif %}
+
+{% endif %}
+
+{% schema %}
+{
+  "name": "Product pages",
+  "class": "section-product",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "center_product_details",
+      "label": "Center product title and price over content",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_zoom",
+      "label": "Enable image zoom",
+      "info": "The image zoom does not apply to the Product slideshow template",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product_show_vendor",
+      "label": "Show names of vendors",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "linked_options",
+      "label": "Disable sold out variants",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "variants_style",
+      "label": "Variants style",
+      "options": [
+        {
+          "value": "select",
+          "label": "Dropdowns"
+        },
+        {
+          "value": "radio",
+          "label": "Buttons"
+        }
+      ],
+      "default": "select"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_cart_redirect",
+      "label": "Enable cart redirection",
+      "info": "Automatically sends users to the Cart page after adding a product.",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "single_column_product",
+      "label": "Use single column layout if no variants",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show share buttons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Related products"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_related_products",
+      "label": "Show related products",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "additional_info",
+      "name": "Additional info",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "[Additional info](https://s3.amazonaws.com/cdn.pixelunion.net/startup/additional-info-screenshot.png) appear wherever a customer can view product information. They’re perfect for linking to size charts, refund policies, or ordering details. Pick from six unique icons."
+        },
+        {
+          "type": "text",
+          "id": "info_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "info_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "select",
+          "id": "info_icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "info",
+              "label": "Information (i)"
+            },
+            {
+              "value": "question-mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "envelope",
+              "label": "Envelope"
+            },
+            {
+              "value": "pencil",
+              "label": "Pencil"
+            },
+            {
+              "value": "shirt",
+              "label": "Shirt"
+            }
+          ],
+          "default": "info"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "additional_info",
+        "settings": {
+          "info_text": "Additional info"
+        }
+      }
+    ]
+  }
+}
+
+{% endschema %}

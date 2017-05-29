@@ -1,0 +1,32 @@
+{% if collection-list-item == 'linklist' %}
+  {% assign link_handle = link.handle %}
+  {% assign collection = collections[link_handle] %}
+{% endif %}
+
+{% assign collection_image = collection.image.src | collection_img_url: '1024x1024' %}
+
+{% unless collection.image %}
+  {% assign collection_image = collection.products.first.featured_image | product_img_url: '1024x1024' %}
+{% endunless %}
+
+<article class="collection-list-item" style="background-image: url({{ collection_image }});">
+
+  <a class="mobile-collection-image" href="{{ collection.url }}">
+    <img src="{{ collection_image }}" alt="{{ collection.title | escape }}">
+  </a>
+
+  <a class="collection-link" href="{{ collection.url }}">
+
+    <div class="collection-details">
+      <h1>{{ collection.title }}</h1>
+
+      {% if collection.description.size != blank and section.settings.show_description %}
+      <div class="rte">
+        <p>{{ collection.description | strip_html | truncate: 100 }}</p>
+      </div>
+      {% endif %}
+    </div>
+
+  </a>
+
+</article>

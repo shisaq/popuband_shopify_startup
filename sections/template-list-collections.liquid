@@ -1,0 +1,40 @@
+<h1 class="page-title">
+  {{ 'collections.listing.header' | t }}
+</h1>
+
+{% assign using_linklist = false %}
+{% if linklists['all-collections'] and linklists['all-collections'].links.size > 0 %}
+  {% assign using_linklist = true %}
+{% endif %}
+
+{% paginate collections by 15 %}
+  <div class="collections-list">
+    {% if using_linklist %}
+      {% for link in linklists['all-collections'].links %}
+        {% include 'collection-list-item' with 'linklist' %}
+      {% endfor %}
+    {% else %}
+      {% for collection in collections %}
+        {% include 'collection-list-item' %}
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  {% if paginate.previous or paginate.next and using_linklist == false %}
+    {% include 'pagination' %}
+  {% endif %}
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Collection list page",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "Show collection descriptions",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

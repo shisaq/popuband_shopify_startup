@@ -1,0 +1,45 @@
+{% assign shareCountClass = '' %}
+{% assign image = false %}
+
+{% if template contains 'article' or template contains 'blog' %}
+
+  {% capture permalinkURL %}{{ shop.url }}{{ article.url }}{% endcapture %}
+  {% assign description = article.title | escape %}
+
+  {% if article.image %}
+    {% assign image = article.image | img_url: '1024x1024' %}
+  {% endif %}
+
+  {% unless settings.blog-display-share-count %}
+    {% assign shareCountClass = 'no-count' %}
+  {% endunless %}
+
+{% elsif template contains 'product' %}
+
+  {% capture permalinkURL %}{{ shop.url }}{{ product.url }}{% endcapture %}
+  {% assign image = product.featured_image | img_url: '1024x1024' %}
+  {% assign description = product.title | escape %}
+
+  {% unless settings.product-display-share-count %}
+    {% assign shareCountClass = 'no-count' %}
+  {% endunless %}
+
+{% endif %}
+
+<div class="share-buttons {{ shareCountClass }}" data-permalink="{{ permalinkURL }}">
+
+  <a target="_blank" href="//www.facebook.com/sharer.php?u={{ permalinkURL }}" class="share-facebook"><span>{{ 'general.social.facebook' | t }}</span> <span class="share-count"></span></a>
+
+  <a target="_blank" href="//twitter.com/share?url={{ permalinkURL }}" class="share-twitter"><span>{{ 'general.social.twitter' | t }}</span> <span class="share-count"></span></a>
+
+  {% if image %}
+
+    <a target="_blank" href="//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media=http:{{ image }}&amp;description={{ description }}" class="share-pinterest"><span>{{ 'general.social.pinterest' | t }}</span> <span class="share-count"></span></a>
+
+    <a target="_blank" href="http://www.thefancy.com/fancyit?ItemURL={{ permalinkURL }}&amp;Title={{ description }}&amp;Category=Other&amp;ImageURL={{ image }}" class="share-fancy"><span>{{ 'general.social.fancy' | t }}</span></a>
+
+  {% endif %}
+
+  <a target="_blank" href="//plus.google.com/share?url={{ permalinkURL }}" class="share-google"><span></span> <span class="share-count">{{ 'general.social.google' | t }}</span></a>
+
+</div>

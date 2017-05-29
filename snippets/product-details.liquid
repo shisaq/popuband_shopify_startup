@@ -1,0 +1,47 @@
+{% comment %}
+  @param is_home {bool}
+    Set as true to show home page specific content
+
+  @param title_in_details {bool}
+    Set as true in order to render product_title
+
+  @param product_title {string}
+    Pass a `capture`'d string to render out a header
+{% endcomment %}
+{% unless section_onboarding %}
+  {% assign price = selected_variant.price %}
+  {% assign vendor = product.vendor %}
+{% else %}
+  {% assign price = 1999 %}
+  {% assign vendor = 'onboarding.featured_product.vendor' | t %}
+{% endunless %}
+
+<div class="product-details">
+
+  {% if title_in_details and product_title %}
+    {{ product_title }}
+  {% endif %}
+
+  {% if section.settings.product_show_vendor and vendor != blank%}
+    <p class="meta vendor">
+      {{ vendor }}
+    </p>
+  {% endif %}
+
+  <p class="product-price">
+
+    <span class="price">
+      <span class="money">{{ price | money }}</span>
+
+      {% unless section_onboarding or product.variants.size == 1 and product.compare_at_price_min <= price %}
+        <span class="original money {% if product.compare_at_price_min <= price %}hidden{% endif %}">
+          {% if selected_variant.compare_at_price > price %}
+            {{ selected_variant.compare_at_price | money }}
+          {% endif %}
+        </span>
+      {% endunless %}
+    </span>
+
+  </p>
+
+</div>

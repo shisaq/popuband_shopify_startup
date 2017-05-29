@@ -1,0 +1,153 @@
+{% assign border_class = '' %}
+{% if settings.background-color == settings.footer-background-color %}
+  {% unless settings.body_background_image or settings.footer_background_image %}
+    {% assign border_class = 'default' %}
+  {% endunless %}
+{% endif %}
+
+<div class="footer-wrapper {{ border_class }}">
+
+  {% assign menu_class = 0 %}
+
+  {% if menus[section.settings.menu_1].links.size > 0 %}
+    {% assign menu_class = menu_class | plus: 1 %}
+  {% endif %}
+
+  {% if menus[section.settings.menu_2].links.size > 0 %}
+    {% assign menu_class = menu_class | plus: 1 %}
+  {% endif %}
+
+  {% if
+    settings.social_facebook_url != blank or
+    settings.social_twitter_url != blank or
+    settings.social-google-plus-url != blank or
+    settings.social_instagram_url != blank or
+    settings.social_pinterest_url != blank or
+    settings.social_vimeo_url != blank or
+    settings.social_youtube_url != blank or
+    settings.social_rss_url != blank
+  %}
+    {% assign has_social = true %}
+    {% assign menu_class = menu_class | plus: 1 %}
+  {% endif %}
+
+  <footer class="main-footer showing-{{ menu_class }}-lists">
+
+    {% for i in (1..2) %}
+      {% capture menu %}menu_{{ i }}{% endcapture %}
+      {% if menus[section.settings[menu]].links.size > 0 %}
+        {% capture menu %}{{ section.settings[menu] }}{% endcapture %}
+        <div class="footer-link-list {{ menus[menu].handle }}">
+          {% if section.settings.show_headings %}
+            <h2 class="footer-title">{{ menus[menu].title }}</h2>
+          {% endif %}
+
+          <ul>
+            {% for link in menus[menu].links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    {% endfor %}
+
+    {% if has_social %}
+      <div class="footer-link-list social-icons">
+        {% if section.settings.show_headings %}
+          <h2 class="footer-title">{{ 'general.social.title' | t }}</h2>
+        {% endif %}
+
+        {% include 'social-icons' %}
+      </div>
+
+    {% endif %}
+
+    {% if section.settings.show_share_buttons %}
+      <div class="spread-the-word">
+        {% if section.settings.show_headings %}
+          <h2 class="footer-title">{{ 'general.social.share_title' | t }}</h2>
+        {% endif %}
+
+        {% assign byline = 'general.social.byline' | t %}
+        {% if byline != blank %}
+          <p>{{ byline }}</p>
+        {% endif %}
+
+        {% assign pinterest_image = '' %}
+
+        {% if template contains 'product' %}
+          {% assign pinterest_image = product.featured_image | img_url: '600x600' %}
+        {% elsif template contains 'article' %}
+          {% if article.image %}
+            {% assign pinterest_image = article.image | img_url: '600x600' %}
+          {% endif %}
+        {% endif %}
+
+        <a class="share-icon icon-tweet" href="//twitter.com/share?url={{ shop.url }}" target="_blank">{{ 'general.social.twitter' | t }}</a>
+        <a class="share-icon icon-like" href="//www.facebook.com/sharer.php?u={{ shop.url }}" target="_blank">{{ 'general.social.facebook' | t }}</a>
+        <a class="share-icon icon-pin" href="//pinterest.com/pin/create/button/?url={{ shop.url }}{% if pinterest_image != blank %}&amp;media={{ pinterest_image }}{% endif %}&amp;description={{ shop.name }}" target="_blank">{{ 'general.social.pinterest' | t }}</a>
+        <a class="share-icon icon-plus" href="//plus.google.com/share?url={{ shop.url }}" target="_blank">{{ 'general.social.google' | t }}</a>
+        <a class="share-icon icon-fancy" href="//www.thefancy.com/fancyit?ItemURL={{ shop.url }}&amp;Title={{ shop.name }}" target="_blank">{{ 'general.social.fancy' | t }}</a>
+      </div>
+    {% endif %}
+
+    <div role="contentinfo" class="copyright footer-module">
+      {% capture year %}{{ "now" | date: "%Y" }}{% endcapture %}
+      <p>{{ 'general.general.copyright_text_html' | t: year: year }} <a href="/">{{ shop.name }}.</a></p>
+    </div>
+
+    {% if shop.enabled_payment_types.size > 0 and section.settings.show_payment_icons %}
+      <div class="payment-types footer-module">
+        {% include 'payment-types' %}
+      </div>
+    {% endif %}
+
+  </footer>
+
+</div>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "footer-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_headings",
+      "label": "Show headings",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show share buttons",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Menus"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": "Menu 1",
+      "default": "footer"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": "Menu 2"
+    },
+    {
+      "type": "header",
+      "content": "Payment icons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show payment icons"
+    }
+  ]
+}
+
+{% endschema %}

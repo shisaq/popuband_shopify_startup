@@ -1,0 +1,109 @@
+{% include 'article-list-item' %}
+
+{% if blog.next_article or blog.previous_article %}
+<div class="single-post-pagination clearfix">
+  {% if blog.previous_article %}<a class="previous-post button" href="{{ blog.previous_article }}">{{ 'general.pagination.previous' | t }}</a>{% endif %}
+  {% if blog.next_article %}<a class="next-post button" href="{{ blog.next_article }}">{{ 'general.pagination.next' | t }}</a>{% endif %}
+</div>
+{% endif %}
+
+{% if article.comments_enabled? %}
+  <div class="post-comments" id="comments">
+
+    {% if article.comments_count > 0 %}
+    <div class="post-comments-list">
+
+      <h3>{{ article.comments_count }} {{ 'blogs.article_item.comment_count' | t: count: article.comments_count }}</h3>
+
+      {% paginate article.comments by 10 %}
+        {% for comment in article.comments %}
+        <div class="post-comment" id="comment-{{ comment.id }}">
+          <p class="meta"><a href="{{ comment.url }}" class="post-comment-date">{{ comment.created_at | date: format: 'short_month' }}</a>
+          &bull; {{ 'blogs.article_item.posted_by' | t }} <strong>{{ comment.author }}</strong></p>
+          <div class="rte">{{ comment.content }}</div>
+        </div>
+        {% endfor %}
+
+        {% if paginate.previous or paginate.next %}
+          {% include 'pagination' %}
+        {% endif %}
+
+      {% endpaginate %}
+    </div>
+    {% endif %}
+
+    <div class="post-comments-submit">
+      <h3>{{ 'blogs.article_item.leave_comment' | t }}</h3>
+
+      {% form article %}
+
+        {% if form.posted_successfully? %}
+          <p>
+          {% if blog.moderated? %}
+            {{ 'blogs.article_item.comment_pending' | t }}
+          {% else %}
+            {{ 'blogs.article_item.comment_posted' | t }}
+          {% endif %}
+          </p>
+        {% endif %}
+
+        {% if form.errors %}
+          <p class="error-message">{{ 'blogs.article_item.error_message' | t }}</p>
+        {% endif %}
+
+        <div class="input-wrapper {% if form.errors contains "author" %}error{% endif %}">
+          <label>{{ 'general.general.name' | t }} {{ form.errors.messages["author"] }}</label>
+          <input class="input-field" type="text" placeholder="{{ 'general.general.name_placeholder' | t }}" value="{{ form.author }}" name="comment[author]">
+        </div>
+
+        <div class="input-wrapper {% if form.errors contains "email" %}error{% endif %}">
+          <label>{{ 'general.general.email' | t }} {{ form.errors.messages["email"] }}</label>
+          <input class="input-field" type="email" placeholder="{{ 'general.general.email_placeholder' | t }}" value="{{ form.email }}" name="comment[email]">
+        </div>
+
+        <div class="input-wrapper {% if form.errors contains "body" %}error{% endif %}">
+          <label>{{ 'general.general.message' | t }} {{ form.errors.messages["body"] }}</label>
+          <textarea class="input-field-textarea" rows="6" name="comment[body]">{{ form.body }}</textarea>
+        </div>
+
+        <div class="input-wrapper">
+          <input class="button" type="submit" value="{{ 'general.general.submit' | t }}">
+        </div>
+
+      {% endform %}
+    </div>
+
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Article",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show post author"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show share buttons",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_full_width_image",
+      "label": "Show full width featured image",
+      "default": true
+    }
+  ]
+}
+
+{% endschema %}

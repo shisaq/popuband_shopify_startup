@@ -1,0 +1,179 @@
+{% assign selected_variant = product.selected_or_first_available_variant | default: product %}
+
+{%- capture feature_styles -%}
+  color: {{ section.settings.slideshow_color }};
+{%- endcapture -%}
+
+{%- capture slideshow_classes -%}
+  full-slideshow-wrapper
+  {{ section.settings.slideshow_layout }}
+  {{ section.settings.slideshow_transition }}
+  {% if section.settings.thumbnail_pagination %}
+    use-thumbnail-pagination
+  {% endif %}
+{%- endcapture -%}
+
+{% assign trigger_full_bleed = false %}
+{% if section.settings.slideshow_layout == 'full-bleed' %}
+  {% assign trigger_full_bleed = true %}
+{% elsif section.settings.slideshow_layout == 'opening-screen' %}
+  {% assign trigger_full_bleed = true %}
+{% endif %}
+
+{% assign image_size = '' %}
+{% if section.settings.slideshow_layout == 'content-width' %}
+  {% assign image_size = '960x600' %}
+{% elsif section.settings.slideshow_layout == 'full-width' %}
+  {% assign image_size = '1440x600' %}
+{% elsif section.settings.slideshow_layout == 'full-bleed' %}
+  {% assign image_size = '1440x700' %}
+{% elsif section.settings.slideshow_layout == 'opening-screen' %}
+  {% assign image_size = '2048x2048' %}
+{% endif %}
+
+<div
+  class="{{ slideshow_classes | strip_newlines }}"
+  data-autoplay="{{ section.settings.autoplay_speed }}"
+  {% if trigger_full_bleed %}
+    data-full-bleed-slideshow
+  {% endif %}
+  data-slideshow-wrapper
+  data-product-slideshow
+  data-section-id="{{ section.id }}"
+  data-section-type="slideshow"
+  style="{{ feature_styles | strip_newlines }}">
+
+  <div class="full-slideshow-content" data-slideshow-container>
+
+    <div class="full-slideshow-loader"></div>
+
+    {% for image in product.images %}
+      <div
+        data-slide="{{ forloop.index }}"
+        class="slideshow-slide"
+        {% if trigger_full_bleed %}
+          style="background-image: url({{ image | img_url: image_size }});"
+        {% endif %}>
+        <img
+          class="slide-image"
+          alt="{{ image.alt | escape }}"
+          src="{{ image | img_url: '2048x2048' }}">
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% if section.settings.thumbnail_pagination %}
+  <div
+    class="full-slideshow-pagination {{ section.settings.slideshow_layout }}"
+    data-slideshow-pagination>
+    {% for image in product.images %}
+      <a
+        class="slideshow-pagination-slide"
+        href="#"
+        data-pagination-slide="{{ forloop.index }}">
+        <img
+          class="slide-pagination-image"
+          alt="{{ image.alt | escape }}"
+          src="{{ image | img_url: '70x70', crop: 'center'}}">
+      </a>
+    {% endfor %}
+  </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Slideshow",
+  "class": "product-slideshow-section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "slideshow_color",
+      "label": "Navigation\/pagination color",
+      "default": "#68574d"
+    },
+    {
+      "type": "select",
+      "id": "slideshow_layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "content-width",
+          "label": "Content width"
+        },
+        {
+          "value": "full-width",
+          "label": "Full width"
+        },
+        {
+          "value": "full-bleed",
+          "label": "Full width, full bleed"
+        },
+        {
+          "value": "opening-screen",
+          "label": "Full width\/height, full bleed"
+        }
+      ],
+      "default": "content-width",
+      "info": "[Style examples](http:\/\/cdn.pixelunion.net\/startup\/startup-slideshow-layouts.png)"
+    },
+    {
+      "type": "select",
+      "id": "slideshow_transition",
+      "label": "Transition",
+      "options": [
+        {
+          "value": "transition-slide",
+          "label": "Slide"
+        },
+        {
+          "value": "transition-fade",
+          "label": "Fade"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "autoplay_speed",
+      "label": "Change slides every",
+      "options": [
+        {
+          "value": "0",
+          "label": "Don't automatically change slides"
+        },
+        {
+          "value": "5000",
+          "label": "5 seconds"
+        },
+        {
+          "value": "6000",
+          "label": "6 seconds"
+        },
+        {
+          "value": "7000",
+          "label": "7 seconds"
+        },
+        {
+          "value": "8000",
+          "label": "8 seconds"
+        },
+        {
+          "value": "9000",
+          "label": "9 seconds"
+        },
+        {
+          "value": "10000",
+          "label": "10 seconds"
+        }
+      ],
+      "default": "5000"
+    },
+    {
+      "type": "checkbox",
+      "id": "thumbnail_pagination",
+      "label": "Use thumbnails for pagination",
+      "default": true
+    }
+  ]
+}
+
+{% endschema %}

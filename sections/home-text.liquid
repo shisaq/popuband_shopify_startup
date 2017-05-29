@@ -1,0 +1,111 @@
+<section
+  class="module-container {{ section.settings.style }} {% if section.settings.show_borders %}borders{% endif %}"
+  data-section-id="{{ section.id }}" 
+  data-section-type="text">
+
+  <div class="module-inner">
+    {% for block in section.blocks %}
+      <div class="home-text-feature">
+        {% if block.settings.title != blank %}
+          <h1 class="feature-title">{{ block.settings.title | escape }}</h1>
+        {% endif %}
+
+        {% if block.type == 'rich_text' and block.settings.content != blank %}
+          <div class="rte home-text-content">{{ block.settings.content }}</div>
+        {% endif %}
+
+        {% if block.type == 'page' and block.settings.page != blank %}
+          {% assign page_content = pages[block.settings.page].content %}
+          {% if page_content != blank %}
+            <div class="rte">{{ pages[block.settings.page].content }}</div>
+          {% endif %}
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Rich text",
+  "max_blocks": 10,
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_borders",
+      "label": "Show border between features",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "rich_text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Rich text"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Text",
+          "default": "<p>Use this section to welcome customers to your store, say a bit about your brand, or share news and seasonal promotions.</p>"
+        }
+      ]
+    },
+    {
+      "type": "page",
+      "name": "Page",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Page content"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Text",
+      "name": "Text",
+      "blocks": [
+        {
+          "type": "rich_text"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

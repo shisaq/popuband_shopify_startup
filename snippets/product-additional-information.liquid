@@ -1,0 +1,13 @@
+{% if section.blocks.size > 0 %}
+  <div class="product-more-info">
+    {% for block in section.blocks %}
+      {% if block.settings.info_text != blank %}
+        <p class="product-info-link {{ block.settings.info_icon }}">
+          {% if block.settings.info_url != blank %}<a href="{{ block.settings.info_url }}">{% endif %}
+            {{ block.settings.info_text | escape }}
+          {% if block.settings.info_url != blank %}</a>{% endif %}
+        </p>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}

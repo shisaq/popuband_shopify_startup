@@ -1,0 +1,142 @@
+{% assign per_row = section.settings.products_per_row %}
+{% assign product_rows = section.settings.product_rows %}
+{% assign collection = section.settings.collection %}
+{% assign product_limit = product_rows | times: per_row %}
+
+<section
+  class="module-container {{ section.settings.style }} rows-of-{{ per_row }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-collection">
+  <div class="module-inner home-featured-collection">
+
+    {% if section.settings.title != blank %}
+      <h1 class="section-title">{{ section.settings.title | escape }}</h1>
+    {% endif %}
+
+    <div class="collection-products">
+      {% for product in collections[collection].products limit: product_limit %}
+        {% include 'product-list-item' %}
+      {% else %}
+        {% for i in (1..product_limit) %}
+          {%- capture placeholder_image -%}
+            {{ 'product-' | append: i | placeholder_svg_tag: 'placeholder-svg product-list-item-image' }}
+          {%- endcapture -%}
+          {% assign title = 'onboarding.featured_collection.product_title' | t %}
+          {% assign vendor = 'onboarding.featured_collection.product_vendor' | t %}
+          {% include
+            'product-list-item',
+            onboarding: true,
+            onboarding_image: placeholder_image,
+            onboarding_title: title,
+            onboarding_price: 1999,
+            onboarding_vendor: vendor %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.button != blank and section.settings.link != blank %}
+      <div class="home-module-cta">
+        <a class="button" href="{{ section.settings.link }}">
+          {{ section.settings.button | escape }}
+        </a>
+      </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured collection"
+    },
+    {
+      "type": "text",
+      "id": "button",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link URL"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
+    },
+    {
+      "type": "select",
+      "id": "products_per_row",
+      "label": "Products per row",
+      "options": [
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ],
+      "default": "3"
+    },
+    {
+      "type": "select",
+      "id": "product_rows",
+      "label": "Number of rows",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ],
+      "default": "1"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Collection",
+      "name": "Featured collection"
+    }
+  ]
+}
+
+{% endschema %}

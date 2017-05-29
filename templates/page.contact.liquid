@@ -1,0 +1,43 @@
+<h1 class="page-title">{{ page.title }}</h1>
+
+<div class="rte">
+  {{ page.content }}
+</div>
+
+<div class="contact-form-wrapper">
+  <h3>{{ 'contact.general.header' | t }}</h3>
+
+  {% form 'contact' %}
+
+    {% if form.posted_successfully? %}
+      <p class="success-message">{{ 'contact.general.success' | t }}</p>
+    {% endif %}
+
+    {% if form.errors %}
+      <p class="error-message">{{ 'contact.general.error' | t }}</p>
+    {% endif %}
+
+    {% unless form.posted_successfully? %}
+      <div class="input-wrapper">
+        <label>{{ 'general.general.name' | t }}</label>
+        <input class="input-field {% if form.errors contains "author" %}error{% endif %}" type="text" placeholder="{{ 'general.general.name_placeholder' | t }}" name="contact[name]">
+      </div>
+
+      <div class="input-wrapper">
+        <label>{{ 'general.general.email' | t }}</label>
+        <input class="input-field {% if form.errors contains "email" %}error{% endif %}" type="text" placeholder="{{ 'general.general.email_placeholder' | t }}" name="contact[email]">
+      </div>
+
+      <div class="input-wrapper">
+        <label>{{ 'general.general.message' | t }}</label>
+        <textarea class="input-field-textarea {% if form.errors contains "body" %}error{% endif %}" name="contact[body]" rows="6"></textarea>
+      </div>
+
+      <div class="input-wrapper">
+        <input type="hidden" class="spam-check" value="">
+        <input class="button" type="submit" value="{{ 'general.general.submit' | t }}">
+      </div>
+    {% endunless %}
+
+  {% endform %}
+</div>

@@ -1,0 +1,9 @@
+<h1 class="page-title">{{ page.title }}</h1>
+
+{% if page.content != blank %}
+  <div class="rte">
+    {{ page.content }}
+  </div>
+{% endif %}
+
+{% section 'module-faq' %}

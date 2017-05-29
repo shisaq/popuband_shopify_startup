@@ -1,0 +1,109 @@
+{% assign blog = blogs[section.settings.blog] %}
+
+<section
+  class="module-container {{ section.settings.style }} rows-of-2"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-blog">
+  <div class="module-inner home-featured-blog">
+
+    {% if section.settings.title != blank %}
+      <h1 class="section-title">{{ section.settings.title | escape }}</h1>
+    {% endif %}
+
+    {% if section.settings.blog != 'none' and blog.articles.size > 0 %}
+      {% for article in blog.articles limit: 2 %}
+        <article class="home-featured-blog-post">
+          <a href="{{ article.url }}">
+            <h1 class="featured-post-title">
+                {{ article.title }}
+            </h1>
+
+            <p class="featured-post-date">
+              {{ article.published_at | date: format: 'long_month' }}
+            </p>
+
+            {% if article.image %}
+              <div class="featured-post-image">
+                <img
+                  src="{{ article.image  | img_url: '600x600' }}"
+                  alt="{{ article.title | escape }}">
+              </div>
+            {% endif %}
+          </a>
+
+          <p class="featured-post-excerpt">
+            {{ article.excerpt_or_content | strip_html }}
+          </p>
+        </article>
+      {% endfor %}
+    {% else %}
+      {% for i in (1..2) %}
+        <article class="home-featured-blog-post">
+          <a href="#">
+            <h1 class="featured-post-title">
+              {{ 'onboarding.blog.title' | t }}
+            </h1>
+
+            <div class="featured-post-image">
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          </a>
+
+          <p class="featured-post-excerpt">
+            {{ 'onboarding.blog.excerpt' | t }}
+          </p>
+        </article>
+      {% endfor %}
+    {% endif %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog posts",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Blog posts"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Blog",
+      "name": "Blog posts",
+      "settings": {
+        "blog": "none"
+      }
+    }
+  ]
+}
+
+{% endschema %}

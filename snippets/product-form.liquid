@@ -1,0 +1,115 @@
+{% comment %}
+  @param product {object}
+    (Required) Contains product information
+
+  @param hide_shoppad {bool}
+    Hide Shoppad integrations
+
+  @param add_to_cart_override {string}
+    Pass an optional string to override the 'Add to cart' button
+
+  @param form_id {number}
+    Pass an optional number to override the form id
+{% endcomment %}
+
+{% unless form_id %}
+  {% assign form_id = product.id %}
+{% endunless %}
+
+<form
+  class="product-form"
+  id="product-form-{{ form_id }}"
+  action="/cart/add"
+  method="post"
+  data-product-form="{{ form_id }}">
+
+  {% unless section_onboarding %}
+    {% if product.variants.size > 1 %}
+      <div class="product-options">
+        {% if section.settings.variants_style == 'select' %}
+          {% include 'product-options-dropdown' %}
+        {% else %}
+          {% include 'product-options-radio' %}
+        {% endif %}
+
+        <div class="selector-wrapper no-js-required">
+          <label for="product-select-{{ form_id }}"></label>
+          <select
+            class="product-select"
+            name="id"
+            id="product-select-{{ form_id }}">
+            {% for variant in product.variants %}
+              {%- capture option_content -%}
+                {%- if variant.available -%}
+                  {{ variant.title }} - {{ variant.price | money }}
+                {%- else -%}
+                  {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                {%- endif -%}
+              {%- endcapture -%}
+              <option
+                {% if variant.id == selected_variant.id %}selected="selected"{% endif %}
+                data-variant-id="{{ variant.id }}"
+                {% if variant.available %}
+                  data-sku="{{ variant.sku }}"
+                  value="{{ variant.id }}"
+                {% else %}
+                  disabled="disabled"
+                {% endif %}>
+                {{ option_content | strip_newlines }}
+              </option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+    {% else %}
+      <input
+        class="product-select"
+        name="id"
+        value="{{ product.variants[0].id }}"
+        type="hidden"
+        data-variant-title="{{ product.variants[0].title }}" />
+    {% endif %}
+  {% endunless %}
+
+  {% unless hide_shoppad %}
+    <div id="infiniteoptions-container"></div>
+    <div id="uploadery-container"></div>
+  {% endunless %}
+
+  <div class="input-wrapper product-quantity">
+    {% unless section_onboarding %}
+      <label
+        class="product-quantity-label"
+        for="quantity">
+        {{ 'general.general.quantity' | t }}
+      </label>
+      <input
+        class="input-field product-quantity-input"
+        type="text"
+        name="quantity"
+        value="1">
+    {% endunless %}
+
+    <div class="add-to-cart">
+      {% if product.available %}
+        <div class="product-form-submit-wrap">
+          {% assign add_to_cart_text = 'products.product.add_to_cart' | t %}
+          {% if add_to_cart_override %}
+            {% assign add_to_cart_text = add_to_cart_override %}
+          {% endif %}
+          <input class="button" type="submit" value="{{ add_to_cart_text }}" />
+          <div class="add-to-cart-loader"></div>
+        </div>
+      {% else %}
+        <input
+          class="button disabled"
+          type="button"
+          disabled="disabled"
+          value="{{ 'products.product.sold_out' | t }}">
+      {% endif %}
+    </div>
+
+    <div class="product-cart-message" data-product-message></div>
+  </div>
+
+</form>

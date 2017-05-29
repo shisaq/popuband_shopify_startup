@@ -1,0 +1,148 @@
+{% assign grid_size = section.blocks.size %}
+{% if section.blocks.size > 4 %}
+  {% assign grid_size = 3 %}
+{% elsif section.blocks.size == 4 %}
+  {% assign grid_size = 2 %}
+{% endif %}
+
+<section
+  class="module-container {{ section.settings.style }} row-of-{{ grid_size }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-collections">
+  <div class="module-inner home-collection-list">
+
+    {% if section.settings.title != blank %}
+      <h1 class="section-title">{{ section.settings.title | escape }}</h1>
+    {% endif %}
+
+    <div class="home-collection-list-items clearfix">
+
+      {% for block in section.blocks %}
+        {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+        {% assign collection = collections[block.settings.collection] %}
+        {% assign collection_title = collection.title %}
+        {% assign collection_url = collection.url %}
+
+        {% assign featured_image = false %}
+        {% assign featured_image_alt = '' %}
+
+        {% if collection.empty? %}
+          {% assign collection_title = 'onboarding.collection.title' | t %}
+          {% assign collection_url = '#' %}
+        {% else %}
+          {% if collection.image %}
+            {% assign featured_image = collection %}
+            {% assign featured_image_alt = collection.image.alt | escape %}
+          {% else %}
+            {% assign featured_image = collection.products.first %}
+            {% assign featured_image_alt = collection.title | escape %}
+          {% endif %}
+        {% endif %}
+
+        <article class="home-collection-list-item" {{ block.shopify_attributes }}>
+          <a href="{{ collection_url }}">
+            {% if collection.empty? %}
+              {{ 'collection-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+            {% else %}
+              <img
+                src="{{ featured_image | img_url: '600x600' }}"
+                alt="{{ featured_image_alt | escape }}">
+            {% endif %}
+          </a>
+
+          <h1 class="home-featured-collection-title">
+            <a href="{{ collection_url }}">{{ collection_title }}</a>
+          </h1>
+
+          {% if section.settings.show_product_count and collection.products.size > 0 %}
+            <span class="home-featured-collection-count">
+            {{ 'product_count' | t: count: collection.products_count }}
+            </span>
+          {% endif %}
+        </article>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Collection list",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Collection list"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_product_count",
+      "label": "Show product count",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "id": "collection",
+          "type": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Collection",
+      "name": "Collection list",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ],
+  "locales": {
+    "en": {
+      "product_count": {
+        "one": "{{ count }} item",
+        "other": "{{ count }} items"
+      }
+    }
+  }
+}
+
+{% endschema %}

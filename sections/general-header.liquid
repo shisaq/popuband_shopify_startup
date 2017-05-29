@@ -1,0 +1,293 @@
+{% assign password_page = false %}
+{% if template contains 'password' %}
+  {% assign password_page = true %}
+{% endif %}
+
+{% unless password_page %}
+  {%- capture additional_classes -%}
+    {% if section.settings.menu_style == 'drawer' %}
+      collapsed-navigation
+    {% endif %}
+
+    {% if section.settings.header_sticky %}
+      sticky-header
+    {% endif %}
+
+    header-bleed-{{ section.settings.color_override }}-colors
+
+    {% if section.settings.menu_style != 'below-header'%}
+      show-border
+    {% endif %}
+  {%- endcapture -%}
+{% endunless %}
+
+<div
+  class="main-header-wrapper {{ additional_classes | strip_newlines }}"
+  {% unless password_page %}
+    data-main-header="{{ section.settings.menu_style }}"
+    data-header-bleed-color="header-bleed-{{ section.settings.color_override }}-colors"
+    {% if section.settings.header_sticky and password_page == false %}
+      data-sticky-header
+    {% endif %}
+  {% endunless %}
+  data-section-id="{{ section.id }}"
+  data-section-type="header">
+
+  {% if section.settings.promotion_text != blank and password_page == false %}
+    <div class="header-promotion-bar {{ section.settings.promotion_style }}" data-promotion-bar>
+      {% if section.settings.promotion_url != blank %}
+        <a class="header-promotion-text" href="{{ section.settings.promotion_url }}">
+          {{ section.settings.promotion_text }}
+        </a>
+      {% else %}
+        <span class="header-promotion-text">
+          {{ section.settings.promotion_text }}
+        </span>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <header class="main-header" role="banner" data-header-content>
+
+    <div class="branding">
+      {% if section.settings.header_logo %}
+        <a class="logo" href="/">
+          {% assign default_logo = section.settings.header_logo %}
+          {% assign alternate_logo = section.settings.header_logo_alternate %}
+          <img class="logo-regular"
+            alt="{{ shop.name | escape }}"
+            src="{{ default_logo | img_url: '300x90', scale: 2 }}"
+            {% if alternate_logo %}
+              data-src-original="{{ default_logo | img_url: '300x90', scale: 2 }}"
+              data-src-alt="{{ alternate_logo | img_url: '300x90', scale: 2  }}"
+            {% endif %}
+            data-header-logo>
+        </a>
+      {% else %}
+        <h1 class="branding-title"><a href="/">{{ shop.name }}</a></h1>
+      {% endif %}
+    </div>
+
+    {% if section.settings.show_search and password_page == false %}
+      <div class="header-search-wrapper" data-header-search>
+        <form class="header-search-form" action="/search" method="get">
+          <input class="input-field header-search-input" name="q" type="text" placeholder="{{ 'general.general.search_placeholder' | t }}">
+        </form>
+      </div>
+    {% endif %}
+
+    {% unless password_page %}
+      <div class="header-tools">
+        {% if section.settings.menu_style == 'header' %}
+          {% include 'navigation' %}
+        {% endif %}
+
+        <div class="header-actions">
+          <div id="coin-container"></div>
+          {% if settings.show-currency-switcher %}
+            <div class="select-wrapper">
+              <div class="selected-currency"></div>
+              <select id="currencies" name="currencies">
+                {% capture codes %},USD,EUR,GBP,CAD,ARS,AUD,BBD,BDT,BSD,BHD,BRL,BOB,BND,BGN,MMK,KYD,CLP,CNY,COP,CRC,HRK,CZK,DKK,DOP,XCD,EGP,XPF,FJD,GHS,GTQ,GYD,GEL,HKD,HUF,ISK,INR,IDR,NIS,JMD,JPY,JOD,KZT,KES,KWD,LVL,LTL,MXN,MYR,MUR,MDL,MAD,MNT,MZN,ANG,NZD,NGN,NOK,OMR,PKR,PYG,PEN,PHP,PLN,QAR,RON,RUB,SAR,RSD,SCR,SGD,SYP,ZAR,KRW,LKR,SEK,CHF,TWD,THB,TZS,TTD,TRY,UAH,AED,UYU,VEB,VND,ZMK,{% endcapture %}
+                {% assign supported_codes = settings.currency-switcher-supported-currencies | split: ' ' %}
+                <option value="{{ shop.currency }}" selected="selected">{{ shop.currency }}</option>
+                {% for code in supported_codes %}
+                  {% if code != shop.currency and codes contains code %}
+                  <option value="{{ code }}">{{ code }}</option>
+                  {% endif %}
+                {% endfor %}
+              </select>
+            </div>
+          {% endif %}
+          {% if section.settings.show_search %}
+            <span class="header-search-toggle">&#57347;</span>
+          {% endif %}
+          {% if section.settings.show_cart %}
+            <a class="cart-link" href="/cart">&#57346;<span class="cart-count">{{ cart.item_count }}</span></a>
+          {% endif %}
+          {% if section.settings.menu_style == 'header' or section.settings.menu_style == 'below-header' %}
+            {% if shop.customer_accounts_enabled %}
+              <a href="/account" class="account-link">&#57348;</a>
+            {% endif %}
+          {% endif %}
+          <span class="drawer-toggle" data-drawer-toggle></span>
+        </div>
+      </div>
+    {% endunless %}
+  </header>
+
+  {% if section.settings.menu_style == 'below-header' and password_page == false %}
+    <div class="header-navigation">
+      {% include 'navigation', header_style: 'below-header' %}
+    </div>
+  {% endif %}
+</div>
+
+{% unless password_page %}
+  <div class="header-drawer" data-header-drawer>
+    <h1 class="branding-title"><a href="/">{{ shop.name }}</a></h1>
+
+    <span class="drawer-toggle icon" data-drawer-toggle>&#57349;</span>
+
+    {% include 'navigation' %}
+
+    {% if shop.customer_accounts_enabled %}
+      <a href="/account" class="drawer-account-link"><span class="icon">&#57351;</span> {{ 'general.general.my_account' | t }}</a>
+    {% endif %}
+
+    <div id="coin-container"></div>
+  </div>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "main-header-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "header_sticky",
+      "label": "Enable fixed header"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cart",
+      "label": "Show cart icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "Show search icon",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "header_logo",
+      "label": "Logo image",
+      "info": "300 x 90x .png recommended"
+    },
+    {
+      "type": "header",
+      "content": "Navigation"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "select",
+      "id": "menu_style",
+      "label": "Menu style",
+      "options": [
+        {
+          "value": "drawer",
+          "label": "Drawer"
+        },
+        {
+          "value": "header",
+          "label": "Header"
+        },
+        {
+          "value": "below-header",
+          "label": "Below header"
+        }
+      ],
+      "info": "When the navigation layout is set to 'Header,' navigation will collapse into the 'Drawer' if there is not enough space."
+    },
+    {
+      "type": "text",
+      "id": "mega_nav_trigger",
+      "label": "Mega navigation trigger",
+      "info": "Add the title of the menu from which you want the mega-nav to stem. Note: the mega navigation system is only functional when the 'Menu style' is set to 'Below header."
+    },
+    {
+      "type": "link_list",
+      "id": "mega_nav_menu_1",
+      "label": "Menu 1"
+    },
+    {
+      "type": "link_list",
+      "id": "mega_nav_menu_2",
+      "label": "Menu 2"
+    },
+    {
+      "type": "link_list",
+      "id": "mega_nav_menu_3",
+      "label": "Menu 3"
+    },
+    {
+      "type": "link_list",
+      "id": "mega_nav_menu_4",
+      "label": "Menu 4"
+    },
+    {
+      "type": "header",
+      "content": "Alternate header"
+    },
+    {
+      "type": "select",
+      "id": "color_override",
+      "label": "Color override",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default colors"
+        },
+        {
+          "value": "light",
+          "label": "White"
+        },
+        {
+          "value": "dark",
+          "label": "Black"
+        }
+      ],
+      "default": "default",
+      "info": "If your header colors and full bleed slideshow images are clashing, this will override the Home page and Product page header colors to be only white or black."
+    },
+    {
+      "type": "image_picker",
+      "id": "header_logo_alternate",
+      "label": "Alternate logo image",
+      "info": "If the logo you have clashes with one of the full bleed slideshows, you may want to upload an alternate logo for those pages."
+    },
+    {
+      "type": "header",
+      "content": "Promotion bar"
+    },
+    {
+      "type": "select",
+      "id": "promotion_style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "standard-style",
+          "label": "Standard"
+        }
+      ],
+      "default": "accent-style"
+    },
+    {
+      "type": "richtext",
+      "id": "promotion_text",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "promotion_url",
+      "label": "Link URL"
+    }
+  ]
+}
+{% endschema %}

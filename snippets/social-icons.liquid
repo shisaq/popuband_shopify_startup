@@ -1,0 +1,26 @@
+<ul>
+  {% if settings.social_facebook_url != blank %}
+    <li class="social-link facebook"><a href="{{ settings.social_facebook_url }}" target="_blank">Facebook</a></li>
+  {% endif %}
+  {% if settings.social_twitter_url != blank %}
+    <li class="social-link twitter"><a href="{{ settings.social_twitter_url }}" target="_blank">Twitter</a></li>
+  {% endif %}
+  {% if settings.social_google_url != blank %}
+    <li class="social-link google"><a href="{{ settings.social-google-plus-url }}" target="_blank">Google+</a></li>
+  {% endif %}
+  {% if settings.social_pinterest_url != blank %}
+    <li class="social-link pinterest"><a href="{{ settings.social_pinterest_url }}" target="_blank">Pinterest</a></li>
+  {% endif %}
+  {% if settings.social_instagram_url != blank %}
+    <li class="social-link instagram"><a href="{{ settings.social_instagram_url }}" target="_blank">Instagram</a></li>
+  {% endif %}
+  {% if settings.social_vimeo_url != blank %}
+    <li class="social-link vimeo"><a href="{{ settings.social_vimeo_url }}" target="_blank">Vimeo</a></li>
+  {% endif %}
+  {% if settings.social_youtube_url != blank %}
+    <li class="social-link youtube"><a href="{{ settings.social_youtube_url }}" target="_blank">YouTube</a></li>
+  {% endif %}
+  {% if settings.social_rss_url != blank %}
+    <li class="social-link rss"><a href="{{ settings.social_rss_url }}" target="_blank">RSS</a></li>
+  {% endif %}
+</ul>

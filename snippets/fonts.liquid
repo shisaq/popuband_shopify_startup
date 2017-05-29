@@ -1,0 +1,34 @@
+{%- capture google_fonts -%}
+
+  {% capture font_settings %}body_font|logo_font|heading_font|section_heading_font|meta_font|button_font{% endcapture %}
+  {% assign font_settings = font_settings | split: "|" %}
+  {% assign request_string = "" %}
+  {% assign google_font_count = 0 %}
+
+  {% for setting in font_settings %}
+
+    {% assign font_setting = settings[setting] %}
+
+    {% if font_setting contains 'Google' %}
+      {% assign font_parts = font_setting | split: '_' %}
+      {% assign google_font_count = google_font_count | plus: 1 %}
+
+      {% comment %}
+          `font_parts[1]` : Font name
+          `font_parts[2]` : Font weight(s)
+      {% endcomment %}
+      {% capture font_segment %}{{ font_parts[1] }}:{{ font_parts[2] }}{% endcapture %}
+
+      {% unless request_string contains font_segment %}
+        {% assign request_string = request_string | append: '|' | append: font_segment %}
+      {% endunless %}
+    {% endif %}
+
+  {% endfor %}
+
+  {% if google_font_count > 0%}
+    {{ '//fonts.googleapis.com/css?family=' | append: request_string | remove_first: "|" | stylesheet_tag }}
+  {% endif %}
+
+{%- endcapture -%}
+{{ google_fonts | strip_newlines }}

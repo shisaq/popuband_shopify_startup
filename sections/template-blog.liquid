@@ -1,0 +1,98 @@
+{% assign paginate_by = 5 %}
+{% if section.settings.layout == 'grid' %}
+  {% assign paginate_by = 4 %}
+{% endif %}
+
+<h1 class="{% if current_tags %}tag-page{% endif %} {% if section.settings.show_rss_icon %}has-rss-icon{% endif %} page-title">
+  {% if current_tags %}<a href="{{ blog.url }}">{% endif %}
+    {{ blog.title }}
+  {% if current_tags %}</a>{% endif %}
+
+  {% if section.settings.show_rss_icon %}<a class="icon rss" href="{{ blog.url }}.atom">&#57366;</a>{% endif %}
+</h1>
+
+{% if current_tags %}
+  <p class="current-tag">{{ 'blogs.blog.posts_tagged' | t }} <em>"{{ current_tags.first }}"</em></p>
+{% endif %}
+
+{% paginate blog.articles by paginate_by %}
+
+  <div class="blog-posts clearfix">
+    {% for article in blog.articles %}
+      {% if section.settings.layout == 'grid' %}
+        {% include 'article-grid-item' %}
+      {% else %}
+        {% include 'article-list-item' %}
+      {% endif %}
+    {% else %}
+      <span class="empty">{{ 'blogs.blog.empty' | t }}</span>
+    {% endfor %}
+  </div>
+
+  {% if paginate.previous or paginate.next %}
+    {% include 'pagination' %}
+  {% endif %}
+
+{% endpaginate %}
+
+{% schema %}
+{
+  "name": "Blog",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "list",
+      "options": [
+        {
+          "value": "grid",
+          "label": "Grid"
+        },
+        {
+          "value": "list",
+          "label": "List"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rss_icon",
+      "label": "Show RSS icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show share buttons",
+      "info": "List layout only",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_image",
+      "label": "Show featured image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author",
+      "label": "Show post author",
+      "info": "List layout only"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_comment_count",
+      "label": "Show comment count",
+      "info": "List layout only"
+    }
+  ]
+}
+
+{% endschema %}

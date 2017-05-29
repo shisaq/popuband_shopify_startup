@@ -1,0 +1,192 @@
+{% assign image = section.settings.image %}
+{% assign has_cta = false %}
+{% assign has_link_wrapper = false %}
+
+{%- if section.settings.title != blank or section.settings.caption != blank -%}
+  {% assign has_content = true %}
+{%- endif -%}
+
+{%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+  {% assign has_cta = true %}
+  {% assign has_content = true %}
+{%- endif -%}
+
+{%- if section.settings.button_text == blank and section.settings.button_link != blank -%}
+  {% assign has_link_wrapper = true %}
+{%- endif -%}
+
+{% if image != blank %}
+  {% assign image_size = '2048x2048' %}
+  {% assign background_image = image | img_url: image_size %}
+  {%- capture feature_image -%}
+    <img
+      class="feature-image"
+      alt="{{ image.alt | escape }}"
+      src="{{ image | img_url: image_size }}">
+  {%- endcapture -%}
+{% else %}
+  {%- capture background_image -%}
+    {%- include 'placeholder_svg_uri' placeholder: 'lifestyle-1' -%}
+  {%- endcapture -%}
+  {%- capture feature_image -%}
+    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg feature-image' }}
+  {%- endcapture -%}
+{% endif %}
+
+{%- capture section_class -%}
+  {{ section.settings.style }}
+  full-width-background
+
+  {% unless has_content %}no-content{% endunless %}
+{%- endcapture -%}
+
+<section
+  class="module-container home-full-width-feature {{ section_class | strip_newlines }}"
+  data-section-id="{{ section.id }}" 
+  data-section-type="image-with-text-overlay"
+  data-image-with-text-layout="background"
+  style="background-image: url('{{ background_image | strip }}')">
+
+  {% if has_link_wrapper %}
+  <a class="home-full-width-feature-link-wrapper" href="{{ section.settings.button_link }}">
+  {% endif %}
+
+  {{ feature_image | strip }}
+
+  <div class="home-module-overlay opacity-{{ section.settings.overlay_opacity }}"></div>
+
+  {% if has_content %}
+    <div class="home-full-width-feature-content" data-feature-content>
+      <article class="module-inner">
+        {% if section.settings.title != blank %}
+          <h1 class="feature-title">{{ section.settings.title | escape }}</h1>
+        {% endif %}
+
+        {% if section.settings.caption != blank %}
+          <div class="rte">{{ section.settings.caption }}</div>
+        {% endif %}
+
+        {% if has_cta %}
+          <div class="home-module-cta">
+            <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_text | escape }}</a>
+          </div>
+        {% endif %}
+      </article>
+    </div>
+  {% endif %}
+
+  {% if section.settings.button_link != blank %}
+    </a>
+  {% endif %}
+
+</section>
+
+{% schema %}
+{
+  "name": "Image with text overlay",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Image with text overlay"
+    },
+    {
+      "type": "richtext",
+      "id": "caption",
+      "label": "Text",
+      "default": "<p>Select imagery and text that relates to your style and story.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "options": [
+        {
+          "value": "0",
+          "label": "No overlay"
+        },
+        {
+          "value": "10",
+          "label": "10%"
+        },
+        {
+          "value": "20",
+          "label": "20%"
+        },
+        {
+          "value": "30",
+          "label": "30%"
+        },
+        {
+          "value": "40",
+          "label": "40%"
+        },
+        {
+          "value": "50",
+          "label": "50%"
+        },
+        {
+          "value": "60",
+          "label": "60%"
+        },
+        {
+          "value": "70",
+          "label": "70%"
+        },
+        {
+          "value": "80",
+          "label": "80%"
+        },
+        {
+          "value": "90",
+          "label": "90%"
+        }
+      ],
+      "default": "90"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Image with text overlay"
+    }
+  ]
+}
+
+{% endschema %}

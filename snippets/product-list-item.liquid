@@ -1,0 +1,92 @@
+{% assign item = product %}
+{% if template contains 'search' %}
+  {% assign item = item %}
+{% elsif template contains 'product' %}
+  {% assign item = prod %}
+{% endif %}
+
+{% if settings.product_stock_overlay and item.available %}
+  {% assign show_stock_indicator = false %}
+  {% assign total = 0 %}
+  {% assign threshold = settings.product_stock_overlay_threshold | times: 1 %}
+  {% for variant in item.variants %}
+    {% if variant.inventory_management == "shopify" and variant.inventory_quantity > 0 and varient.inventory_policy != 'continue'%}
+      {% assign total = total | plus: variant.inventory_quantity %}
+      {% assign show_stock_indicator = true %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<article class="product-list-item" {% unless onboarding %}id="product-list-item-{{ item.id }}"{% endunless %}>
+
+  <figure class="product-list-item-thumbnail">
+    {% unless onboarding %}
+      <a href="{{ item.url | within: collection }}">
+        <img
+          class="product-list-item-image"
+          src="{{ item.featured_image.src | product_img_url: '600x600' }}"
+          alt="{{ item.featured_image.alt | escape }}" />
+
+        {% if show_stock_indicator and total < threshold %}
+          <span class="stock-overlay meta">{{ 'products.product.stock_level' | t: stock_count: total }}</span>
+        {% endif %}
+
+        {% if item.compare_at_price_min > item.price_min and item.available %}
+          <span class="sale-badge">&#57367;</span>
+        {% endif %}
+      </a>
+    {% else %}
+      <a href="#">
+        {{ onboarding_image }}
+      </a>
+    {% endunless %}
+  </figure>
+
+  <div class="product-list-item-details">
+    {% if settings.product_show_vendor %}
+      <p class="product-list-item-vendor vendor meta">
+        {% unless onboarding %}
+          {{ item.vendor }}
+        {% else %}
+          {{ onboarding_vendor }}
+        {% endunless %}
+      </p>
+    {% endif %}
+
+    <h1 class="product-list-item-title">
+      <a href="{% unless onboarding %}{{ item.url | within: collection }}{% endunless %}">
+        {% unless onboarding %}
+          {{ item.title }}
+        {% else %}
+          {{ onboarding_title }}
+        {% endunless %}
+      </a>
+    </h1>
+
+      <p class="product-list-item-price">
+        {% if onboarding %}
+          {{ onboarding_price | money }}
+        {% elsif item.available %}
+          {% if item.price_varies %}
+            <span class="price">
+              {% if item.price_varies %}{{ 'products.product.from' | t }}{% endif %}
+              <span class="money">{{ item.price_min | money }}</span></span>
+          {% else %}
+            <span class="price">
+              <span class="money">{{ item.price_min | money }}</span>
+              {% unless item.compare_at_price_min <= item.price_min %}
+                <span class="original money">
+                  {% if item.compare_at_price_min > item.price_min %}
+                    {{ item.compare_at_price_min | money }}
+                  {% endif %}
+                </span>
+              {% endunless %}
+            </span>
+          {% endif %}
+        {% else %}
+          {{ 'products.product.sold_out' | t }}
+        {% endif %}
+      </p>
+  </div>
+
+</article>

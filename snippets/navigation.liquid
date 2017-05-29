@@ -1,0 +1,97 @@
+{% comment %}
+  @param header_style {string}
+    - Pass as 'below-header' to enable meganav.
+    - 'below-header' must not be passed to drawer
+{% endcomment %}
+
+<nav class="navigation {% if header_style %}{{ header_style }}{% endif %}">
+  <ul class="primary">
+
+    {% assign mega_nav_trigger = section.settings.mega_nav_trigger | handle | strip %}
+
+    {% for link in linklists[section.settings.menu].links %}
+      {% assign link_handle = link.title | handle | strip %}
+
+      {% assign use_mega_nav = false %}
+      {% if mega_nav_trigger != blank and header_style == 'below-header' %}
+        {% assign use_mega_nav = true %}
+      {% endif %}
+
+      {% assign has_mega_nav = false %}
+      {% if mega_nav_trigger == link_handle %}
+        {% assign has_mega_nav = true %}
+      {% endif %}
+
+      {% assign nav_below_header = false %}
+      {% if header_style == 'below-header' %}
+        {% assign nav_below_header = true %}
+      {% endif %}
+
+      {% assign display_mega_nav = false %}
+      {% if use_mega_nav and has_mega_nav and nav_below_header %}
+        {% assign display_mega_nav = true %}
+      {% endif %}
+
+      {% assign mega_nav_count = 0 %}
+      {% for i in (1..4) %}
+        {% assign menu_name = 'mega_nav_menu_' | append: i %}
+
+        {% if section.settings[menu_name] != blank and linklists[section.settings[menu_name]].links %}
+          {% assign mega_nav_count = mega_nav_count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+
+      {% if mega_nav_count == 0 %}
+        {% assign display_mega_nav = false %}
+      {% endif %}
+
+      {% assign has_dropdown = false %}
+      {% if linklists[link_handle] and linklists[link_handle].links.size > 0 %}{% assign has_dropdown = true %}{% endif %}
+
+      <li class="{% if has_dropdown or display_mega_nav %}has-dropdown{% if display_mega_nav %} has-mega-nav{% else %} simple-dropdown{% endif %}{% endif %}">
+        <a class="main-nav-item" href="{{ link.url }}">{{ link.title }}</a>
+
+        {% if has_dropdown or display_mega_nav %}
+          {% if display_mega_nav %}
+
+            {% if mega_nav_count < 5 %}
+              {% assign mega_nav_class = 'showing-' | append: mega_nav_count %}
+            {% else %}
+              {% assign mega_nav_class = 'showing-5-or-more' %}
+            {% endif %}
+
+            <div class="mega-nav {{ mega_nav_class }}">
+          {% endif %}
+
+          <ul class="{% if nav_below_header %}secondary{% endif %}">
+            {% if display_mega_nav %}
+              {% for i in (1..4) %}
+                {% assign menu_name = 'mega_nav_menu_' | append: i %}
+                {% if section.settings[menu_name] != blank and linklists[section.settings[menu_name]].links %}
+                  <li>
+                    <a href="#">{{ linklists[section.settings[menu_name]].title }}</a>
+                    <ul class="tertiary">
+                      {% for link in linklists[section.settings[menu_name]].links %}
+                        {% include 'navigation-mega-nav', link: link %}
+                      {% endfor %}
+                    </ul>
+                  </li>
+                {% endif %}
+              {% endfor %}
+            {% else %}
+              {% for link in linklists[link_handle].links %}
+                {% include 'navigation-menu', link: link %}
+              {% endfor %}
+            {% endif %}
+          </ul>
+
+          {% if display_mega_nav %}
+            </div>
+          {% endif %}
+        {% endif %}
+      </li>
+
+    {% endfor %}
+
+  </ul>
+</nav>

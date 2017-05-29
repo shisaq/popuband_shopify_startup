@@ -1,0 +1,74 @@
+{% for block in section.blocks %}
+  {% if block.settings.title != blank and block.settings.content != blank %}
+
+    {% assign is_first = forloop.first %}
+    <article class="accordion-item" {{ block.shopify_attributes }}>
+      <h1 class="accordion-item-title">
+        <a
+          class="{% if is_first %}accordion-active{% endif %}"
+          href="#"
+          data-accordion-trigger="accordion-{{ block.id }}">
+          <span class="accordion-inline-title">
+            {{ block.settings.title | escape }}
+          </span>
+          {%- include 'icon-plus', class: 'accordion-icon' -%}
+        </a>
+      </h1>
+      <div
+        class="accordion-item-content rte full-width-rte"
+        data-accordion-content="accordion-{{ block.id }}"
+        {% unless is_first %}style="display: none;"{% endunless %}>
+        {{ block.settings.content }}
+      </div>
+    </article>
+
+  {% endif %}
+{% endfor %}
+{% schema %}
+{
+  "name": "FAQ",
+  "class": "accordion-list",
+  "blocks": [
+    {
+      "type": "faq",
+      "name": "Frequently asked question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Question",
+          "default": "Want to know anything else?"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Answer",
+          "default": "<p>Save yourself the time and trouble of writing the same email over and over again by listing your most commonly asked questions and answers here. A dedicated FAQ page should help address the basic needs of your customers, cutting down on customer service emails, increasing conversions, and creating a more satisfying shopping experience!</p>"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "faq",
+        "settings": {
+          "title": "When will my order arrive?"
+        }
+      },
+      {
+        "type": "faq",
+        "settings": {
+          "title": "Can I return an item if I'm dissatisfied?"
+        }
+      },
+      {
+        "type": "faq",
+        "settings": {
+          "title": "Can I change or cancel my order?"
+        }
+      }
+    ]
+  }
+}
+{% endschema %}

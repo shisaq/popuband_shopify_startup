@@ -1,0 +1,125 @@
+<section
+  class="module-container {{ section.settings.style }} rows-of-{{ section.settings.logos_per_row }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-press">
+  <div class="module-inner module-inline-items home-logo-list">
+
+    {% if section.settings.title != blank %}
+      <h1 class="section-title">{{ section.settings.title | escape }}</h1>
+    {% endif %}
+
+    {% for block in section.blocks %}
+      {%- assign logo = block.settings.logo -%}
+      {%- assign url = block.settings.url -%}
+
+      <div class="module-inline-item home-logo-list-item" {{ block.shopify_attributes }}>
+        {% if url != blank %}
+          <a href="{{ url }}" target="_blank">
+        {% endif %}
+
+        {% if block.settings.logo != blank %}
+          <img alt="{{ logo.alt | escape }}"
+            src="{{ logo | img_url: '330x280' }}">
+        {% else %}
+          {{ 'logo' | placeholder_svg_tag: 'placeholder-svg' }}
+        {% endif %}
+
+        {% if url != blank %}
+            </a>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Logo list",
+  "max_blocks": 12,
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Logo list"
+    },
+    {
+      "type": "select",
+      "id": "logos_per_row",
+      "label": "Logos per row",
+      "options": [
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        }
+      ],
+      "default": "4"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Logo",
+      "settings": [
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo image",
+          "info": "660 x 560px .png recommended"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Logo list",
+      "blocks": [
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        },
+        {
+          "type": "logo"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

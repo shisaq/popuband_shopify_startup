@@ -1,0 +1,21 @@
+{% capture link_handle %}{{ link.title | handle }}{% endcapture %}
+{% assign has_dropdown = false %}
+{% if linklists[link_handle] and linklists[link_handle].links.size > 0 %}{% assign has_dropdown = true %}{% endif %}
+
+<li class="{% if has_dropdown %}has-dropdown{% endif %}{% if use_mega_nav and has_mega_nav == false %} hover-link{% elsif use_mega_nav == false %} hover-link{% endif %}">
+  <a data-category="{{ link_handle }}" href="{{ link.url }}">{{ link.title }}</a>
+
+  {% if has_dropdown %}
+    <div class="quarternary-wrapper">
+      <ul class="quarternary">
+        <div class="quarternary-breadcrumbs">
+          <span data-category="{{ link_handle }}" class="close-category">{{ section.settings.mega_nav_trigger }}</span> / {{ link.title }}
+        </div>
+
+        {% for link in linklists[link_handle].links %}
+          <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</li>

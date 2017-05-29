@@ -1,0 +1,38 @@
+{% comment %}
+  @param product {object}
+    Product object drop is required
+
+  @param selected_variant {object}
+    selected_variant object is required
+{% endcomment %}
+
+{% assign featured_image = selected_variant.featured_image | default: product.featured_image %}
+<div class="product-slideshow clearfix">
+  <div
+    class="product-big-image {% if section.settings.enable_zoom %}can-zoom{% endif %}"
+    data-no-image-svg="{{ 'no-image.svg' | asset_url }}"
+    data-no-image-png="{{ 'no-image.png' | asset_url }}">
+
+    {% if product.images.size > 0 %}
+      <img
+        src="{{ featured_image | img_url: '2048x2048' }}"
+        alt="{{ featured_image.alt }}">
+    {% else %}
+      {{ 'image' | placeholder_svg_tag: 'placeholder-svg product-no-images' }}
+    {% endif %}
+
+    {% if section.settings.enable_zoom %}<div class="product-image-zoom"></div>{% endif %}
+  </div>
+
+  {% if product.images.size > 1 %}
+  <div class="product-thumbnails">
+    {% for image in product.images %}
+      <img
+        class="{% if image == featured_image %}active{% endif %}"
+        src="{{ image | product_img_url: '50x50' }}"
+        alt="{{ image.alt }}"
+        data-high-res="{{ image | product_img_url: '2048x2048' }}">
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>

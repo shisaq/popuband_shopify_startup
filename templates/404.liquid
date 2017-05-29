@@ -1,0 +1,10 @@
+<h1 class="page-title">
+  {{ 'general.404.title' | t }}
+</h1>
+
+<div class="rte">
+  {% capture link %}
+    <a href="/collections/all">{{ 'general.404.link' | t }}</a>
+  {% endcapture %}
+  <p>{{ 'general.404.subtext_html' | t: link: link }}</p>
+</div>

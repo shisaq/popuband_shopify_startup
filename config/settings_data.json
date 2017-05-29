@@ -1,0 +1,1093 @@
+{
+  "current": {
+    "background-color": "#ffffff",
+    "body-text-color": "#51595D",
+    "accent-color": "#2FC496",
+    "heading-color": "#fa8c01",
+    "border-color": "#D7DCDE",
+    "primary-button-color": "#ffffff",
+    "form-select-background": "#f4f5f5",
+    "form-select-color": "#fa8c01",
+    "form-select-border-color": "#d7dcde",
+    "footer-background-color": "#272B32",
+    "footer-header-color": "#ffffff",
+    "footer-accent-color": "#fa8c01",
+    "body_background_image": "",
+    "contrast_background_image": "",
+    "footer_background_image": "",
+    "body_font": "Google_Open+Sans_400,700",
+    "logo_font": "Google_Open+Sans_400,700",
+    "logo_font_weight": "700",
+    "logo_font_capitalize": false,
+    "heading_font": "Google_Open+Sans_400,700",
+    "heading_font_weight": "700",
+    "heading_font_capitalize": false,
+    "section_heading_font_weight": "700",
+    "section_heading_font_capitalize": false,
+    "meta_font_weight": "400",
+    "meta_font_capitalize": false,
+    "button_font": "Google_Roboto_400,700",
+    "button_font_weight": "700",
+    "button_font_capitalize": true,
+    "breadcrumbs_enable": false,
+    "product_show_vendor": false,
+    "product_stock_overlay": false,
+    "product_stock_overlay_threshold": "5",
+    "social_facebook_url": "",
+    "social_twitter_url": "",
+    "social_google_url": "",
+    "social_pinterest_url": "",
+    "social_instagram_url": "",
+    "social_vimeo_url": "",
+    "social_youtube_url": "",
+    "social_rss_url": "",
+    "show-currency-switcher": false,
+    "currency-switcher-format": "money_with_currency_format",
+    "currency-switcher-supported-currencies": "INR GBP CAD USD AUD EUR JPY",
+    "currency-switcher-default": "USD",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#1990C6",
+    "checkout_button_color": "#1990C6",
+    "checkout_error_color": "#ff6d6d",
+    "contrast-background-color": "#E05E60",
+    "meta-color": "#a0a2a3",
+    "error-color": "#b84949",
+    "header-show-breadcrumbs": false,
+    "sections": {
+      "general-header": {
+        "type": "general-header",
+        "settings": {
+          "header_sticky": true,
+          "show_cart": true,
+          "show_search": false,
+          "header_logo": "shopify:\/\/shop_images\/popuband_logo.png",
+          "menu": "main-menu",
+          "menu_style": "header",
+          "mega_nav_trigger": "",
+          "mega_nav_menu_1": "",
+          "mega_nav_menu_2": "",
+          "mega_nav_menu_3": "",
+          "mega_nav_menu_4": "",
+          "color_override": "default",
+          "header_logo_alternate": "",
+          "promotion_style": "accent-style",
+          "promotion_text": "<p>Order now to enjoy FREE shipping in US\/CA!<\/p>",
+          "promotion_url": "shopify:\/\/products\/populele-with-accessory"
+        }
+      },
+      "general-newsletter": {
+        "type": "general-newsletter",
+        "settings": {
+          "enable": true,
+          "style": "default-style",
+          "title": "",
+          "caption": ""
+        }
+      },
+      "module-product-slideshow": {
+        "type": "module-product-slideshow",
+        "settings": {
+          "slideshow_color": "#2e3438",
+          "slideshow_layout": "content-width",
+          "slideshow_transition": "transition-slide",
+          "autoplay_speed": "0",
+          "thumbnail_pagination": true
+        }
+      },
+      "home-slideshow": {
+        "type": "home-slideshow",
+        "blocks": {
+          "slide-1": {
+            "type": "slide",
+            "settings": {
+              "image": "",
+              "alignment": "center",
+              "title": "Slideshow",
+              "subtitle": "",
+              "caption": "<p>Introduce customers to your shop with lifestyle imagery and product photography.<\/p>",
+              "button": "",
+              "link": ""
+            }
+          },
+          "slide-2": {
+            "type": "slide",
+            "settings": {
+              "image": "",
+              "alignment": "center",
+              "title": "Slideshow",
+              "subtitle": "",
+              "caption": "<p>Introduce customers to your shop with lifestyle imagery and product photography.<\/p>",
+              "button": "",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "slide-1",
+          "slide-2"
+        ],
+        "settings": {
+          "enable": false,
+          "show_shadows": false,
+          "text_color": "#2e3438",
+          "slideshow_layout": "content-width",
+          "slideshow_transition": "transition-slide",
+          "autoplay_speed": "0"
+        }
+      },
+      "home-promotion": {
+        "type": "home-promotion",
+        "settings": {
+          "style": "default-style",
+          "title": "Populele",
+          "subtitle": "Time To Shine.",
+          "text": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "content_image": "shopify:\/\/shop_images\/square8.jpg"
+        }
+      },
+      "home-alternating-content": {
+        "type": "home-alternating-content",
+        "blocks": {
+          "home-alternating-content-1": {
+            "type": "image",
+            "settings": {
+              "media_alignment": "left",
+              "title": "Game Mode",
+              "caption": "Games designed specifically for beginners to learn Uke, without the boring instruction. Sound-responsive technology enables users to get instant feedback and correct themselves.",
+              "button_text": "",
+              "button_link": "",
+              "image": "shopify:\/\/shop_images\/mp4.mp4_1489369051.gif"
+            }
+          },
+          "home-alternating-content-2": {
+            "type": "image",
+            "settings": {
+              "media_alignment": "right",
+              "title": "Dazzle Mode",
+              "caption": "Sound responsive dazzle mode lights up your jam session.",
+              "button_text": "",
+              "button_link": "",
+              "image": "shopify:\/\/shop_images\/dazzle.gif"
+            }
+          },
+          "1495942932994": {
+            "type": "image",
+            "settings": {
+              "media_alignment": "left",
+              "title": "Chord Library",
+              "caption": "Shows exactly where your fingers go.",
+              "button_text": "",
+              "button_link": "",
+              "image": "shopify:\/\/shop_images\/Chord_Library.gif"
+            }
+          }
+        },
+        "block_order": [
+          "home-alternating-content-1",
+          "home-alternating-content-2",
+          "1495942932994"
+        ],
+        "settings": {
+          "style": "contrast-style",
+          "title": "How To Enjoy Populele",
+          "show_borders": false
+        }
+      },
+      "home-featured-product": {
+        "type": "home-featured-product",
+        "blocks": {
+          "1495943532008": {
+            "type": "additional_info",
+            "settings": {
+              "info_text": "",
+              "info_url": "",
+              "info_icon": "info"
+            }
+          }
+        },
+        "block_order": [
+          "1495943532008"
+        ],
+        "settings": {
+          "style": "contrast-style",
+          "title": "",
+          "product": "populele-with-accessory",
+          "description": "<p>Tell customers about the look, feel, and style of your product. Add details on color, materials, sizing, and where it was made.<\/p>",
+          "enable_zoom": true,
+          "product_show_vendor": false,
+          "linked_options": true,
+          "variants_style": "radio",
+          "product_cart_redirect": false
+        }
+      },
+      "home-instagram": {
+        "type": "home-instagram",
+        "settings": {
+          "style": "default-style",
+          "title": "Instagram feed",
+          "access_token": "4312582081.1677ed0.c7bb3ad3019a460d80921cea7f4337d9",
+          "button_text": "",
+          "button_link": ""
+        }
+      },
+      "general-footer": {
+        "type": "general-footer",
+        "settings": {
+          "show_headings": true,
+          "show_share_buttons": true,
+          "menu_1": "footer",
+          "menu_2": "main-menu",
+          "show_payment_icons": true
+        }
+      },
+      "1495942253659": {
+        "type": "home-video-with-text-overlay",
+        "settings": {
+          "title": "Populele",
+          "caption": "<p>The Smart Musical Gift for Everyone.<\/p>",
+          "button_text": "Shop Now",
+          "button_link": "shopify:\/\/products\/populele-with-accessory",
+          "video_url": "https:\/\/www.youtube.com\/watch?v=4Ql13zouORI",
+          "overlay_opacity": "50"
+        }
+      },
+      "1495942532321": {
+        "type": "home-testimonials",
+        "blocks": {
+          "1495942532321-0": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "Like any stringed instrument, learning chords is a bit of pain. We can solve this with technology.",
+              "source": "The Verge",
+              "avatar": ""
+            }
+          },
+          "1495942532321-1": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "It connects to an app where users can get instant feedback and correct themselves.",
+              "source": "CNBC",
+              "avatar": ""
+            }
+          },
+          "1495942598424": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "A wild new startup is about to unleash Populele, an electric Ukulele that will teach you how to play old Uke standards like Ukulele Lady, D’yer Maker, and Tiptoe Through The Tulips.",
+              "source": "TechCrunch",
+              "avatar": ""
+            }
+          },
+          "1495942621264": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "This is an awesome ukulele: fun, educational, and just plain cool; it's a really good entry-level uke in its own right, it's a lot of fun to play with the app, too.",
+              "source": "The Ukulele Teacher",
+              "avatar": ""
+            }
+          }
+        },
+        "block_order": [
+          "1495942532321-0",
+          "1495942532321-1",
+          "1495942598424",
+          "1495942621264"
+        ],
+        "settings": {
+          "style": "contrast-style",
+          "title": "Testimonials"
+        }
+      },
+      "template-collection": {
+        "type": "template-collection",
+        "settings": {
+          "show_featured_image": false,
+          "show_description": true,
+          "tag_filtering": true,
+          "products_per_row": "4",
+          "number_of_rows": "5"
+        }
+      },
+      "template-cart": {
+        "type": "template-cart",
+        "settings": {
+          "product_show_vendor": false,
+          "enable_order_notes": true,
+          "show_shipping_calculator": false,
+          "shipping_calculator_default_country": "United States"
+        }
+      },
+      "1495943834875": {
+        "type": "home-text-columns-with-images",
+        "blocks": {
+          "1495943834875-0": {
+            "type": "text_column",
+            "settings": {
+              "title": "Step 1",
+              "caption": "<p>Turn on your Populele.<\/p>",
+              "button_text": "",
+              "button_link": "",
+              "image": "shopify:\/\/shop_images\/square8.jpg"
+            }
+          },
+          "1495943834875-1": {
+            "type": "text_column",
+            "settings": {
+              "title": "Step 2",
+              "caption": "<p>Open the app and connect your Populele.<\/p>",
+              "button_text": "",
+              "button_link": "",
+              "image": "shopify:\/\/shop_images\/square8.jpg"
+            }
+          },
+          "1495943834875-2": {
+            "type": "text_column",
+            "settings": {
+              "title": "Step 3",
+              "caption": "<p>Get ready to play and shine!<\/p>",
+              "button_text": "",
+              "button_link": "",
+              "image": "shopify:\/\/shop_images\/square8.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1495943834875-0",
+          "1495943834875-1",
+          "1495943834875-2"
+        ],
+        "settings": {
+          "style": "default-style",
+          "title": "3 Easy Steps To Start"
+        }
+      },
+      "1495944165298": {
+        "type": "home-image-with-text-overlay",
+        "settings": {
+          "style": "accent-style",
+          "title": "Premium Quality",
+          "caption": "<p>Handcrafted using premium European maple and Italian Aquila strings, Populele sports an innovative fretboard learning system with 72 built-in LEDS, which connect via Bluetooth to deliver an unparalleled gamified app experience. With its elegant design, Populele provides a learning experience nothing short of revolutionary.<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "image": "shopify:\/\/shop_images\/bomb.jpg",
+          "overlay_opacity": "80"
+        }
+      }
+    },
+    "content_for_index": [
+      "1495942253659",
+      "home-promotion",
+      "1495942532321",
+      "1495944165298",
+      "1495943834875",
+      "home-alternating-content",
+      "home-instagram",
+      "home-featured-product"
+    ]
+  },
+  "presets": {
+    "Home": {
+      "background-color": "#ffffff",
+      "contrast-background-color": "#FAF7F6",
+      "body-text-color": "#988980",
+      "accent-color": "#FF5555",
+      "heading-color": "#68574D",
+      "meta-color": "#b7aba3",
+      "error-color": "#B84949",
+      "border-color": "#EDE7E4",
+      "primary-button-color": "#ffffff",
+      "form-select-background": "#ede7e4",
+      "form-select-color": "#988980",
+      "form-select-border-color": "#ede7e4",
+      "footer-background-color": "#2C211B",
+      "footer-header-color": "#ffffff",
+      "footer-accent-color": "#988980",
+      "body_font": "Google_Roboto_400,700",
+      "logo_font": "Google_Bitter_400,700",
+      "logo_font_weight": "700",
+      "heading_font": "Google_Bitter_400,700",
+      "heading_font_weight": "700",
+      "section_heading_font_weight": "700",
+      "meta_font_weight": "400",
+      "button_font": "Google_Roboto_400,700",
+      "button_font_weight": "700",
+      "logo_font_capitalize": true,
+      "heading_font_capitalize": false,
+      "section_heading_font_capitalize": true,
+      "meta_font_capitalize": true,
+      "button_font_capitalize": true,
+      "header-show-breadcrumbs": false,
+      "sections": {
+        "general-header": {
+          "type": "general-header",
+          "settings": {
+            "menu_style": "drawer",
+            "color_override": "default"
+          }
+        },
+        "general-newsletter": {
+          "type": "general-newsletter",
+          "settings": {
+            "enable": true,
+            "style": "contrast-style"
+          }
+        },
+        "module-product-slideshow": {
+          "type": "module-product-slideshow",
+          "settings": {
+            "slideshow_color": "#68574d",
+            "slideshow_layout": "full-bleed",
+            "slideshow_transition": "transition-slide",
+            "autoplay_speed": "5000"
+          }
+        },
+        "home-slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            },
+            "slide-2": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1",
+            "slide-2"
+          ],
+          "settings": {
+            "enable": true,
+            "text_color": "#68574d",
+            "slideshow_layout": "full-bleed",
+            "autoplay_speed": "6000"
+          }
+        },
+        "home-image-with-text": {
+          "type": "home-image-with-text",
+          "settings": {
+            "style": "default-style",
+            "media_layout": "regular"
+          }
+        },
+        "home-text-columns-with-images": {
+          "type": "home-text-columns-with-images",
+          "blocks": {
+            "column-1": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "column-2": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "column-3": {
+              "type": "text_column",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "column-1",
+            "column-2",
+            "column-3"
+          ],
+          "settings": {
+            "style": "contrast-style"
+          }
+        },
+        "home-testimonials": {
+          "type": "home-testimonials",
+          "blocks": {
+            "testimonial-1": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "testimonial-2": {
+              "type": "testimonial",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "testimonial-1",
+            "testimonial-2"
+          ],
+          "settings": {
+            "style": "default-style"
+          }
+        },
+        "home-featured-product": {
+          "type": "home-featured-product",
+          "settings": {
+            "style": "contrast-style",
+            "title": "Featured product"
+          }
+        },
+        "home-instagram": {
+          "type": "home-instagram",
+          "settings": {
+            "style": "default-style"
+          }
+        }
+      },
+      "content_for_index": [
+        "home-image-with-text",
+        "home-text-columns-with-images",
+        "home-testimonials",
+        "home-featured-product",
+        "home-instagram"
+      ]
+    },
+    "Tech": {
+      "background-color": "#ffffff",
+      "contrast-background-color": "#E05E60",
+      "body-text-color": "#51595D",
+      "accent-color": "#2FC496",
+      "heading-color": "#E05E60",
+      "meta-color": "#a0a2a3",
+      "error-color": "#b84949",
+      "border-color": "#D7DCDE",
+      "primary-button-color": "#ffffff",
+      "footer-background-color": "#272B32",
+      "footer-header-color": "#ffffff",
+      "footer-accent-color": "#2CBB84",
+      "form-select-background": "#f4f5f5",
+      "form-select-color": "#2cbb84",
+      "form-select-border-color": "#d7dcde",
+      "body_font": "Google_Open+Sans_400,700",
+      "logo_font": "Google_Open+Sans_400,700",
+      "logo_font_weight": "700",
+      "heading_font": "Google_Open+Sans_400,700",
+      "heading_font_weight": "700",
+      "section_heading_font_weight": "700",
+      "meta_font_weight": "400",
+      "button_font": "Google_Roboto_400,700",
+      "button_font_weight": "700",
+      "logo_font_capitalize": false,
+      "heading_font_capitalize": false,
+      "section_heading_font_capitalize": false,
+      "meta_font_capitalize": false,
+      "button_font_capitalize": true,
+      "header-show-breadcrumbs": false,
+      "sections": {
+        "general-header": {
+          "type": "general-header",
+          "settings": {
+            "header_sticky": true,
+            "menu_style": "header"
+          }
+        },
+        "general-newsletter": {
+          "type": "general-newsletter",
+          "settings": {
+            "enable": true,
+            "style": "default-style"
+          }
+        },
+        "module-product-slideshow": {
+          "type": "module-product-slideshow",
+          "settings": {
+            "slideshow_color": "#2e3438",
+            "slideshow_layout": "content-width",
+            "autoplay_speed": "0"
+          }
+        },
+        "home-slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            },
+            "slide-2": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1",
+            "slide-2"
+          ],
+          "settings": {
+            "enable": false,
+            "text_color": "#2e3438",
+            "slideshow_layout": "content-width",
+            "autoplay_speed": "0"
+          }
+        },
+        "home-promotion": {
+          "type": "home-promotion",
+          "settings": {
+            "style": "default-style"
+          }
+        },
+        "home-image-with-text": {
+          "type": "home-image-with-text",
+          "settings": {
+            "style": "contrast-style",
+            "media_layout": "regular"
+          }
+        },
+        "home-alternating-content": {
+          "type": "home-alternating-content",
+          "blocks": {
+            "home-alternating-content-1": {
+              "type": "image",
+              "settings": {
+                "media_alignment": "left"
+              }
+            },
+            "home-alternating-content-2": {
+              "type": "image",
+              "settings": {
+                "media_alignment": "right"
+              }
+            }
+          },
+          "block_order": [
+            "home-alternating-content-1",
+            "home-alternating-content-2"
+          ],
+          "settings": {
+            "style": "default-style",
+            "title": "Alternating content",
+            "show_borders": false
+          }
+        },
+        "home-testimonials": {
+          "type": "home-testimonials",
+          "blocks": {
+            "testimonial-1": {
+              "type": "testimonial",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "testimonial-1"
+          ],
+          "settings": {
+            "style": "contrast-style"
+          }
+        },
+        "home-featured-product": {
+          "type": "home-featured-product",
+          "settings": {
+            "style": "default-style",
+            "title": "Featured product"
+          }
+        },
+        "home-instagram": {
+          "type": "home-instagram",
+          "settings": {
+            "style": "contrast-style"
+          }
+        }
+      },
+      "content_for_index": [
+        "home-promotion",
+        "home-image-with-text",
+        "home-alternating-content",
+        "home-testimonials",
+        "home-featured-product",
+        "home-instagram"
+      ]
+    },
+    "Cloth": {
+      "background-color": "#ffffff",
+      "contrast-background-color": "#2E3438",
+      "body-text-color": "#838B8F",
+      "accent-color": "#729BB4",
+      "heading-color": "#2E3438",
+      "meta-color": "#838b8f",
+      "error-color": "#b8474f",
+      "border-color": "#EDF0F2",
+      "primary-button-color": "#ffffff",
+      "form-select-background": "#F4F5F5",
+      "form-select-color": "#838B8F",
+      "form-select-border-color": "#D7DCDE",
+      "footer-background-color": "#729BB4",
+      "footer-header-color": "#ffffff",
+      "footer-accent-color": "#ffffff",
+      "body_font": "Google_Open+Sans_400,700",
+      "logo_font": "Google_Open+Sans_400,700",
+      "logo_font_weight": "700",
+      "heading_font": "Google_Volkhov_400,700",
+      "heading_font_weight": "700",
+      "section_heading_font_weight": "400",
+      "meta_font_weight": "400",
+      "button_font": "Google_Volkhov_400,700",
+      "button_font_weight": "700",
+      "logo_font_capitalize": true,
+      "heading_font_capitalize": false,
+      "section_heading_font_capitalize": true,
+      "meta_font_capitalize": true,
+      "button_font_capitalize": true,
+      "header-show-breadcrumbs": false,
+      "sections": {
+        "general-header": {
+          "type": "general-header",
+          "settings": {
+            "menu_style": "below-header"
+          }
+        },
+        "general-newsletter": {
+          "type": "general-newsletter",
+          "settings": {
+            "enable": true,
+            "style": "contrast-style"
+          }
+        },
+        "module-product-slideshow": {
+          "type": "module-product-slideshow",
+          "settings": {
+            "slideshow_color": "#989ea0",
+            "slideshow_layout": "content-width",
+            "autoplay_speed": "0"
+          }
+        },
+        "home-slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            },
+            "slide-2": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1",
+            "slide-2"
+          ],
+          "settings": {
+            "enable": true,
+            "show_shadows": true,
+            "text_color": "#989ea0",
+            "slideshow_layout": "full-width",
+            "autoplay_speed": "0"
+          }
+        },
+        "home-image-with-text": {
+          "type": "home-image-with-text",
+          "settings": {
+            "style": "default-style",
+            "media_layout": "regular"
+          }
+        },
+        "home-text-columns-with-images": {
+          "type": "home-text-columns-with-images",
+          "blocks": {
+            "column-1": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "column-2": {
+              "type": "text_column",
+              "settings": {}
+            },
+            "column-3": {
+              "type": "text_column",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "column-1",
+            "column-2",
+            "column-3"
+          ],
+          "settings": {
+            "style": "contrast-style"
+          }
+        },
+        "home-testimonials": {
+          "type": "home-testimonials",
+          "blocks": {
+            "testimonial-1": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "testimonial-2": {
+              "type": "testimonial",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "testimonial-1",
+            "testimonial-2"
+          ],
+          "settings": {
+            "style": "default-style"
+          }
+        },
+        "home-featured-product": {
+          "type": "home-featured-product",
+          "settings": {
+            "style": "default-style",
+            "title": "Featured product"
+          }
+        },
+        "home-instagram": {
+          "type": "home-instagram",
+          "settings": {
+            "style": "default-style"
+          }
+        },
+        "home-alternating-content": {
+          "type": "home-alternating-content",
+          "blocks": {
+            "home-alternating-content-1": {
+              "type": "image",
+              "settings": {
+                "media_alignment": "left"
+              }
+            },
+            "home-alternating-content-2": {
+              "type": "image",
+              "settings": {
+                "media_alignment": "right"
+              }
+            },
+            "home-alternating-content-3": {
+              "type": "image",
+              "settings": {
+                "media_alignment": "left"
+              }
+            }
+          },
+          "block_order": [
+            "home-alternating-content-1",
+            "home-alternating-content-2",
+            "home-alternating-content-3"
+          ],
+          "settings": {
+            "style": "default-style",
+            "title": "Alternating content",
+            "show_borders": true
+          }
+        },
+        "home-featured-collection": {
+          "type": "home-featured-collection",
+          "settings": {
+            "style": "default-style",
+            "title": "Featured collection",
+            "products_per_row": "3",
+            "product_rows": "2"
+          }
+        },
+        "home-logo-list": {
+          "type": "home-logo-list",
+          "blocks": {
+            "logo-1": {
+              "type": "logo",
+              "settings": {}
+            },
+            "logo-2": {
+              "type": "logo",
+              "settings": {}
+            },
+            "logo-3": {
+              "type": "logo",
+              "settings": {}
+            },
+            "logo-4": {
+              "type": "logo",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "logo-1",
+            "logo-2",
+            "logo-3",
+            "logo-4"
+          ],
+          "settings": {
+            "style": "default-style",
+            "logos_per_row": "4"
+          }
+        }
+      },
+      "content_for_index": [
+        "home-image-with-text",
+        "home-alternating-content",
+        "home-text-columns-with-images",
+        "home-testimonials",
+        "home-featured-product",
+        "home-featured-collection",
+        "home-logo-list",
+        "home-instagram"
+      ]
+    },
+    "Art": {
+      "background-color": "#ffffff",
+      "contrast-background-color": "#6FC3C4",
+      "body-text-color": "#060C0C",
+      "accent-color": "#6fc3c4",
+      "heading-color": "#060C0C",
+      "meta-color": "#a0a2a3",
+      "error-color": "#b84949",
+      "border-color": "#e8eced",
+      "primary-button-color": "#ffffff",
+      "form-select-background": "#ffffff",
+      "form-select-color": "#6a9898",
+      "form-select-border-color": "#b8c8c8",
+      "footer-background-color": "#050D0E",
+      "footer-header-color": "#ffffff",
+      "footer-accent-color": "#5FB8B7",
+      "body_font": "Google_Montserrat_400,700",
+      "logo_font": "Google_Montserrat_400,700",
+      "logo_font_weight": "700",
+      "heading_font": "Google_Montserrat_400,700",
+      "heading_font_weight": "700",
+      "section_heading_font_weight": "700",
+      "meta_font_weight": "400",
+      "button_font": "Google_Montserrat_400,700",
+      "button_font_weight": "700",
+      "logo_font_capitalize": true,
+      "heading_font_capitalize": false,
+      "section_heading_font_capitalize": true,
+      "meta_font_capitalize": true,
+      "button_font_capitalize": true,
+      "header-show-breadcrumbs": false,
+      "sections": {
+        "general-header": {
+          "type": "general-header",
+          "settings": {
+            "header_sticky": true,
+            "menu_style": "header"
+          }
+        },
+        "general-newsletter": {
+          "type": "general-newsletter",
+          "settings": {
+            "enable": true,
+            "style": "contrast-style"
+          }
+        },
+        "module-product-slideshow": {
+          "type": "module-product-slideshow",
+          "settings": {
+            "slideshow_color": "#060c0c",
+            "slideshow_layout": "content-width",
+            "autoplay_speed": "0"
+          }
+        },
+        "home-slideshow": {
+          "type": "home-slideshow",
+          "blocks": {
+            "slide-1": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            },
+            "slide-2": {
+              "type": "slide",
+              "settings": {
+                "alignment": "center"
+              }
+            }
+          },
+          "block_order": [
+            "slide-1",
+            "slide-2"
+          ],
+          "settings": {
+            "enable": false,
+            "text_color": "#060c0c",
+            "slideshow_layout": "full-width",
+            "autoplay_speed": "0"
+          }
+        },
+        "home-promotion": {
+          "type": "home-promotion",
+          "settings": {
+            "style": "default-style"
+          }
+        },
+        "home-image-with-text": {
+          "type": "home-image-with-text",
+          "settings": {
+            "style": "contrast-style",
+            "media_layout": "regular"
+          }
+        },
+        "home-featured-product": {
+          "type": "home-featured-product",
+          "settings": {
+            "style": "default-style",
+            "title": "Featured product"
+          }
+        },
+        "home-featured-collection": {
+          "type": "home-featured-collection",
+          "settings": {
+            "style": "contrast-style",
+            "title": "Featured collection",
+            "products_per_row": "3",
+            "product_rows": "1"
+          }
+        },
+        "home-testimonials": {
+          "type": "home-testimonials",
+          "blocks": {
+            "testimonial-1": {
+              "type": "testimonial",
+              "settings": {}
+            },
+            "testimonial-2": {
+              "type": "testimonial",
+              "settings": {}
+            }
+          },
+          "block_order": [
+            "testimonial-1",
+            "testimonial-2"
+          ],
+          "settings": {
+            "style": "default-style"
+          }
+        },
+        "home-instagram": {
+          "type": "home-instagram",
+          "settings": {
+            "style": "contrast-style"
+          }
+        }
+      },
+      "content_for_index": [
+        "home-promotion",
+        "home-image-with-text",
+        "home-featured-product",
+        "home-featured-collection",
+        "home-testimonials",
+        "home-instagram"
+      ]
+    }
+  }
+}

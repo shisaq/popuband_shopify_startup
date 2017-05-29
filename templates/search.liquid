@@ -1,0 +1,86 @@
+<h1 class="page-title">
+  {% if search.performed %}
+    {{ 'general.search.header_results' | t }}
+  {% else %}
+    {{ 'general.search.header' | t }}
+  {% endif %}
+</h1>
+
+<form class="search-form" action="/search" method="get">
+  <input class="input-field search-input" name="q" type="text" placeholder="{{ 'general.general.search_placeholder' | t }}" value="{{ search.terms }}" />
+
+  <div class="search-submit">
+    <input class="button" type="submit" value="{{ 'general.search.submit' | t }}" />
+  </div>
+</form>
+
+{% paginate search.results by 10 %}
+<div class="search-results-wrapper">
+
+  {% if search.performed %}
+    <div class="search-results-count">
+      {% if search.results.size > 0 %}
+        {% capture results %}
+          {{ 'general.search.results' | t: count: search.results_count }}
+        {% endcapture %}
+        <p>{{ 'general.search.results_text' | t: search_terms: search.terms, results_count: search.results_count, results: results }}</p>
+      {% else %}
+        <div class="rte">
+          <p>{{ 'general.search.no_results' | t: search_terms: search.terms }}</p>
+
+          <ul>
+            <li><a href="/">{{ 'general.breadcrumbs.home' | t }}</a></li>
+            <li><a href="/collections">{{ 'general.breadcrumbs.collections' | t }}</a></li>
+            <li><a href="/collections/all">{{ 'general.breadcrumbs.all_products' | t }}</a></li>
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if search.results.size > 0 %}
+    <div class="search-results">
+      <div class="search-results-products">
+        <h3>{{ 'general.search.products' | t }}</h3>
+        {% assign productCount = 0 %}
+        {% for item in search.results %}
+          {% if item.object_type == 'product' %}
+            {% assign productCount = productCount | plus: 1 %}
+            {% include 'product-list-item' %}
+          {% endif %}
+        {% endfor %}
+        {% if productCount == 0 %}
+          <p class="search-results-products-none">{{ 'general.search.no_products' | t: search_terms: search.terms }}</p>
+        {% endif %}
+      </div>
+
+      <div class="search-results-pages">
+        <h3>{{ 'general.search.pages' | t }}</h3>
+        {% assign pageCount = 0 %}
+        {% for item in search.results %}
+          {% if item.object_type != 'product' %}
+            {% assign pageCount = pageCount | plus: 1 %}
+            <div class="search-result clearfix">
+              <h4><a class="search-result-link" href="{{ item.url }}">{{ item.title }}</a></h4>
+              {% if item.object_type == 'article' %}
+                <time class="meta">{{ item.published_at | date: format: 'short_month' }}</time>
+                <div class="rte">{{ item.excerpt_or_content | strip_html | truncate: 140 }}</div>
+              {% else %}
+                <div class="rte">{{ item.content | strip_html | truncate: 140 }}</div>
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endfor %}
+        {% if pageCount == 0 %}
+          <p>{{ 'general.search.no_articles' | t: search_terms: search.terms }}</p>
+        {% endif %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if paginate.previous or paginate.next %}
+      {% include 'pagination' %}
+    {% endif %}
+
+  {% endif %}
+</div>
+{% endpaginate %}

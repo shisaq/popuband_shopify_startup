@@ -1,0 +1,15 @@
+{% comment %}
+  - Test shop payment options against Shopify's provided list of payment gateways
+    (https://help.shopify.com/themes/customization/store/add-credit-card-icons)
+{% endcomment %}
+{% assign payment_icons_available = 'amazon_payments|american_express|apple_pay|bitcoin|cirrus|dankort|diners_club|discover|dogecoin|dwolla|forbrugsforeningen|interac|jcb|litecoin|maestro|master|paypal|visa|stripe' | split: '|' %}
+<ul class="payment-types-list">
+  {%- for type in shop.enabled_payment_types -%}
+    {%- if payment_icons_available contains type -%}
+      {% assign payment_type = type | handlesize | replace: '_', '-' | prepend: 'icon-payment-' %}
+      <li class="payment-types-item">
+        {%- include payment_type -%}
+      </li>
+    {%- endif -%}
+  {%- endfor -%}
+</ul>

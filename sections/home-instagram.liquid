@@ -1,0 +1,93 @@
+{% assign access_token = section.settings.access_token | escape %}
+{% assign tag = section.settings.tag %}
+
+<section
+  class="module-container module-hidden {{ section.settings.style }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="instagram">
+  <div
+    class="module-inner home-instagram"
+    data-instagram-token="{{ access_token }}">
+
+    {% if section.settings.title != blank %}
+      <h1 class="section-title">{{ section.settings.title | escape }}</h1>
+    {% endif %}
+
+    {% if access_token != blank %}
+      <div data-instagram-photos></div>
+    {% else %}
+      <div>
+        {% for i in (1..6) %}
+          <span class="instagram-photo">
+            {% capture current %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+            {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+          </span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+      <div class="home-module-cta">
+        <a class="button secondary" href="{{ section.settings.button_link }}">
+          {{ section.settings.button_text | escape }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Instagram feed",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Instagram feed"
+    },
+    {
+      "type": "text",
+      "id": "access_token",
+      "label": "Access token",
+      "info": "Get your [access token](http:\/\/instagram.pixelunion.net)."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link URL"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Social media",
+      "name": "Instagram feed"
+    }
+  ]
+}
+
+{% endschema %}

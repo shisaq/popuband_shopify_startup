@@ -1,0 +1,98 @@
+{% if section.settings.enable or template contains 'password' %}
+  <div class="module-container {% unless template contains 'password' %}{{ section.settings.style }}{% endunless %}">
+
+    <div class="module-inner">
+      {% unless template contains 'password' %}
+        {% if section.settings.title != blank %}
+          <h3 class="section-title">{{ section.settings.title | escape }}</h3>
+        {% endif %}
+
+        {% if section.settings.caption != blank %}
+          <div class="newsletter-message">
+            {{ section.settings.caption }}
+          </div>
+        {% endif %}
+      {% endunless %}
+
+      {% form 'customer' %}
+
+        {{ form.errors | default_errors }}
+
+        {% if form.posted_successfully? %}
+          <div class="newsletter-message">
+            <p>{{ 'general.mailing_list.message' | t }}</p>
+          </div>
+        {% else %}
+          {%- capture tags -%}
+            {%- unless template contains 'password' %}
+              newsletter
+            {%- else -%}
+              prospect, password page
+            {%- endunless -%}
+          {%- endcapture -%}
+
+          <input type="hidden" id="contact_tags" name="contact[tags]" value="{{ tags | strip }}">
+
+          <input
+            class="input-field inline-field-input"
+            name="contact[email]"
+            type="email"
+            placeholder="{{ 'general.general.email_placeholder' | t }}">
+
+          <input
+              class="inline-field-submit button secondary"
+              name="subscribe"
+              type="submit"
+              value="{{ 'general.general.subscribe' | t }}">
+        {% endif %}
+
+      {% endform %}
+
+    </div>
+
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Newsletter",
+  "class": "newsletter-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable",
+      "label": "Show newsletter sign-up in footer"
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "caption",
+      "label": "Text"
+    }
+  ]
+}
+{% endschema %}

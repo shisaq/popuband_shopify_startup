@@ -1,0 +1,236 @@
+{% assign product = all_products[section.settings.product] %}
+{% if product.empty? %}
+  {% assign section_onboarding = true %}
+{% endif %}
+
+{% assign title_in_details = true %}
+{%- capture product_title -%}
+  {%- unless section_onboarding -%}
+    <h2 class="product-title">
+      <a href="{{ product.url }}">{{ product.title }}</a>
+    </h2>
+  {%- else -%}
+    <h2 class="product-title">
+      <a href="#">{{ 'onboarding.featured_product.title' | t }}</a>
+    </h2>
+  {%- endunless -%}
+{%- endcapture -%}
+
+<section
+  class="module-container {{ section.settings.style }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-product">
+
+  <div class="module-inner home-order-now">
+
+    {% if section.settings.title != blank %}
+      <h1 class="section-title">{{ section.settings.title | escape }}</h1>
+    {% endif %}
+
+    {% assign selected_variant = product.selected_or_first_available_variant %}
+
+    {% include
+      'product-details',
+      is_home: true,
+      product_title: product_title,
+      title_in_details: title_in_details %}
+
+    {% include 'product-images' %}
+
+    <div class="product-wrap">
+      {% assign add_to_cart_text = 'products.product.buy_now' | t %}
+      {% if section.settings.product_cart_redirect %}
+        {% assign add_to_cart_text = 'products.product.add_to_cart' | t %}
+      {% endif %}
+
+      {%
+        include 'product-form',
+        add_to_cart_override: add_to_cart_text,
+        hide_shoppad: true,
+        form_id: section.id
+      %}
+
+      {% if section.settings.description != blank or product.description != blank %}
+        <div class="product-description rte">
+          {% if section.settings.description == blank %}
+            {{ product.description }}
+          {% else %}
+            {{ section.settings.description }}
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% include 'product-additional-information' %}
+
+    </div>
+
+    {% assign add_to_cart_text = 'products.product.buy_now' | t %}
+    {% if section.settings.product_cart_redirect %}
+      {% assign add_to_cart_text = 'products.product.add_to_cart' | t %}
+    {% endif %}
+
+    {%
+      include 'product-json',
+      id: section.id,
+      add_to_cart_text: add_to_cart_text,
+      enable_history: false
+    %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured product",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Featured product"
+    },
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Tell customers about the look, feel, and style of your product. Add details on color, materials, sizing, and where it was made.</p>",
+      "info": "Override your long product description with one better suited to the home page."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_zoom",
+      "label": "Enable image zoom",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "product_show_vendor",
+      "label": "Show names of vendors",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "linked_options",
+      "label": "Disable sold out variants",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "variants_style",
+      "label": "Variants style",
+      "options": [
+        {
+          "value": "select",
+          "label": "Dropdowns"
+        },
+        {
+          "value": "radio",
+          "label": "Buttons"
+        }
+      ],
+      "default": "select"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_cart_redirect",
+      "label": "Enable cart redirection",
+      "info": "Automatically sends users to the Cart page after adding a product.",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "additional_info",
+      "name": "Additional info",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "[Additional info](https://s3.amazonaws.com/cdn.pixelunion.net/startup/additional-info-screenshot.png) appear wherever a customer can view product information. They’re perfect for linking to size charts, refund policies, or ordering details. Pick from six unique icons."
+        },
+        {
+          "type": "text",
+          "id": "info_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "info_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "select",
+          "id": "info_icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "info",
+              "label": "Information (i)"
+            },
+            {
+              "value": "question-mark",
+              "label": "Question mark"
+            },
+            {
+              "value": "ruler",
+              "label": "Ruler"
+            },
+            {
+              "value": "envelope",
+              "label": "Envelope"
+            },
+            {
+              "value": "pencil",
+              "label": "Pencil"
+            },
+            {
+              "value": "shirt",
+              "label": "Shirt"
+            }
+          ],
+          "default": "info"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Product",
+      "name": "Featured product",
+      "blocks": [
+        {
+          "type": "additional_info",
+          "settings": {
+            "info_text": "Additional info"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,33 @@
+<h1 class="page-title">{{ 'customer.register.header' | t }}</h1>
+
+{% form 'create_customer' %}
+
+  {% if form.errors %}
+    {{ form.errors | default_errors }}
+  {% endif %}
+
+  <div class="input-wrapper">
+    <label for="customer[first_name]">{{ 'customer.addresses.first_name' | t }}</label>
+    <input class="input-field {% if form.errors contains 'first_name' %}error{% endif %}" type="text" value="{{ form.first_name }}" name="customer[first_name]">
+  </div>
+
+  <div class="input-wrapper">
+    <label for="customer[last_name]">{{ 'customer.addresses.last_name' | t }}</label>
+    <input class="input-field {% if form.errors contains 'last_name' %}error{% endif %}" type="text" value="{{ form.last_name }}" name="customer[last_name]">
+  </div>
+
+  <div class="input-wrapper">
+    <label for="customer[email]">{{ 'general.general.email' | t }}</label>
+    <input class="input-field {% if form.errors contains 'email' %}error{% endif %}" type="text" value="{{ form.email }}" name="customer[email]">
+  </div>
+
+  <div class="input-wrapper">
+    <label for="customer[password]">{{ 'general.general.password' | t }}</label>
+    <input class="input-field input-password {% if form.errors contains 'password' %}error{% endif %}" type="password" name="customer[password]">
+  </div>
+
+  <div class="input-wrapper">
+    <input class="button" type="submit" value="{{ 'customer.activate_account.submit' | t }}">
+  </div>
+
+{% endform %}
