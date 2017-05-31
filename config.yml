@@ -4,3 +4,5 @@ development:
   store: popuband.myshopify.com
   ignore_files:
   - .git
+  - .DS_Store
+  - .gitignore
