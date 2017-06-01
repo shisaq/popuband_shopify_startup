@@ -1690,8 +1690,6 @@ window.VideoLoader = (function(superClass) {
     if (window.ThemeUtils.windowWidth() > 720) {
       videoHeight = $(window).width() / 1.78;
       contentHeight = this.videoObject.$content.outerHeight(true);
-      console.log(videoHeight);
-      console.log(contentHeight);
       return this.videoObject.$content.css({
         top: Math.abs(videoHeight - contentHeight) / 2
       });
