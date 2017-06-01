@@ -15,7 +15,7 @@
 
 {%- if section.settings.video_url != blank -%}
   {%- capture video_code -%}
-    <div class="home-full-width-video">
+    <div class="home-full-width-video hide-mobile">
       <div
         id="video-{{ section.id }}"
         data-parent-section="{{ section.id }}"

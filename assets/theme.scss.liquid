@@ -2307,7 +2307,7 @@ $local-grey: #333;
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
-    
+
     a {
       display: table-cell;
       vertical-align: middle;
@@ -3510,8 +3510,8 @@ input.header-search-input {
   }
 }
 
-/* 
- * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+/*
+ * * * * * * * * * * * * * * * * * * * * * * * * * * *
  ShopPad App: Tracktor
  https://apps.shopify.com/tracktor-2
  * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -3574,7 +3574,7 @@ input.header-search-input {
 }
 
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * *
 ShopPad App: Bouncer
 https://apps.shopify.com/bouncer
 * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -3588,7 +3588,7 @@ https://apps.shopify.com/bouncer
   font-family: $body-font;
 }
 #bouncer_modal_datepicker {
-  
+
   span {
     position: relative;
     display: inline-block;
@@ -3626,7 +3626,7 @@ https://apps.shopify.com/bouncer
 }
 
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
 ShopPad App: Uploadery
 https://apps.shopify.com/uploadery
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -3636,7 +3636,7 @@ https://apps.shopify.com/uploadery
   &:empty {
     display: none !important;
   }
-  
+
   form {
     display: inline-block;
     width: 100%;
@@ -3687,7 +3687,7 @@ https://apps.shopify.com/uploadery
 
 
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
 ShopPad App: Infinite Options
 https://apps.shopify.com/custom-options
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -3798,10 +3798,10 @@ https://apps.shopify.com/custom-options
     background-color: $color-form-select-background;
     border: 1px solid $color-form-select-border;
   }
-  input[type=number]::-webkit-inner-spin-button, 
-  input[type=number]::-webkit-outer-spin-button { 
-    -webkit-appearance: none; 
-    margin: 0; 
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
   textarea {
     min-height: 75px;
@@ -3850,12 +3850,12 @@ https://apps.shopify.com/custom-options
 }
 .cart-item-property {
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
   max-width: 200px;
 }
 
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * *
 ShopPad App: Coin
 https://apps.shopify.com/coin
 * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -3922,7 +3922,7 @@ https://apps.shopify.com/coin
     bottom: 7px;
     border-color: $color-action-icons rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
   }
-  
+
   label {
     color: $color-action-icons;
 
@@ -3943,7 +3943,7 @@ https://apps.shopify.com/coin
     width: auto;
     padding-right: 22px;
   }
-  
+
   label {
     width: 100%;
     display: inline-block;
@@ -4656,7 +4656,7 @@ input.cart-item-quantity-display {
   font-size: 0;
 }
 
-.cart-instructions, 
+.cart-instructions,
 .cart-totals {
   display: inline-block;
   vertical-align: top;
@@ -7142,7 +7142,7 @@ $slideshow-gutter: 70px + $gutter;
   @include breakpoint(s-up) {
     //scss-lint:disable ImportantRule
     //Important is required to override QualifyingSelector of .default h1
-    color: currentColor !important;  
+    color: currentColor !important;
 
     .slide-text-use-shadows & {
       text-shadow: 0 2px 7px rgba($color-black, 0.15);
@@ -7194,3 +7194,10 @@ $slideshow-gutter: 70px + $gutter;
   border: 0;
 }
 
+// customize
+// just display when screen is big enough(tablet, laptop)
+@media screen and (max-width: 720px) {
+  .hide-mobile {
+    display: none;
+  }
+}
