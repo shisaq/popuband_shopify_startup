@@ -1,15 +1,15 @@
 {
   "current": {
     "background-color": "#ffffff",
-    "body-text-color": "#51595D",
-    "accent-color": "#2FC496",
+    "body-text-color": "#51595d",
+    "accent-color": "#2fc496",
     "heading-color": "#fa8c01",
-    "border-color": "#D7DCDE",
+    "border-color": "#d7dcde",
     "primary-button-color": "#ffffff",
     "form-select-background": "#f4f5f5",
     "form-select-color": "#fa8c01",
     "form-select-border-color": "#d7dcde",
-    "footer-background-color": "#272B32",
+    "footer-background-color": "#272b32",
     "footer-header-color": "#ffffff",
     "footer-accent-color": "#fa8c01",
     "body_background_image": "",
@@ -56,8 +56,8 @@
     "checkout_sidebar_background_color": "#fafafa",
     "checkout_heading_font": "Helvetica Neue",
     "checkout_body_font": "Helvetica Neue",
-    "checkout_accent_color": "#1990C6",
-    "checkout_button_color": "#1990C6",
+    "checkout_accent_color": "#1990c6",
+    "checkout_button_color": "#1990c6",
     "checkout_error_color": "#ff6d6d",
     "contrast-background-color": "#E05E60",
     "meta-color": "#a0a2a3",
@@ -252,17 +252,6 @@
           "show_payment_icons": true
         }
       },
-      "1495942253659": {
-        "type": "home-video-with-text-overlay",
-        "settings": {
-          "title": "Populele",
-          "caption": "<p>The Smart Musical Gift for Everyone.<\/p>",
-          "button_text": "Shop Now",
-          "button_link": "shopify:\/\/products\/populele-with-accessory",
-          "video_url": "https:\/\/www.youtube.com\/watch?v=4Ql13zouORI",
-          "overlay_opacity": "50"
-        }
-      },
       "1495942532321": {
         "type": "home-testimonials",
         "blocks": {
@@ -384,10 +373,21 @@
           "image": "shopify:\/\/shop_images\/bomb.jpg",
           "overlay_opacity": "80"
         }
+      },
+      "1496270902201": {
+        "type": "bg_video",
+        "settings": {
+          "title": "Populele",
+          "caption": "<p>The Smart Musical Gift for Everyone.<\/p>",
+          "button_text": "Shop Now",
+          "button_link": "shopify:\/\/products\/populele-with-accessory",
+          "video_url": "https:\/\/www.youtube.com\/watch?v=WHsdZQOp-MY",
+          "overlay_opacity": "50"
+        }
       }
     },
     "content_for_index": [
-      "1495942253659",
+      "1496270902201",
       "home-promotion",
       "1495942532321",
       "1495944165298",
