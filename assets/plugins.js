@@ -347,12 +347,7 @@ if (typeof Object.create !== "function") {
       // Load Youtube API
       var tag = document.createElement('script');
       var head = document.getElementsByTagName('head')[0];
-
-      if (window.location.origin == 'file://') {
-        tag.src = 'http://www.youtube.com/iframe_api';
-      } else {
-        tag.src = '//www.youtube.com/iframe_api';
-      }
+      tag.src = 'https://www.youtube.com/iframe_api';
 
       head.appendChild(tag);
 
@@ -490,10 +485,11 @@ if (typeof Object.create !== "function") {
      */
     createBackgroundVideo: function createBackgroundVideo() {
       /*jshint multistr: true */
-      var self = this, $YTPlayerString = $('<div id="ytplayer-container' + self.ID + '" class="ytplayer-container background">\
-                                    <div id="' + self.holderID + '" class="ytplayer-player"></div>\
-                                    </div>\
-                                    <div id="ytplayer-shield" class="ytplayer-shield"></div>');
+      var self = this,
+      iframeHtml = '<div id="ytplayer-container' + self.ID + '" class="ytplayer-container background">' +
+                        '<div id="' + self.holderID + '" class="ytplayer-player"></div></div>' +
+                        '<div id="ytplayer-shield" class="ytplayer-shield"></div>',
+      $YTPlayerString = $(iframeHtml);
 
       self.$node.append($YTPlayerString);
       self.$YTPlayerString = $YTPlayerString;
@@ -550,6 +546,11 @@ if (typeof Object.create !== "function") {
       self.player = null;
     }
   };
+
+  onYouTubeIframeAPIReady: function onYouTubeIframeAPIReady() {
+      var self = this;
+      self.player = new window.YT.Player(self.holderID, self.options);
+    }
 
   // Create plugin
   $.fn.YTPlayer = function (options) {

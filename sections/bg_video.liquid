@@ -1,0 +1,169 @@
+{% assign media_layout = section.settings.media_layout %}
+
+{% assign has_content = false %}
+{% assign has_cta = false %}
+
+{%- if section.settings.title != blank or section.settings.caption != blank -%}
+  {% assign has_content = true %}
+{%- endif -%}
+
+{%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+  {% assign has_cta = true %}
+  {% assign has_content = true %}
+{%- endif -%}
+
+
+{%- if section.settings.video_url != blank -%}
+  {%- capture video_code -%}
+    <div class="home-full-width-video">
+      <div
+        id="video-{{ section.id }}"
+        data-parent-section="{{ section.id }}"
+        data-video-layout="background"
+        data-video-id="{{ section.settings.video_url.id }}"
+        data-video-type="{{ section.settings.video_url.type }}"></div>
+    </div>
+  {%- endcapture -%}
+{%- else -%}
+  {%- capture video_code -%}
+    <div class="home-full-width-video">
+      <div
+        id="video-{{ section.id }}"
+        data-parent-section="{{ section.id }}"
+        data-video-layout="background"
+        data-video-id="_9VUPq3SxOc"
+        data-video-type="youtube"></div>
+    </div>
+  {%- endcapture -%}
+{%- endif -%}
+
+{%- capture section_class -%}
+  black-style
+  full-width-background
+  home-video-with-text
+
+  {% unless has_content %}no-content{% endunless %}
+{%- endcapture -%}
+
+<section
+  class="module-container home-full-width-feature {{ section_class | strip_newlines }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="full-width-video-with-text">
+
+  {{ video_code }}
+
+  <div class="home-module-overlay opacity-{{ section.settings.overlay_opacity }}"></div>
+
+  {% if has_content %}
+    <article class="module-inner home-full-width-feature-content" data-section-content>
+      {% if section.settings.title != blank %}
+        <h1 class="feature-title">{{ section.settings.title | escape }}</h1>
+      {% endif %}
+
+      {% if section.settings.caption != blank %}
+        <div class="rte">{{ section.settings.caption }}</div>
+      {% endif %}
+
+      {% if has_cta %}
+        <div class="home-module-cta">
+          <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_text | escape }}</a>
+        </div>
+      {% endif %}
+    </article>
+  {% endif %}
+
+</section>
+
+{% schema %}
+{
+  "name": "Background Video",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Populele"
+    },
+    {
+      "type": "richtext",
+      "id": "caption",
+      "label": "Text",
+      "default": "<p>The Smart Musical Gift for Everyone.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link URL"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "Video URL",
+      "accept": ["youtube"],
+      "info": "Enter a link to a YouTube video",
+      "default": "https://www.youtube.com/watch?v=1a7IXg1rTwM"
+    },
+    {
+      "type": "select",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "options": [
+        {
+          "value": "0",
+          "label": "No overlay"
+        },
+        {
+          "value": "10",
+          "label": "10%"
+        },
+        {
+          "value": "20",
+          "label": "20%"
+        },
+        {
+          "value": "30",
+          "label": "30%"
+        },
+        {
+          "value": "40",
+          "label": "40%"
+        },
+        {
+          "value": "50",
+          "label": "50%"
+        },
+        {
+          "value": "60",
+          "label": "60%"
+        },
+        {
+          "value": "70",
+          "label": "70%"
+        },
+        {
+          "value": "80",
+          "label": "80%"
+        },
+        {
+          "value": "90",
+          "label": "90%"
+        }
+      ],
+      "default": "50"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Video",
+      "name": "Background Video"
+    }
+  ]
+}
+
+{% endschema %}

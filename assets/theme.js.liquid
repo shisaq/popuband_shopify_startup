@@ -1636,13 +1636,6 @@ window.VideoLoader = (function(superClass) {
     playerOptions = {
       fitToBackground: true,
       videoId: videoId,
-      events: {
-        'onReady': (function(_this) {
-          return function() {
-            return _this.onReady();
-          };
-        })(this)
-      },
       playerVars: {
         autohide: 0,
         autoplay: 0,
@@ -1698,7 +1691,7 @@ window.VideoLoader = (function(superClass) {
       videoHeight = this.videoObject.$parent.outerHeight(true);
       contentHeight = this.videoObject.$content.outerHeight(true);
       return this.videoObject.$content.css({
-        top: (videoHeight - contentHeight) / 2
+        top: Math.abs(videoHeight - contentHeight) / 2
       });
     } else {
       return this.videoObject.$content.css({
@@ -3000,7 +2993,7 @@ window.ThemeEditor = (function(superClass) {
       Registration of a section
           - Takes a string parameter as the first argument which
             matches to `[data-section-type]`
-  
+
        * Example
           @sections = new Sections()
           @sections.register('some-section-type', @someSectionClass)
@@ -3099,7 +3092,7 @@ window.SlideshowView = (function(superClass) {
     /*
         On slide change, find the new height of the slide and set it as the
         height of the slider
-    
+
         TODO: On upgrade to Flickity 2, change this to `select`
      */
     this.slideShow.on('cellSelect', (function(_this) {
