@@ -46,18 +46,18 @@
     "currency-switcher-supported-currencies": "INR GBP CAD USD AUD EUR JPY",
     "currency-switcher-default": "USD",
     "checkout_header_image": "",
-    "checkout_logo_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/popuband_logo.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
-    "checkout_body_background_color": "#fff",
-    "checkout_input_background_color_mode": "white",
+    "checkout_body_background_color": "#ffffff",
+    "checkout_input_background_color_mode": "transparent",
     "checkout_sidebar_background_image": "",
     "checkout_sidebar_background_color": "#fafafa",
     "checkout_heading_font": "Helvetica Neue",
     "checkout_body_font": "Helvetica Neue",
-    "checkout_accent_color": "#1990c6",
-    "checkout_button_color": "#1990c6",
+    "checkout_accent_color": "#fa8c01",
+    "checkout_button_color": "#2fc496",
     "checkout_error_color": "#ff6d6d",
     "contrast-background-color": "#E05E60",
     "meta-color": "#a0a2a3",
@@ -81,7 +81,7 @@
           "color_override": "default",
           "header_logo_alternate": "",
           "promotion_style": "accent-style",
-          "promotion_text": "<p>Order now to enjoy FREE shipping in US\/CA!<\/p>",
+          "promotion_text": "<p>Free Shipping for US&nbsp;&amp; Canada residents. <strong>Order Now!<\/strong><\/p>",
           "promotion_url": "shopify:\/\/products\/populele-with-accessory"
         }
       },
@@ -296,7 +296,7 @@
         ],
         "settings": {
           "style": "contrast-style",
-          "title": "Testimonials"
+          "title": "In The News"
         }
       },
       "template-collection": {
