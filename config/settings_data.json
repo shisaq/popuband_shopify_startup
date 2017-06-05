@@ -201,7 +201,7 @@
         ],
         "settings": {
           "style": "contrast-style",
-          "title": "How To Enjoy Populele",
+          "title": "",
           "show_borders": false
         }
       },
@@ -236,7 +236,7 @@
         "type": "home-instagram",
         "settings": {
           "style": "default-style",
-          "title": "Instagram feed",
+          "title": "Follow @Popuband on Instagram",
           "access_token": "4312582081.1677ed0.c7bb3ad3019a460d80921cea7f4337d9",
           "button_text": "",
           "button_link": ""

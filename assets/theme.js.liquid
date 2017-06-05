@@ -1492,7 +1492,7 @@ window.Instagram = (function(superClass) {
           if (response.meta.code === 200) {
             photos = [];
             ref = response.data;
-            for (j = 0, len = ref.length; j < len; j++) {
+            for (j = 0, len = ref.length; j < 4; j++) {
               photo = ref[j];
               photos.push("<a class='instagram-photo' target='_blank' href='" + photo.link + "'><img src='" + photo.images.low_resolution.url + "'/></a>");
             }
