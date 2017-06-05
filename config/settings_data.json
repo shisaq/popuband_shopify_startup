@@ -252,53 +252,6 @@
           "show_payment_icons": true
         }
       },
-      "1495942532321": {
-        "type": "home-testimonials",
-        "blocks": {
-          "1495942532321-0": {
-            "type": "testimonial",
-            "settings": {
-              "quote": "Like any stringed instrument, learning chords is a bit of pain. We can solve this with technology.",
-              "source": "The Verge",
-              "avatar": "shopify:\/\/shop_images\/theverge.png"
-            }
-          },
-          "1495942532321-1": {
-            "type": "testimonial",
-            "settings": {
-              "quote": "It connects to an app where users can get instant feedback and correct themselves.",
-              "source": "CNBC",
-              "avatar": "shopify:\/\/shop_images\/cnbc.png"
-            }
-          },
-          "1495942598424": {
-            "type": "testimonial",
-            "settings": {
-              "quote": "A wild new startup is about to unleash Populele, an electric Ukulele that will teach you how to play old Uke standards like Ukulele Lady, D’yer Maker, and Tiptoe Through The Tulips.",
-              "source": "TechCrunch",
-              "avatar": "shopify:\/\/shop_images\/techcrunch.png"
-            }
-          },
-          "1495942621264": {
-            "type": "testimonial",
-            "settings": {
-              "quote": "This is an awesome ukulele: fun, educational, and just plain cool; it's a really good entry-level uke in its own right, it's a lot of fun to play with the app, too.",
-              "source": "The Ukulele Teacher",
-              "avatar": "shopify:\/\/shop_images\/theukuleletercher.png"
-            }
-          }
-        },
-        "block_order": [
-          "1495942532321-0",
-          "1495942532321-1",
-          "1495942598424",
-          "1495942621264"
-        ],
-        "settings": {
-          "style": "contrast-style",
-          "title": "In The News"
-        }
-      },
       "template-collection": {
         "type": "template-collection",
         "settings": {
@@ -384,12 +337,56 @@
           "video_url": "https:\/\/www.youtube.com\/watch?v=WHsdZQOp-MY",
           "overlay_opacity": "50"
         }
+      },
+      "1496673050535": {
+        "type": "home-logo-list",
+        "blocks": {
+          "1496673050535-0": {
+            "type": "logo",
+            "settings": {
+              "url": "https:\/\/www.theverge.com\/circuitbreaker\/2017\/1\/6\/14192116\/populele-smart-ukelele-hands-on-ces-2017",
+              "logo": "shopify:\/\/shop_images\/theverge.png"
+            }
+          },
+          "1496673050535-1": {
+            "type": "logo",
+            "settings": {
+              "url": "http:\/\/video.cnbc.com\/gallery\/?video=3000600312",
+              "logo": "shopify:\/\/shop_images\/cnbc.png"
+            }
+          },
+          "1496673050535-2": {
+            "type": "logo",
+            "settings": {
+              "url": "https:\/\/techcrunch.com\/2017\/03\/20\/if-you-like-to-linger-where-its-shady-the-populele-wants-to-linger-too\/",
+              "logo": "shopify:\/\/shop_images\/techcrunch.png"
+            }
+          },
+          "1496673050535-3": {
+            "type": "logo",
+            "settings": {
+              "url": "https:\/\/www.youtube.com\/watch?v=8q8ANU2_ocw",
+              "logo": "shopify:\/\/shop_images\/theukuleletercher.png"
+            }
+          }
+        },
+        "block_order": [
+          "1496673050535-0",
+          "1496673050535-1",
+          "1496673050535-2",
+          "1496673050535-3"
+        ],
+        "settings": {
+          "style": "default-style",
+          "title": "In The News",
+          "logos_per_row": "4"
+        }
       }
     },
     "content_for_index": [
       "1496270902201",
       "home-promotion",
-      "1495942532321",
+      "1496673050535",
       "1495944165298",
       "1495943834875",
       "home-alternating-content",
