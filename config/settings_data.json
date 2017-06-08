@@ -91,7 +91,7 @@
           "enable": true,
           "style": "default-style",
           "title": "",
-          "caption": ""
+          "caption": "<p>Be the 1st to know about new products, offers, tips, and tricks about becoming the best player!<\/p>"
         }
       },
       "module-product-slideshow": {
@@ -149,7 +149,7 @@
         "type": "home-promotion",
         "settings": {
           "style": "default-style",
-          "title": "Populele",
+          "title": "",
           "subtitle": "Time To Shine.",
           "text": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
           "button_text": "",
@@ -312,7 +312,7 @@
         ],
         "settings": {
           "style": "default-style",
-          "title": "3 Easy Steps To Start"
+          "title": "3 Steps To Start Playing"
         }
       },
       "1495944165298": {
@@ -320,7 +320,7 @@
         "settings": {
           "style": "accent-style",
           "title": "Premium Quality",
-          "caption": "<p>Handcrafted using premium European maple and Italian Aquila strings, Populele sports an innovative fretboard learning system with 72 built-in LEDS, which connect via Bluetooth to deliver an unparalleled gamified app experience. With its elegant design, Populele provides a learning experience nothing short of revolutionary.<\/p>",
+          "caption": "<p>Handcrafted using premium European maple paneling for optimal acoustic performance. Our protrusive back arc design improves mixing effects offering crisp sound. Italian Aquila nylon strings offer players a gentle grip and soft tone.&nbsp;<\/p>",
           "button_text": "",
           "button_link": "",
           "image": "shopify:\/\/shop_images\/bomb.jpg",
