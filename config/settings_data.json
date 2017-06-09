@@ -145,18 +145,6 @@
           "autoplay_speed": "0"
         }
       },
-      "home-promotion": {
-        "type": "home-promotion",
-        "settings": {
-          "style": "default-style",
-          "title": "",
-          "subtitle": "Time To Shine.",
-          "text": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
-          "button_text": "",
-          "button_link": "",
-          "content_image": "shopify:\/\/shop_images\/square8.jpg"
-        }
-      },
       "home-alternating-content": {
         "type": "home-alternating-content",
         "blocks": {
@@ -381,11 +369,23 @@
           "title": "In The News",
           "logos_per_row": "4"
         }
+      },
+      "1497025149595": {
+        "type": "home-image-with-text-overlay",
+        "settings": {
+          "style": "default-style",
+          "title": "Time To Shine.",
+          "caption": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "image": "",
+          "overlay_opacity": "90"
+        }
       }
     },
     "content_for_index": [
       "1496270902201",
-      "home-promotion",
+      "1497025149595",
       "1496673050535",
       "1495944165298",
       "1495943834875",
