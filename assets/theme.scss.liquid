@@ -6065,7 +6065,7 @@ input[type="text"].search-input {
   .media-aligned-right & {
     position: relative;
     left: -50%;
-    padding-right: $gutter;
+    padding-left: $gutter;
 
     @include breakpoint(s) {
       left: 0;
@@ -6087,7 +6087,7 @@ input[type="text"].search-input {
   .media-aligned-right & {
     position: relative;
     left: 50%;
-    padding-left: $gutter;
+    padding-right: $gutter;
 
     @include breakpoint(s) {
       left: 0;
@@ -7199,4 +7199,8 @@ $slideshow-gutter: 70px + $gutter;
   .hide-mobile {
     display: none;
   }
+}
+
+.content-title {
+  font-size: rem(30px);
 }

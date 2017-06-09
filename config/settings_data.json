@@ -156,7 +156,7 @@
               "caption": "Games designed specifically for beginners to learn Uke, without the boring instruction. Sound-responsive technology enables users to get instant feedback and correct themselves.",
               "button_text": "",
               "button_link": "",
-              "image": "shopify:\/\/shop_images\/mp4.mp4_1489369051.gif"
+              "image": "shopify:\/\/shop_images\/game_mode.gif"
             }
           },
           "home-alternating-content-2": {
@@ -167,7 +167,7 @@
               "caption": "Sound responsive dazzle mode lights up your jam session.",
               "button_text": "",
               "button_link": "",
-              "image": "shopify:\/\/shop_images\/dazzle.gif"
+              "image": "shopify:\/\/shop_images\/dazzle_mode_e836d4d8-92d1-45d4-bc9f-ac4c1c488200.gif"
             }
           },
           "1495942932994": {
@@ -178,7 +178,7 @@
               "caption": "Shows exactly where your fingers go.",
               "button_text": "",
               "button_link": "",
-              "image": "shopify:\/\/shop_images\/Chord_Library.gif"
+              "image": "shopify:\/\/shop_images\/chord_library_22597bda-3b64-4d98-b7f4-3b2e8d490dd5.gif"
             }
           }
         },
@@ -189,8 +189,8 @@
         ],
         "settings": {
           "style": "contrast-style",
-          "title": "",
-          "show_borders": false
+          "title": "How Can You Enjoy Populele",
+          "show_borders": true
         }
       },
       "home-featured-product": {
@@ -266,7 +266,7 @@
             "type": "text_column",
             "settings": {
               "title": "Step 1",
-              "caption": "<p>Turn on your Populele.<\/p>",
+              "caption": "<p>Charge your Populele.<\/p>",
               "button_text": "",
               "button_link": "",
               "image": "shopify:\/\/shop_images\/square8.jpg"
@@ -276,7 +276,7 @@
             "type": "text_column",
             "settings": {
               "title": "Step 2",
-              "caption": "<p>Open the app and connect your Populele.<\/p>",
+              "caption": "<p>Download the Populele app.<\/p>",
               "button_text": "",
               "button_link": "",
               "image": "shopify:\/\/shop_images\/square8.jpg"
@@ -286,7 +286,7 @@
             "type": "text_column",
             "settings": {
               "title": "Step 3",
-              "caption": "<p>Get ready to play and shine!<\/p>",
+              "caption": "<p>Open the app and connect them through bluetooth.<\/p>",
               "button_text": "",
               "button_link": "",
               "image": "shopify:\/\/shop_images\/square8.jpg"
