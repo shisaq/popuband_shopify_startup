@@ -85,8 +85,8 @@
           "promotion_url": "shopify:\/\/products\/populele"
         }
       },
-      "general-newsletter": {
-        "type": "general-newsletter",
+      "mailchimp-newsletter": {
+        "type": "mailchimp-newsletter",
         "settings": {
           "enable": true,
           "style": "default-style",
@@ -246,8 +246,8 @@
           "show_featured_image": false,
           "show_description": true,
           "tag_filtering": true,
-          "products_per_row": "4",
-          "number_of_rows": "5"
+          "products_per_row": "3",
+          "number_of_rows": "4"
         }
       },
       "template-cart": {
@@ -403,10 +403,10 @@
           "product_show_vendor": false,
           "linked_options": true,
           "variants_style": "select",
-          "product_cart_redirect": false,
+          "product_cart_redirect": true,
           "single_column_product": false,
           "show_share_buttons": true,
-          "show_related_products": false
+          "show_related_products": true
         }
       }
     },
@@ -461,8 +461,8 @@
             "color_override": "default"
           }
         },
-        "general-newsletter": {
-          "type": "general-newsletter",
+        "mailchimp-newsletter": {
+          "type": "mailchimp-newsletter",
           "settings": {
             "enable": true,
             "style": "contrast-style"
