@@ -81,7 +81,7 @@
           "color_override": "default",
           "header_logo_alternate": "",
           "promotion_style": "accent-style",
-          "promotion_text": "<p>🎸 Get your&nbsp;smart uke for $40 off <strong>now<\/strong>!<\/p>",
+          "promotion_text": "<p>🎸 Enter \"SMARTUKE\" to get $40 off&nbsp;<strong>now<\/strong>!<\/p>",
           "promotion_url": "shopify:\/\/products\/populele"
         }
       },
@@ -269,7 +269,7 @@
               "caption": "<p>Charge your Populele.<\/p>",
               "button_text": "",
               "button_link": "",
-              "image": "shopify:\/\/shop_images\/square8.jpg"
+              "image": "shopify:\/\/shop_images\/step1_b2672232-122e-4b32-8090-58d21c8b302d.jpg"
             }
           },
           "1495943834875-1": {
@@ -279,7 +279,7 @@
               "caption": "<p>Download the Populele app.<\/p>",
               "button_text": "",
               "button_link": "",
-              "image": "shopify:\/\/shop_images\/square8.jpg"
+              "image": "shopify:\/\/shop_images\/step2_02e83512-2f7c-4ee9-9034-10ed68746278.jpg"
             }
           },
           "1495943834875-2": {
@@ -289,7 +289,7 @@
               "caption": "<p>Open the app and connect them through bluetooth.<\/p>",
               "button_text": "",
               "button_link": "",
-              "image": "shopify:\/\/shop_images\/square8.jpg"
+              "image": "shopify:\/\/shop_images\/step3_5dcc3d2d-3550-4938-beae-f8ba49f3038b.jpg"
             }
           }
         },
@@ -306,13 +306,13 @@
       "1495944165298": {
         "type": "home-image-with-text-overlay",
         "settings": {
-          "style": "accent-style",
+          "style": "default-style",
           "title": "Premium Quality",
           "caption": "<p>Handcrafted using premium European maple paneling for optimal acoustic performance. Our protrusive back arc design improves mixing effects offering crisp sound. Italian Aquila nylon strings offer players a gentle grip and soft tone.&nbsp;<\/p>",
           "button_text": "",
           "button_link": "",
-          "image": "shopify:\/\/shop_images\/bomb.jpg",
-          "overlay_opacity": "80"
+          "image": "shopify:\/\/shop_images\/banner4_39471f3f-34a9-4ab7-a32c-2b7ceba72c08.jpg",
+          "overlay_opacity": "50"
         }
       },
       "1496270902201": {
@@ -376,10 +376,10 @@
           "style": "default-style",
           "title": "Time To Shine.",
           "caption": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
-          "button_text": "",
-          "button_link": "",
-          "image": "",
-          "overlay_opacity": "90"
+          "button_text": "Get Yours",
+          "button_link": "shopify:\/\/collections\/frontpage",
+          "image": "shopify:\/\/shop_images\/Popuband_SiteBanner_1980x1080_d5040993-ab02-4296-9530-3c4432a4cc35.jpg",
+          "overlay_opacity": "0"
         }
       },
       "module-product": {

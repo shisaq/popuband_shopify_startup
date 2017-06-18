@@ -47,6 +47,12 @@
 
     {% if product.description.size > 0 %}
     <div class="product-description rte">
+      {% comment %}shipment delay{% endcomment %}
+      {% assign variant = product.variants.first %}
+      {% if variant.inventory_quantity <= 0 and variant.available and variant.inventory_management != '' %}
+      <p style="color:#ff0000">Stay tuned! This item is currently out of stock. It will be available around August 15, 2017.</p>
+      {% endif %}
+      {% comment %}end shipment delay{% endcomment %}
       {{ product.description }}
     </div>
     {% endif %}
