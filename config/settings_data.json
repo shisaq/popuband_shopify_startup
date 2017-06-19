@@ -81,7 +81,7 @@
           "color_override": "default",
           "header_logo_alternate": "",
           "promotion_style": "accent-style",
-          "promotion_text": "<p>🎸 Enter \"SMARTUKE\" to get $40 off&nbsp;<strong>now<\/strong>!<\/p>",
+          "promotion_text": "<p>🎸 Enter \"SMARTUKE\" to get $40 off&nbsp;<strong><u>now<\/u><\/strong>!<\/p>",
           "promotion_url": "shopify:\/\/products\/populele"
         }
       },
