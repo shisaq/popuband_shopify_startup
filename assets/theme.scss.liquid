@@ -667,13 +667,23 @@ $color-accent-onboarding-background: rgba($color-accent-text, 0.25);
 
 }
 
+/* 
 %main-content {
   max-width: $max-width;
   padding: $gutter-vertical-large $gutter 0;
-  margin: 0 auto $gutter-vertical-large;
+  margin: 0 auto $gutter-vertical-small;
+
+  @include breakpoint(s) { padding-top: $gutter-double; }
+} */
+
+%main-content {
+  max-width: 100%;
+  padding: $form-padding 0 0;
+  margin: 0 0 0;
 
   @include breakpoint(s) { padding-top: $gutter-double; }
 }
+
 
 %clearfix {
   &:before,
@@ -4841,6 +4851,7 @@ input[type="button"].cart-shipping-calculate {
     padding-left: 0;
   }
 }
+
 
 .collection-header-wrapper {
   display: table;

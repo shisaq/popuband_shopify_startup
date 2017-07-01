@@ -17,7 +17,7 @@
 
 {% paginate blog.articles by paginate_by %}
 
-  <div class="blog-posts clearfix">
+  <div class="blog-posts clearfix" style="margin-left: 5%; margin-right:5%;"> 
     {% for article in blog.articles %}
       {% if section.settings.layout == 'grid' %}
         {% include 'article-grid-item' %}

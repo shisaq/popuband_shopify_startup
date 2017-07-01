@@ -2,7 +2,7 @@
   "current": {
     "background-color": "#ffffff",
     "body-text-color": "#51595d",
-    "accent-color": "#2fc496",
+    "accent-color": "#fa8c01",
     "heading-color": "#fa8c01",
     "border-color": "#d7dcde",
     "primary-button-color": "#ffffff",
@@ -10,8 +10,8 @@
     "form-select-color": "#fa8c01",
     "form-select-border-color": "#d7dcde",
     "footer-background-color": "#272b32",
-    "footer-header-color": "#ffffff",
-    "footer-accent-color": "#fa8c01",
+    "footer-header-color": "#fa8c01",
+    "footer-accent-color": "#ffffff",
     "body_background_image": "",
     "contrast_background_image": "",
     "footer_background_image": "",
@@ -46,7 +46,7 @@
     "currency-switcher-supported-currencies": "INR GBP CAD USD AUD EUR JPY",
     "currency-switcher-default": "USD",
     "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/popuband_logo1_bd57ab12-17ac-490b-825e-3098dd91b5bf.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/shopify_logo.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
@@ -69,19 +69,19 @@
         "settings": {
           "header_sticky": true,
           "show_cart": true,
-          "show_search": false,
-          "header_logo": "shopify:\/\/shop_images\/popuband_logo1_bd57ab12-17ac-490b-825e-3098dd91b5bf.png",
+          "show_search": true,
+          "header_logo": "shopify:\/\/shop_images\/shopify_logo.png",
           "menu": "main-menu",
           "menu_style": "header",
           "mega_nav_trigger": "",
-          "mega_nav_menu_1": "",
+          "mega_nav_menu_1": "main-menu",
           "mega_nav_menu_2": "",
           "mega_nav_menu_3": "",
           "mega_nav_menu_4": "",
           "color_override": "default",
           "header_logo_alternate": "",
           "promotion_style": "accent-style",
-          "promotion_text": "<p>🎸 Enter \"SMARTUKE\" to get $40 off&nbsp;<strong><u>now<\/u><\/strong>!<\/p>",
+          "promotion_text": "<p>Enter \"POPULELE40\" to get $40 off&nbsp;<strong><u>now<\/u><\/strong>!<\/p>",
           "promotion_url": "shopify:\/\/products\/populele"
         }
       },
@@ -91,7 +91,7 @@
           "enable": true,
           "style": "default-style",
           "title": "",
-          "caption": "<p>Be the 1st to know about new products, offers, tips, and tricks about becoming the best player!<\/p>"
+          "caption": ""
         }
       },
       "module-product-slideshow": {
@@ -188,9 +188,9 @@
           "1495942932994"
         ],
         "settings": {
-          "style": "contrast-style",
+          "style": "accent-style",
           "title": "How Can You Enjoy Populele",
-          "show_borders": true
+          "show_borders": false
         }
       },
       "home-featured-product": {
@@ -209,7 +209,7 @@
           "1495943532008"
         ],
         "settings": {
-          "style": "contrast-style",
+          "style": "default-style",
           "title": "",
           "product": "populele-with-accessory",
           "description": "<p>Tell customers about the look, feel, and style of your product. Add details on color, materials, sizing, and where it was made.<\/p>",
@@ -218,16 +218,6 @@
           "linked_options": true,
           "variants_style": "radio",
           "product_cart_redirect": false
-        }
-      },
-      "home-instagram": {
-        "type": "home-instagram",
-        "settings": {
-          "style": "default-style",
-          "title": "Follow @Popuband on Instagram",
-          "access_token": "4312582081.1677ed0.c7bb3ad3019a460d80921cea7f4337d9",
-          "button_text": "",
-          "button_link": ""
         }
       },
       "general-footer": {
@@ -299,31 +289,31 @@
           "1495943834875-2"
         ],
         "settings": {
-          "style": "default-style",
+          "style": "accent-style",
           "title": "3 Steps To Start Playing"
         }
       },
       "1495944165298": {
         "type": "home-image-with-text-overlay",
         "settings": {
-          "style": "default-style",
+          "style": "contrast-style",
           "title": "Premium Quality",
           "caption": "<p>Handcrafted using premium European maple paneling for optimal acoustic performance. Our protrusive back arc design improves mixing effects offering crisp sound. Italian Aquila nylon strings offer players a gentle grip and soft tone.&nbsp;<\/p>",
           "button_text": "",
           "button_link": "",
           "image": "shopify:\/\/shop_images\/banner4_39471f3f-34a9-4ab7-a32c-2b7ceba72c08.jpg",
-          "overlay_opacity": "50"
+          "overlay_opacity": "20"
         }
       },
       "1496270902201": {
         "type": "bg_video",
         "settings": {
           "title": "Populele",
-          "caption": "<p>The Smart Musical Gift for Everyone.<\/p>",
+          "caption": "<p>Learn Music Fast &amp; Fun<\/p>\n<p><\/p>",
           "button_text": "Shop Now",
           "button_link": "shopify:\/\/collections\/frontpage",
           "video_url": "https:\/\/www.youtube.com\/watch?v=WHsdZQOp-MY",
-          "overlay_opacity": "50"
+          "overlay_opacity": "40"
         }
       },
       "1496673050535": {
@@ -366,7 +356,7 @@
         ],
         "settings": {
           "style": "default-style",
-          "title": "In The News",
+          "title": "As Seen In",
           "logos_per_row": "4"
         }
       },
@@ -376,8 +366,8 @@
           "style": "default-style",
           "title": "Time To Shine.",
           "caption": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
-          "button_text": "Get Yours",
-          "button_link": "shopify:\/\/collections\/frontpage",
+          "button_text": "",
+          "button_link": "",
           "image": "shopify:\/\/shop_images\/Popuband_SiteBanner_1980x1080_d5040993-ab02-4296-9530-3c4432a4cc35.jpg",
           "overlay_opacity": "0"
         }
@@ -408,17 +398,115 @@
           "show_share_buttons": true,
           "show_related_products": true
         }
+      },
+      "1498672635158": {
+        "type": "home-promotion",
+        "settings": {
+          "style": "default-style",
+          "title": "Welcome",
+          "subtitle": "This is the featured promotion section.",
+          "text": "<p>Use this area to promote a single item with an image on the right.<\/p>\n<p><\/p>\n<p><\/p>",
+          "button_text": "Buy Now",
+          "button_link": "shopify:\/\/products\/populele",
+          "content_image": "shopify:\/\/shop_images\/Populele_1.png"
+        }
+      },
+      "1498673174160": {
+        "type": "home-image-with-text-overlay",
+        "settings": {
+          "style": "default-style",
+          "title": "",
+          "caption": "",
+          "button_text": "",
+          "button_link": "",
+          "image": "shopify:\/\/shop_images\/Screen_Shot_2017-06-28_at_2.24.38_PM.png",
+          "overlay_opacity": "0"
+        }
+      },
+      "1498674191168": {
+        "type": "home-image-with-text-overlay",
+        "settings": {
+          "style": "default-style",
+          "title": "",
+          "caption": "",
+          "button_text": "",
+          "button_link": "",
+          "image": "shopify:\/\/shop_images\/Screen_Shot_2017-06-28_at_2.22.51_PM.png",
+          "overlay_opacity": "0"
+        }
+      },
+      "1498675871312": {
+        "type": "home-image-with-text-overlay",
+        "settings": {
+          "style": "default-style",
+          "title": "",
+          "caption": "",
+          "button_text": "",
+          "button_link": "",
+          "image": "shopify:\/\/shop_images\/Screen_Shot_2017-06-28_at_2.51.27_PM.png",
+          "overlay_opacity": "0"
+        }
+      },
+      "template-blog": {
+        "type": "template-blog",
+        "settings": {
+          "layout": "grid",
+          "show_rss_icon": false,
+          "show_tags": true,
+          "show_share_buttons": true,
+          "show_featured_image": true,
+          "show_author": false,
+          "show_comment_count": false
+        }
+      },
+      "bg_video": {
+        "type": "bg_video",
+        "settings": {
+          "title": "Populele",
+          "caption": "<p>The Smart Musical Gift for Everyone.<\/p>",
+          "button_text": "Shop Now",
+          "button_link": "",
+          "video_url": "https:\/\/www.youtube.com\/watch?v=1a7IXg1rTwM",
+          "overlay_opacity": "50"
+        }
+      },
+      "home-image-with-text": {
+        "type": "home-image-with-text",
+        "settings": {
+          "style": "default-style",
+          "title": "Image with text",
+          "caption": "<p>Select imagery and text that relates to your style and story.<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "image": "",
+          "media_layout": "regular"
+        }
+      },
+      "home-image-with-text-overlay": {
+        "type": "home-image-with-text-overlay",
+        "settings": {
+          "style": "default-style",
+          "title": "",
+          "caption": "",
+          "button_text": "",
+          "button_link": "",
+          "image": "shopify:\/\/shop_images\/Screen_Shot_2017-06-28_at_2.43.05_PM.png",
+          "overlay_opacity": "20"
+        }
       }
     },
     "content_for_index": [
       "1496270902201",
+      "1498673174160",
+      "1498672635158",
+      "1495944165298",
+      "1498674191168",
+      "1495943834875",
+      "home-featured-product",
       "1497025149595",
       "1496673050535",
-      "1495944165298",
-      "1495943834875",
       "home-alternating-content",
-      "home-instagram",
-      "home-featured-product"
+      "1498675871312"
     ]
   },
   "presets": {
