@@ -411,18 +411,6 @@
           "content_image": "shopify:\/\/shop_images\/Populele_1.png"
         }
       },
-      "1498673174160": {
-        "type": "home-image-with-text-overlay",
-        "settings": {
-          "style": "default-style",
-          "title": "",
-          "caption": "",
-          "button_text": "",
-          "button_link": "",
-          "image": "shopify:\/\/shop_images\/Screen_Shot_2017-06-28_at_2.24.38_PM.png",
-          "overlay_opacity": "0"
-        }
-      },
       "1498674191168": {
         "type": "home-image-with-text-overlay",
         "settings": {
@@ -493,11 +481,15 @@
           "image": "shopify:\/\/shop_images\/Screen_Shot_2017-06-28_at_2.43.05_PM.png",
           "overlay_opacity": "20"
         }
+      },
+      "1499093515292": {
+        "type": "customize-feature-group-icons",
+        "settings": {}
       }
     },
     "content_for_index": [
       "1496270902201",
-      "1498673174160",
+      "1499093515292",
       "1498672635158",
       "1495944165298",
       "1498674191168",
