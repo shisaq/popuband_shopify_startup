@@ -31,7 +31,12 @@
           src="https://cdn.shopify.com/s/files/1/2021/3861/files/populele-breath-in.png?17914215599095211533"
           class="light-breath-in">
       {% else %}
-        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+        <img
+          alt="{{ section.settings.content_image.alt }}"
+          src="https://cdn.shopify.com/s/files/1/2021/3861/files/app-screenshot1.jpg?10271410623950523086">
+        <img
+          src="https://cdn.shopify.com/s/files/1/2021/3861/files/app-screenshot2.jpg?10271410623950523086"
+          class="light-breath-in">
       {% endif %}
     </div>
 

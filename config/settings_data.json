@@ -381,6 +381,18 @@
           "image": "shopify:\/\/shop_images\/streaming-background.jpg",
           "overlay_opacity": "70"
         }
+      },
+      "1499209845662": {
+        "type": "customize-lights-twinkle",
+        "settings": {
+          "style": "default-style",
+          "title": "App",
+          "subtitle": "",
+          "text": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "content_image": ""
+        }
       }
     },
     "content_for_index": [
@@ -389,6 +401,7 @@
       "1499131033415",
       "1496673050535",
       "1499198570990",
+      "1499209845662",
       "1497025149595",
       "home-featured-product",
       "1498675871312"
