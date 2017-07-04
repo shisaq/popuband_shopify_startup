@@ -295,18 +295,6 @@
           "show_related_products": true
         }
       },
-      "1498674191168": {
-        "type": "home-image-with-text-overlay",
-        "settings": {
-          "style": "default-style",
-          "title": "",
-          "caption": "",
-          "button_text": "",
-          "button_link": "",
-          "image": "shopify:\/\/shop_images\/Screen_Shot_2017-06-28_at_2.22.51_PM.png",
-          "overlay_opacity": "0"
-        }
-      },
       "1498675871312": {
         "type": "home-image-with-text-overlay",
         "settings": {
@@ -381,6 +369,18 @@
           "button_link": "shopify:\/\/products\/populele-with-accessory",
           "content_image": "shopify:\/\/shop_images\/logo_50fcaa2a-97a2-4eda-9897-1b1ce8a00223.png"
         }
+      },
+      "1499198570990": {
+        "type": "home-image-with-text-overlay",
+        "settings": {
+          "style": "accent-style",
+          "title": "Music Library",
+          "caption": "<p>Select imagery and text that relates to your style and story.<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "image": "shopify:\/\/shop_images\/streaming-background.jpg",
+          "overlay_opacity": "70"
+        }
       }
     },
     "content_for_index": [
@@ -388,7 +388,7 @@
       "1499093515292",
       "1499131033415",
       "1496673050535",
-      "1498674191168",
+      "1499198570990",
       "1497025149595",
       "home-featured-product",
       "1498675871312"
