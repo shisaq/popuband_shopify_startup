@@ -399,18 +399,6 @@
           "show_related_products": true
         }
       },
-      "1498672635158": {
-        "type": "home-promotion",
-        "settings": {
-          "style": "default-style",
-          "title": "Welcome",
-          "subtitle": "This is the featured promotion section.",
-          "text": "<p>Use this area to promote a single item with an image on the right.<\/p>\n<p><\/p>\n<p><\/p>",
-          "button_text": "Buy Now",
-          "button_link": "shopify:\/\/products\/populele",
-          "content_image": "shopify:\/\/shop_images\/Populele_1.png"
-        }
-      },
       "1498674191168": {
         "type": "home-image-with-text-overlay",
         "settings": {
@@ -485,12 +473,24 @@
       "1499093515292": {
         "type": "customize-feature-group-icons",
         "settings": {}
+      },
+      "1499131033415": {
+        "type": "customize-lights-twinkle",
+        "settings": {
+          "style": "default-style",
+          "title": "Welcome",
+          "subtitle": "This is the featured promotion section.",
+          "text": "<p>Use this area to promote a single item with an image on the right.<\/p>",
+          "button_text": "Buy Now",
+          "button_link": "shopify:\/\/products\/populele-with-accessory",
+          "content_image": "shopify:\/\/shop_images\/logo_50fcaa2a-97a2-4eda-9897-1b1ce8a00223.png"
+        }
       }
     },
     "content_for_index": [
       "1496270902201",
       "1499093515292",
-      "1498672635158",
+      "1499131033415",
       "1495944165298",
       "1498674191168",
       "1495943834875",

@@ -1,0 +1,107 @@
+<section
+  class="module-container home-promotion {{ section.settings.style }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="promotion">
+  <article class="module-inner">
+
+    <div class="home-promotion-text">
+      {% if section.settings.title != blank %}
+        <h1 class="feature-title">{{ section.settings.title | escape }}</h1>
+      {% endif %}
+
+      {% if section.settings.subtitle != blank %}
+        <h2 class="feature-subtitle">{{ section.settings.subtitle | escape }}</h2>
+      {% endif %}
+
+      {% if section.settings.text != blank %}
+        {{ section.settings.text }}
+      {% endif %}
+
+      {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+        <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_text | escape }}</a>
+      {% endif %}
+    </div>
+
+    <div class="home-promotion-image twinkle-wrap">
+      {% if section.settings.content_image %}
+        <img
+          alt="{{ section.settings.content_image.alt }}"
+          src="https://cdn.shopify.com/s/files/1/2021/3861/files/populele-breath-out.jpg?17914215599095211533">
+        <img
+          src="https://cdn.shopify.com/s/files/1/2021/3861/files/populele-breath-in.png?17914215599095211533"
+          class="light-breath-in">
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+    </div>
+
+  </article>
+</section>
+
+{% schema %}
+{
+  "name": "Promotion",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Welcome"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "This is the featured promotion section."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Use this area to promote a single item with an image on the right.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "content_image",
+      "label": "Image",
+      "info": "1440 x 600px .jpg recommended"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Customize",
+      "name": "Promotion"
+    }
+  ]
+}
+{% endschema %}
