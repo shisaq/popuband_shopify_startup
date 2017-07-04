@@ -145,54 +145,6 @@
           "autoplay_speed": "0"
         }
       },
-      "home-alternating-content": {
-        "type": "home-alternating-content",
-        "blocks": {
-          "home-alternating-content-1": {
-            "type": "image",
-            "settings": {
-              "media_alignment": "left",
-              "title": "Game Mode",
-              "caption": "Games designed specifically for beginners to learn Uke, without the boring instruction. Sound-responsive technology enables users to get instant feedback and correct themselves.",
-              "button_text": "",
-              "button_link": "",
-              "image": "shopify:\/\/shop_images\/game_mode.gif"
-            }
-          },
-          "home-alternating-content-2": {
-            "type": "image",
-            "settings": {
-              "media_alignment": "right",
-              "title": "Dazzle Mode",
-              "caption": "Sound responsive dazzle mode lights up your jam session.",
-              "button_text": "",
-              "button_link": "",
-              "image": "shopify:\/\/shop_images\/dazzle_mode_abf81252-d7a8-4f07-9d36-c9a4ff3d8cb2.gif"
-            }
-          },
-          "1495942932994": {
-            "type": "image",
-            "settings": {
-              "media_alignment": "left",
-              "title": "Chord Library",
-              "caption": "Shows exactly where your fingers go.",
-              "button_text": "",
-              "button_link": "",
-              "image": "shopify:\/\/shop_images\/chord_library_22597bda-3b64-4d98-b7f4-3b2e8d490dd5.gif"
-            }
-          }
-        },
-        "block_order": [
-          "home-alternating-content-1",
-          "home-alternating-content-2",
-          "1495942932994"
-        ],
-        "settings": {
-          "style": "accent-style",
-          "title": "How Can You Enjoy Populele",
-          "show_borders": false
-        }
-      },
       "home-featured-product": {
         "type": "home-featured-product",
         "blocks": {
@@ -247,62 +199,6 @@
           "enable_order_notes": true,
           "show_shipping_calculator": false,
           "shipping_calculator_default_country": "United States"
-        }
-      },
-      "1495943834875": {
-        "type": "home-text-columns-with-images",
-        "blocks": {
-          "1495943834875-0": {
-            "type": "text_column",
-            "settings": {
-              "title": "Step 1",
-              "caption": "<p>Charge your Populele.<\/p>",
-              "button_text": "",
-              "button_link": "",
-              "image": "shopify:\/\/shop_images\/step1_b2672232-122e-4b32-8090-58d21c8b302d.jpg"
-            }
-          },
-          "1495943834875-1": {
-            "type": "text_column",
-            "settings": {
-              "title": "Step 2",
-              "caption": "<p>Download the Populele app.<\/p>",
-              "button_text": "",
-              "button_link": "",
-              "image": "shopify:\/\/shop_images\/step2_02e83512-2f7c-4ee9-9034-10ed68746278.jpg"
-            }
-          },
-          "1495943834875-2": {
-            "type": "text_column",
-            "settings": {
-              "title": "Step 3",
-              "caption": "<p>Open the app and connect them through bluetooth.<\/p>",
-              "button_text": "",
-              "button_link": "",
-              "image": "shopify:\/\/shop_images\/step3_5dcc3d2d-3550-4938-beae-f8ba49f3038b.jpg"
-            }
-          }
-        },
-        "block_order": [
-          "1495943834875-0",
-          "1495943834875-1",
-          "1495943834875-2"
-        ],
-        "settings": {
-          "style": "accent-style",
-          "title": "3 Steps To Start Playing"
-        }
-      },
-      "1495944165298": {
-        "type": "home-image-with-text-overlay",
-        "settings": {
-          "style": "contrast-style",
-          "title": "Premium Quality",
-          "caption": "<p>Handcrafted using premium European maple paneling for optimal acoustic performance. Our protrusive back arc design improves mixing effects offering crisp sound. Italian Aquila nylon strings offer players a gentle grip and soft tone.&nbsp;<\/p>",
-          "button_text": "",
-          "button_link": "",
-          "image": "shopify:\/\/shop_images\/banner4_39471f3f-34a9-4ab7-a32c-2b7ceba72c08.jpg",
-          "overlay_opacity": "20"
         }
       },
       "1496270902201": {
@@ -491,13 +387,10 @@
       "1496270902201",
       "1499093515292",
       "1499131033415",
-      "1495944165298",
-      "1498674191168",
-      "1495943834875",
-      "home-featured-product",
-      "1497025149595",
       "1496673050535",
-      "home-alternating-content",
+      "1498674191168",
+      "1497025149595",
+      "home-featured-product",
       "1498675871312"
     ]
   },
