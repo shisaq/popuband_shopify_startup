@@ -295,18 +295,6 @@
           "show_related_products": true
         }
       },
-      "1498675871312": {
-        "type": "home-image-with-text-overlay",
-        "settings": {
-          "style": "default-style",
-          "title": "",
-          "caption": "",
-          "button_text": "",
-          "button_link": "",
-          "image": "shopify:\/\/shop_images\/Screen_Shot_2017-06-28_at_2.51.27_PM.png",
-          "overlay_opacity": "0"
-        }
-      },
       "template-blog": {
         "type": "template-blog",
         "settings": {
@@ -393,6 +381,10 @@
           "button_link": "",
           "content_image": ""
         }
+      },
+      "1499211987304": {
+        "type": "customize-support-icons",
+        "settings": {}
       }
     },
     "content_for_index": [
@@ -404,7 +396,7 @@
       "1499209845662",
       "1497025149595",
       "home-featured-product",
-      "1498675871312"
+      "1499211987304"
     ]
   },
   "presets": {
