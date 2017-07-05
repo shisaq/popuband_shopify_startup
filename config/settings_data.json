@@ -385,6 +385,18 @@
       "1499211987304": {
         "type": "customize-support-icons",
         "settings": {}
+      },
+      "customize-lights-twinkle": {
+        "type": "customize-lights-twinkle",
+        "settings": {
+          "style": "default-style",
+          "title": "Hello",
+          "subtitle": "This is the featured promotion section.",
+          "text": "<p>Use this area to promote a single item with an image on the right.<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "content_image": ""
+        }
       }
     },
     "content_for_index": [
