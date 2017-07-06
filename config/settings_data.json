@@ -350,10 +350,10 @@
         "type": "customize-lights-twinkle",
         "settings": {
           "style": "default-style",
-          "title": "Welcome",
-          "subtitle": "This is the featured promotion section.",
-          "text": "<p>Use this area to promote a single item with an image on the right.<\/p>",
-          "button_text": "Buy Now",
+          "title": "World’s First Smart Ukulele",
+          "subtitle": "",
+          "text": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
+          "button_text": "get it",
           "button_link": "shopify:\/\/products\/populele-with-accessory",
           "content_image": "shopify:\/\/shop_images\/logo_50fcaa2a-97a2-4eda-9897-1b1ce8a00223.png"
         }
@@ -363,7 +363,7 @@
         "settings": {
           "style": "accent-style",
           "title": "Music Library",
-          "caption": "<p>Select imagery and text that relates to your style and story.<\/p>",
+          "caption": "<p>Find and learn your favorite songs in our Continuously updated song library. If you can&rsquo;t find your song, tell us we will make it for you.<\/p>",
           "button_text": "",
           "button_link": "",
           "image": "shopify:\/\/shop_images\/streaming-background.jpg",
@@ -374,9 +374,9 @@
         "type": "customize-lights-twinkle",
         "settings": {
           "style": "default-style",
-          "title": "App",
+          "title": "Populele App",
           "subtitle": "",
-          "text": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
+          "text": "<p>Easy to use app offers everything you need for learning an Instrument.<\/p>",
           "button_text": "",
           "button_link": "",
           "content_image": ""
