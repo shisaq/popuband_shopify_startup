@@ -3,7 +3,7 @@
     "background-color": "#ffffff",
     "body-text-color": "#51595d",
     "accent-color": "#fa8c01",
-    "heading-color": "#fa8c01",
+    "heading-color": "#51595d",
     "border-color": "#d7dcde",
     "primary-button-color": "#ffffff",
     "form-select-background": "#f4f5f5",
@@ -187,7 +187,7 @@
         "settings": {
           "show_featured_image": false,
           "show_description": true,
-          "tag_filtering": true,
+          "tag_filtering": false,
           "products_per_row": "3",
           "number_of_rows": "4"
         }
@@ -209,7 +209,7 @@
           "button_text": "Shop Now",
           "button_link": "shopify:\/\/collections\/frontpage",
           "video_url": "https:\/\/www.youtube.com\/watch?v=WHsdZQOp-MY",
-          "overlay_opacity": "40"
+          "overlay_opacity": "50"
         }
       },
       "1496673050535": {
@@ -256,18 +256,6 @@
           "logos_per_row": "4"
         }
       },
-      "1497025149595": {
-        "type": "home-image-with-text-overlay",
-        "settings": {
-          "style": "default-style",
-          "title": "Time To Shine.",
-          "caption": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
-          "button_text": "",
-          "button_link": "",
-          "image": "shopify:\/\/shop_images\/Popuband_SiteBanner_1980x1080_d5040993-ab02-4296-9530-3c4432a4cc35.jpg",
-          "overlay_opacity": "0"
-        }
-      },
       "module-product": {
         "type": "module-product",
         "blocks": {
@@ -301,7 +289,7 @@
           "layout": "list",
           "show_rss_icon": false,
           "show_tags": true,
-          "show_share_buttons": false,
+          "show_share_buttons": true,
           "show_featured_image": true,
           "show_author": false,
           "show_comment_count": true
@@ -361,13 +349,13 @@
       "1499198570990": {
         "type": "home-image-with-text-overlay",
         "settings": {
-          "style": "accent-style",
+          "style": "default-style",
           "title": "Music Library",
           "caption": "<p>Find and learn your favorite songs in our Continuously updated song library. If you can&rsquo;t find your song, tell us we will make it for you.<\/p>",
           "button_text": "",
           "button_link": "",
           "image": "shopify:\/\/shop_images\/streaming-background.jpg",
-          "overlay_opacity": "70"
+          "overlay_opacity": "80"
         }
       },
       "1499209845662": {
@@ -390,8 +378,8 @@
         "type": "customize-lights-twinkle",
         "settings": {
           "style": "default-style",
-          "title": "Hello",
-          "subtitle": "This is the featured promotion section.",
+          "title": "Download",
+          "subtitle": "",
           "text": "<p>Use this area to promote a single item with an image on the right.<\/p>",
           "button_text": "",
           "button_link": "",
@@ -406,6 +394,53 @@
           "show_share_buttons": true,
           "show_full_width_image": false
         }
+      },
+      "1499487791316": {
+        "type": "home-testimonials",
+        "blocks": {
+          "1499487791316-0": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "Like any stringed instrument, learning chords is a bit of pain. We can solve this with technology.",
+              "source": "The Verge",
+              "avatar": "shopify:\/\/shop_images\/theverge.png"
+            }
+          },
+          "1499487791316-1": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "It connects to an app where users can get instant feedback and correct themselves.",
+              "source": "CNBC",
+              "avatar": "shopify:\/\/shop_images\/cnbc.png"
+            }
+          },
+          "1499487996217": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "A wild new startup is about to unleash Populele, an electric Ukulele that will teach you how to play old Uke standards like Ukulele Lady, D’yer Maker, and Tiptoe Through The Tulips.",
+              "source": "TechCrunch",
+              "avatar": "shopify:\/\/shop_images\/techcrunch.png"
+            }
+          },
+          "1499488009919": {
+            "type": "testimonial",
+            "settings": {
+              "quote": "This is an awesome ukulele: fun, educational, and just plain cool; it's a really good entry-level uke in its own right, it's a lot of fun to play with the app, too.",
+              "source": "The Ukulele Teacher",
+              "avatar": "shopify:\/\/shop_images\/theukuleletercher.png"
+            }
+          }
+        },
+        "block_order": [
+          "1499487791316-0",
+          "1499487791316-1",
+          "1499487996217",
+          "1499488009919"
+        ],
+        "settings": {
+          "style": "default",
+          "title": "As Seen In"
+        }
       }
     },
     "content_for_index": [
@@ -414,8 +449,8 @@
       "1499093515292",
       "1499198570990",
       "1496673050535",
+      "1499487791316",
       "1499209845662",
-      "1497025149595",
       "home-featured-product",
       "1499211987304"
     ]

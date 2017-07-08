@@ -55,8 +55,8 @@
     },
     "social": {
       "title": "Find us online",
-      "share_title": "Help spread the word!",
-      "byline": "Please help us spread the news about our awesome products.",
+      "share_title": "Help spread the world!",
+      "byline": "Please help us spread the news about Populele.",
       "facebook": "Share",
       "twitter": "Tweet",
       "twitter_follow": "Follow us @{{ username }}",
