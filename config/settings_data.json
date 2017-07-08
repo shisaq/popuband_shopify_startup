@@ -332,7 +332,9 @@
       },
       "1499093515292": {
         "type": "customize-feature-group-icons",
-        "settings": {}
+        "settings": {
+          "style": "contrast-style"
+        }
       },
       "1499131033415": {
         "type": "customize-lights-twinkle",
@@ -438,8 +440,62 @@
           "1499488009919"
         ],
         "settings": {
-          "style": "default",
+          "style": "default-style",
           "title": "As Seen In"
+        }
+      },
+      "customize-feature-group-icons": {
+        "type": "customize-feature-group-icons",
+        "settings": {
+          "style": "default-style"
+        }
+      },
+      "app-alternating-content": {
+        "type": "app-alternating-content",
+        "blocks": {
+          "1499524824469": {
+            "type": "video",
+            "settings": {
+              "media_alignment": "right",
+              "title": "Alternating content",
+              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+            }
+          },
+          "1499524833445": {
+            "type": "video",
+            "settings": {
+              "media_alignment": "left",
+              "title": "Alternating content",
+              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+            }
+          },
+          "1499524837465": {
+            "type": "video",
+            "settings": {
+              "media_alignment": "right",
+              "title": "Alternating content",
+              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+            }
+          }
+        },
+        "block_order": [
+          "1499524824469",
+          "1499524833445",
+          "1499524837465"
+        ],
+        "settings": {
+          "style": "default-style",
+          "title": "",
+          "show_borders": false
         }
       }
     },

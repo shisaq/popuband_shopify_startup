@@ -1,4 +1,4 @@
-<div data-section-id="{{ section.id }}" class="block-gray">
+<div data-section-id="{{ section.id }}" class="block-gray {{ section.settings.style }}">
   <div class="container">
     <div class="space-lg"></div>
     <div class="space-lg visible-xs"></div>
@@ -6,49 +6,49 @@
       <div class="col-xs-6 col-sm-3 col-lg-2 col-lg-offset-2">
         <img class="feature-icon" src="https://cdn.shopify.com/s/files/1/2021/3861/files/icons8-Bluetooth-100.png?12538457032907798725" alt="">
         <div class="space-xxs"></div>
-        <p class="h6">Telescopic<br>Mechanics</p>
+        <p class="h6">bluetooth<br>connection</p>
         <div class="space-sm"></div>
       </div>
       <div class="col-xs-6 col-sm-3 col-lg-2">
         <img class="feature-icon" src="https://cdn.shopify.com/s/files/1/2021/3861/files/icons8-Guitar-100.png?12538457032907798725" alt="">
         <div class="space-xxs"></div>
-        <p class="h6">Independent<br>Tweeter</p>
+        <p class="h6">real<br>ukulele</p>
         <div class="space-sm"></div>
       </div>
       <div class="col-xs-6 col-sm-3 col-lg-2">
         <img class="feature-icon" src="https://cdn.shopify.com/s/files/1/2021/3861/files/icons8-LED_Diode-100.png?12538457032907798725" alt="">
         <div class="space-xxs"></div>
-        <p class="h6">RGB Color<br>Wheel</p>
+        <p class="h6">embedded<br>led lights</p>
         <div class="space-sm"></div>
       </div>
       <div class="col-xs-6 col-sm-3 col-lg-2">
         <img class="feature-icon" src="https://cdn.shopify.com/s/files/1/2021/3861/files/icons8-Music_Record-100.png?12538457032907798725" alt="">
         <div class="space-xxs"></div>
-        <p class="h6">Multi-Room<br>Play</p>
+        <p class="h6">extensive<br>song library</p>
         <div class="space-sm"></div>
       </div>
       <div class="col-xs-6 col-sm-3 col-lg-2 col-lg-offset-2">
         <img class="feature-icon" src="https://cdn.shopify.com/s/files/1/2021/3861/files/icons8-Share_2-100.png?12538457032907798725" alt="">
         <div class="space-xxs"></div>
-        <p class="h6">Meshnet Group<br>Play</p>
+        <p class="h6">easily<br>share</p>
         <div class="space-sm"></div>
       </div>
       <div class="col-xs-6 col-sm-3 col-lg-2">
         <img class="feature-icon" src="https://cdn.shopify.com/s/files/1/2021/3861/files/icons8-Record-100.png?12538457032907798725" alt="">
         <div class="space-xxs"></div>
-        <p class="h6">Stereo <br>Pairing</p>
+        <p class="h6">portfolio<br>recording</p>
         <div class="space-sm"></div>
       </div>
       <div class="col-xs-6 col-sm-3 col-lg-2">
         <img class="feature-icon" src="https://cdn.shopify.com/s/files/1/2021/3861/files/icons8-Visual_Game_Boy-100.png?12538457032907798725" alt="">
         <div class="space-xxs"></div>
-        <p class="h6">Lossless Audio<br>Transmission</p>
+        <p class="h6">game<br>mode</p>
         <div class="space-sm"></div>
       </div>
       <div class="col-xs-6 col-sm-3 col-lg-2">
         <img class="feature-icon" src="https://cdn.shopify.com/s/files/1/2021/3861/files/icons8-Smartphone_Tablet-100.png?12538457032907798725" alt="">
         <div class="space-xxs"></div>
-        <p class="h6">Easy Music<br>Streaming</p>
+        <p class="h6">smart device<br>compatible</p>
         <div class="space-sm"></div>
       </div>
     </div>
@@ -59,6 +59,28 @@
 
 {% schema %}
 {
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    }
+  ],
   "presets": [
     {
       "category": "Customize",
