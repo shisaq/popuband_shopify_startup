@@ -81,8 +81,8 @@
           "color_override": "default",
           "header_logo_alternate": "",
           "promotion_style": "accent-style",
-          "promotion_text": "<p>Enter \"POPULELE40\" to get $40 off&nbsp;<strong><u>now<\/u><\/strong>!<\/p>",
-          "promotion_url": "shopify:\/\/products\/populele"
+          "promotion_text": "",
+          "promotion_url": ""
         }
       },
       "mailchimp-newsletter": {
@@ -169,14 +169,14 @@
           "product_show_vendor": false,
           "linked_options": true,
           "variants_style": "radio",
-          "product_cart_redirect": false
+          "product_cart_redirect": true
         }
       },
       "general-footer": {
         "type": "general-footer",
         "settings": {
           "show_headings": true,
-          "show_share_buttons": false,
+          "show_share_buttons": true,
           "menu_1": "footer",
           "menu_2": "main-menu",
           "show_payment_icons": true
@@ -298,13 +298,13 @@
       "template-blog": {
         "type": "template-blog",
         "settings": {
-          "layout": "grid",
+          "layout": "list",
           "show_rss_icon": false,
           "show_tags": true,
-          "show_share_buttons": true,
+          "show_share_buttons": false,
           "show_featured_image": true,
           "show_author": false,
-          "show_comment_count": false
+          "show_comment_count": true
         }
       },
       "bg_video": {
@@ -397,14 +397,23 @@
           "button_link": "",
           "content_image": ""
         }
+      },
+      "template-article": {
+        "type": "template-article",
+        "settings": {
+          "show_tags": true,
+          "show_author": false,
+          "show_share_buttons": true,
+          "show_full_width_image": false
+        }
       }
     },
     "content_for_index": [
       "1496270902201",
-      "1499093515292",
       "1499131033415",
-      "1496673050535",
+      "1499093515292",
       "1499198570990",
+      "1496673050535",
       "1499209845662",
       "1497025149595",
       "home-featured-product",
