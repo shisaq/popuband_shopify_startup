@@ -457,11 +457,11 @@
             "type": "video",
             "settings": {
               "media_alignment": "right",
-              "title": "Alternating content",
+              "title": "Game Mode",
               "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
               "button_text": "",
               "button_link": "",
-              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+              "video_url": "https:\/\/www.youtube.com\/watch?v=E1o3O3TMim8"
             }
           },
           "1499524833445": {
@@ -479,11 +479,11 @@
             "type": "video",
             "settings": {
               "media_alignment": "right",
-              "title": "Alternating content",
+              "title": "Song Library",
               "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
               "button_text": "",
               "button_link": "",
-              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+              "video_url": "https:\/\/www.youtube.com\/watch?v=uGAwwqxB0Co"
             }
           }
         },
@@ -496,6 +496,30 @@
           "style": "default-style",
           "title": "",
           "show_borders": false
+        }
+      },
+      "home-promotion": {
+        "type": "home-promotion",
+        "settings": {
+          "style": "default-style",
+          "title": "Welcome",
+          "subtitle": "",
+          "text": "<p>Use this area to promote a single item with an image on the right.<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "content_image": "shopify:\/\/shop_images\/populeleWithApp.jpg"
+        }
+      },
+      "app-download-badges": {
+        "type": "app-download-badges",
+        "settings": {
+          "style": "default-style",
+          "title": "Download",
+          "caption": "<p>Select imagery and text that relates to your style and story.<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "image": "",
+          "media_layout": "regular"
         }
       }
     },

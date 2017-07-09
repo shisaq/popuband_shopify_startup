@@ -32,9 +32,9 @@
               {% if block.settings.video_url != blank %}
                 {% if block.settings.video_url.type == "youtube" %}
                   <iframe
-                    src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?rel=0&showinfo=0&vq=720"
+                    src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?rel=0&showinfo=0&vq=720&autoplay=1&mute=1&controls=0&showinfo=0&rel=0​&modestbranding=1&loop=1&playlist={{ block.settings.video_url.id }}"
                     width="850"
-                    height="480"
+                    height="500"
                     frameborder="0"
                     allowfullscreen></iframe>
                 {% endif %}
