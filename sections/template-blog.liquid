@@ -5,7 +5,9 @@
 
 <h1 class="{% if current_tags %}tag-page{% endif %} {% if section.settings.show_rss_icon %}has-rss-icon{% endif %} page-title">
   {% if current_tags %}<a href="{{ blog.url }}">{% endif %}
-    {{ blog.title }}
+    {% if section.settings.show_h1_title %}
+      {{ blog.title }}
+    {% endif %}
   {% if current_tags %}</a>{% endif %}
 
   {% if section.settings.show_rss_icon %}<a class="icon rss" href="{{ blog.url }}.atom">&#57366;</a>{% endif %}
@@ -17,7 +19,7 @@
 
 {% paginate blog.articles by paginate_by %}
 
-  <div class="blog-posts clearfix" style="margin-left: 5%; margin-right:5%;"> 
+  <div class="blog-posts clearfix" style="margin-left: 5%; margin-right:5%;">
     {% for article in blog.articles %}
       {% if section.settings.layout == 'grid' %}
         {% include 'article-grid-item' %}
@@ -54,6 +56,12 @@
           "label": "List"
         }
       ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_h1_title",
+      "label": "Show H1 Title",
+      "default": true
     },
     {
       "type": "checkbox",

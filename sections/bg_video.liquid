@@ -66,7 +66,8 @@
 
       {% if has_cta %}
         <div class="home-module-cta">
-          <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_text | escape }}</a>
+          <a class="button bg_video_button" href="{{ section.settings.button_link }}">{{ section.settings.button_text | escape }}</a>
+          <a class="button bg_video_button" href="{{ section.settings.video_button_link }}">{{ section.settings.video_button_text | escape }}</a>
         </div>
       {% endif %}
     </article>
@@ -100,6 +101,20 @@
       "type": "url",
       "id": "button_link",
       "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "video_button_text",
+      "label": "Video Button Text",
+      "default": "Watch Film"
+    },
+    {
+      "type": "video_url",
+      "id": "video_button_link",
+      "label": "Video Button Link",
+      "accept": ["youtube"],
+      "info": "Enter a link to a YouTube video",
+      "default": "https://www.youtube.com/watch?v=DMcyuOM0lVQ"
     },
     {
       "type": "video_url",

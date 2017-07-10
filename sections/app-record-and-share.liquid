@@ -22,21 +22,13 @@
       {% endif %}
     </div>
 
-    <div class="home-promotion-image twinkle-wrap">
+    <div class="home-promotion-image">
       {% if section.settings.content_image %}
         <img
           alt="{{ section.settings.content_image.alt }}"
-          src="https://cdn.shopify.com/s/files/1/2021/3861/files/populele-random1.jpg">
-        {% comment %}<img
-          src="https://cdn.shopify.com/s/files/1/2021/3861/files/populele-breath-in2.jpg"
-          class="light-breath-in">{% endcomment %}
+          src="{{ section.settings.content_image | img_url: '1440x640' }}">
       {% else %}
-        <img
-          alt="{{ section.settings.content_image.alt }}"
-          src="https://cdn.shopify.com/s/files/1/2021/3861/files/app-screenshot1-white.jpg">
-        <img
-          src="https://cdn.shopify.com/s/files/1/2021/3861/files/app-screenshot2-white.jpg"
-          class="light-breath-in">
+        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
       {% endif %}
     </div>
 
@@ -45,7 +37,7 @@
 
 {% schema %}
 {
-  "name": "Welcome",
+  "name": "Promotion",
   "settings": [
     {
       "type": "select",
@@ -104,8 +96,8 @@
   ],
   "presets": [
     {
-      "category": "Customize",
-      "name": "Welcome"
+      "category": "Image",
+      "name": "Promotion"
     }
   ]
 }

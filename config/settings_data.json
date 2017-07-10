@@ -208,52 +208,10 @@
           "caption": "<p>Learn Music Fast &amp; Fun<\/p>\n<p><\/p>",
           "button_text": "Shop Now",
           "button_link": "shopify:\/\/collections\/frontpage",
+          "video_button_text": "Watch Film",
+          "video_button_link": "https:\/\/www.youtube.com\/watch?v=DMcyuOM0lVQ",
           "video_url": "https:\/\/www.youtube.com\/watch?v=WHsdZQOp-MY",
           "overlay_opacity": "50"
-        }
-      },
-      "1496673050535": {
-        "type": "home-logo-list",
-        "blocks": {
-          "1496673050535-0": {
-            "type": "logo",
-            "settings": {
-              "url": "https:\/\/www.theverge.com\/circuitbreaker\/2017\/1\/6\/14192116\/populele-smart-ukelele-hands-on-ces-2017",
-              "logo": "shopify:\/\/shop_images\/theverge.png"
-            }
-          },
-          "1496673050535-1": {
-            "type": "logo",
-            "settings": {
-              "url": "http:\/\/video.cnbc.com\/gallery\/?video=3000600312",
-              "logo": "shopify:\/\/shop_images\/cnbc.png"
-            }
-          },
-          "1496673050535-2": {
-            "type": "logo",
-            "settings": {
-              "url": "https:\/\/techcrunch.com\/2017\/03\/20\/if-you-like-to-linger-where-its-shady-the-populele-wants-to-linger-too\/",
-              "logo": "shopify:\/\/shop_images\/techcrunch.png"
-            }
-          },
-          "1496673050535-3": {
-            "type": "logo",
-            "settings": {
-              "url": "https:\/\/www.youtube.com\/watch?v=8q8ANU2_ocw",
-              "logo": "shopify:\/\/shop_images\/theukuleletercher.png"
-            }
-          }
-        },
-        "block_order": [
-          "1496673050535-0",
-          "1496673050535-1",
-          "1496673050535-2",
-          "1496673050535-3"
-        ],
-        "settings": {
-          "style": "default-style",
-          "title": "As Seen In",
-          "logos_per_row": "4"
         }
       },
       "module-product": {
@@ -287,6 +245,7 @@
         "type": "template-blog",
         "settings": {
           "layout": "list",
+          "show_h1_title": false,
           "show_rss_icon": false,
           "show_tags": true,
           "show_share_buttons": true,
@@ -302,6 +261,8 @@
           "caption": "<p>The Smart Musical Gift for Everyone.<\/p>",
           "button_text": "Shop Now",
           "button_link": "",
+          "video_button_text": "Watch Film",
+          "video_button_link": "https:\/\/www.youtube.com\/watch?v=DMcyuOM0lVQ",
           "video_url": "https:\/\/www.youtube.com\/watch?v=1a7IXg1rTwM",
           "overlay_opacity": "50"
         }
@@ -356,7 +317,7 @@
           "caption": "<p>Find and learn your favorite songs in our Continuously updated song library. If you can&rsquo;t find your song, tell us we will make it for you.<\/p>",
           "button_text": "",
           "button_link": "",
-          "image": "shopify:\/\/shop_images\/streaming-background.jpg",
+          "image": "shopify:\/\/shop_images\/streaming-background1.jpg",
           "overlay_opacity": "80"
         }
       },
@@ -519,6 +480,18 @@
           "google_link": "https:\/\/play.google.com\/store\/apps\/details?id=com.gt.populeleinternational",
           "apple_link": "https:\/\/itunes.apple.com\/us\/app\/populele-international\/id1241571882"
         }
+      },
+      "app-record-and-share": {
+        "type": "app-record-and-share",
+        "settings": {
+          "style": "default-style",
+          "title": "Record & Share",
+          "subtitle": "",
+          "text": "<p>Use this area to promote a single item with an image on the right..<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "content_image": "shopify:\/\/shop_images\/11.2_c2e837d5-4fb8-4d45-b71a-dced23a9d8fa.jpg"
+        }
       }
     },
     "content_for_index": [
@@ -526,7 +499,6 @@
       "1499131033415",
       "1499093515292",
       "1499198570990",
-      "1496673050535",
       "1499487791316",
       "1499209845662",
       "home-featured-product",

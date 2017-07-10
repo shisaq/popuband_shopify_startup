@@ -28,18 +28,18 @@
 
 <div class="share-buttons {{ shareCountClass }}" data-permalink="{{ permalinkURL }}">
 
-  <a target="_blank" href="//www.facebook.com/sharer.php?u={{ permalinkURL }}" class="share-facebook"><span>{{ 'general.social.facebook' | t }}</span> <span class="share-count"></span></a>
+  <a target="_blank" href="//www.facebook.com/sharer.php?u={{ permalinkURL }}" class="share-facebook the-share-button"><span>{{ 'general.social.facebook' | t }}</span> <span class="share-count"></span></a>
 
-  <a target="_blank" href="//twitter.com/share?url={{ permalinkURL }}" class="share-twitter"><span>{{ 'general.social.twitter' | t }}</span> <span class="share-count"></span></a>
+  <a target="_blank" href="//twitter.com/share?url={{ permalinkURL }}" class="share-twitter the-share-button"><span>{{ 'general.social.twitter' | t }}</span> <span class="share-count"></span></a>
 
   {% if image %}
 
-    <a target="_blank" href="//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media=http:{{ image }}&amp;description={{ description }}" class="share-pinterest"><span>{{ 'general.social.pinterest' | t }}</span> <span class="share-count"></span></a>
+    <a target="_blank" href="//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media=http:{{ image }}&amp;description={{ description }}" class="share-pinterest the-share-button"><span>{{ 'general.social.pinterest' | t }}</span> <span class="share-count"></span></a>
 
-    <a target="_blank" href="http://www.thefancy.com/fancyit?ItemURL={{ permalinkURL }}&amp;Title={{ description }}&amp;Category=Other&amp;ImageURL={{ image }}" class="share-fancy"><span>{{ 'general.social.fancy' | t }}</span></a>
+    <a target="_blank" href="http://www.thefancy.com/fancyit?ItemURL={{ permalinkURL }}&amp;Title={{ description }}&amp;Category=Other&amp;ImageURL={{ image }}" class="share-fancy the-share-button"><span>{{ 'general.social.fancy' | t }}</span></a>
 
   {% endif %}
 
-  <a target="_blank" href="//plus.google.com/share?url={{ permalinkURL }}" class="share-google"><span></span> <span class="share-count">{{ 'general.social.google' | t }}</span></a>
+  <a target="_blank" href="//plus.google.com/share?url={{ permalinkURL }}" class="share-google the-share-button"><span></span> <span class="share-count">{{ 'general.social.google' | t }}</span></a>
 
 </div>
