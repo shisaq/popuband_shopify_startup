@@ -66,6 +66,8 @@
                     {% endfor %}
                   </div>
                 {% endif %}
+                
+              
 
                 <a
                   class="cart-item-remove"
@@ -94,10 +96,24 @@
               <span class="money">{{ item.quantity | times: item.price | money }}</span>
             </td>
           </tr>
+
+    
         {% endfor %}
       </tbody>
 
     </table>
+
+
+    <div  class="custome-image-size"
+         data-app="eastsideco_cartOffers"
+         data-shop="{{ shop.permanent_domain }}"
+         data-money-format="{{ shop.money_format }}">
+      <script id="cartData" type="application/json">{{ cart.items | json }}
+      </script>
+    </div> <!-- added on July 9th 2017 -->
+
+
+    
     {% comment %}create a datepicker to make a shipment delay{% endcomment %}
     <div style="width:100%; clear:both;">
       <p>
@@ -293,5 +309,6 @@
       "info": "If a customer is logged in to their account, their default shipping address country will be selected."
     }
   ]
+
 }
 {% endschema %}
