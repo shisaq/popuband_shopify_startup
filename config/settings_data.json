@@ -312,7 +312,7 @@
       "1499198570990": {
         "type": "home-image-with-text-overlay",
         "settings": {
-          "style": "accent-style",
+          "style": "black-style",
           "title": "Music Library",
           "caption": "<p><strong>Find your favorite songs in our continuously updated library. <\/strong><\/p>\n<p><strong>Can't find it? Tell us, we will add it for you.<\/strong><\/p>",
           "button_text": "",
