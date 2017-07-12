@@ -26,7 +26,7 @@
     "section_heading_font_capitalize": false,
     "meta_font_weight": "400",
     "meta_font_capitalize": false,
-    "button_font": "Google_Roboto_400,700",
+    "button_font": "Google_Open+Sans_400,700",
     "button_font_weight": "700",
     "button_font_capitalize": true,
     "breadcrumbs_enable": false,
@@ -162,9 +162,9 @@
         ],
         "settings": {
           "style": "default-style",
-          "title": "",
-          "product": "populele-with-accessory",
-          "description": "<p>Tell customers about the look, feel, and style of your product. Add details on color, materials, sizing, and where it was made.<\/p>",
+          "title": "Learn, Play, Share - All in One.",
+          "product": "populele",
+          "description": "<p>Now, your should start your journey to learn music Fast &amp; Fun.<\/p>",
           "enable_zoom": true,
           "product_show_vendor": false,
           "linked_options": true,
@@ -197,7 +197,7 @@
         "settings": {
           "product_show_vendor": false,
           "enable_order_notes": true,
-          "show_shipping_calculator": false,
+          "show_shipping_calculator": true,
           "shipping_calculator_default_country": "United States"
         }
       },
@@ -208,7 +208,7 @@
           "caption": "<p>Learn Music Fast &amp; Fun<\/p>\n<p><\/p>",
           "button_text": "Shop Now",
           "button_link": "shopify:\/\/collections\/frontpage",
-          "video_button_text": "Watch Film",
+          "video_button_text": "Watch film",
           "video_button_link": "https:\/\/www.youtube.com\/watch?v=DMcyuOM0lVQ",
           "video_url": "https:\/\/www.youtube.com\/watch?v=WHsdZQOp-MY",
           "overlay_opacity": "50"
@@ -294,40 +294,40 @@
       "1499093515292": {
         "type": "customize-feature-group-icons",
         "settings": {
-          "style": "contrast-style"
+          "style": "default-style"
         }
       },
       "1499131033415": {
         "type": "customize-lights-twinkle",
         "settings": {
           "style": "default-style",
-          "title": "Designed For Everyone",
-          "subtitle": "",
+          "title": "Designed for Everyone.",
+          "subtitle": "Fast & Fun.",
           "text": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
           "button_text": "Buy Now",
-          "button_link": "shopify:\/\/products\/populele-with-accessory",
+          "button_link": "shopify:\/\/products\/populele",
           "content_image": "shopify:\/\/shop_images\/logo_50fcaa2a-97a2-4eda-9897-1b1ce8a00223.png"
         }
       },
       "1499198570990": {
         "type": "home-image-with-text-overlay",
         "settings": {
-          "style": "default-style",
+          "style": "accent-style",
           "title": "Music Library",
-          "caption": "<p>Find and learn your favorite songs in our Continuously updated song library. If you can&rsquo;t find your song, tell us we will make it for you.<\/p>",
+          "caption": "<p><strong>Find and learn your favorite songs in our Continuously updated song library. <\/strong><strong>If you can&rsquo;t find your song, tell us we will make it for you.<\/strong><\/p>",
           "button_text": "",
           "button_link": "",
           "image": "shopify:\/\/shop_images\/streaming-background1.jpg",
-          "overlay_opacity": "80"
+          "overlay_opacity": "40"
         }
       },
       "1499209845662": {
         "type": "customize-lights-twinkle",
         "settings": {
           "style": "default-style",
-          "title": "Populele App",
-          "subtitle": "",
-          "text": "<p>Easy to use app offers everything you need for learning an Instrument.<\/p>",
+          "title": "Populele Game App.",
+          "subtitle": "Play & Learn.",
+          "text": "<p><\/p>\n<p>Easy to use app offers gamified learning experience and everything you need (includes built-in tuner, chords book, song library, etc.) for learning an Instrument.&nbsp;<\/p>",
           "button_text": "",
           "button_link": "",
           "content_image": ""
@@ -492,6 +492,30 @@
           "button_link": "",
           "content_image": "shopify:\/\/shop_images\/11.2_c2e837d5-4fb8-4d45-b71a-dced23a9d8fa.jpg"
         }
+      },
+      "1499800394698": {
+        "type": "home-image-with-text-overlay",
+        "settings": {
+          "style": "default-style",
+          "title": "Smart & Slim.",
+          "caption": "<p><\/p>\n<p>&nbsp;<\/p>\n<p><\/p>\n<p><\/p>\n<p><\/p>\n<p><\/p>",
+          "button_text": "",
+          "button_link": "",
+          "image": "shopify:\/\/shop_images\/banner2_a08a954a-9490-4529-9482-16aabd284a30.jpg",
+          "overlay_opacity": "10"
+        }
+      },
+      "1499822079571": {
+        "type": "app-record-and-share",
+        "settings": {
+          "style": "default-style",
+          "title": "Welcome",
+          "subtitle": "This is the featured promotion section.",
+          "text": "<p>Use this area to promote a single item with an image on the right.<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "content_image": "shopify:\/\/shop_images\/indiegogo_640_2_15_db2aff2b-3b3b-470f-95e6-1ec82d0146f8.jpg"
+        }
       }
     },
     "content_for_index": [
@@ -499,8 +523,10 @@
       "1499131033415",
       "1499093515292",
       "1499198570990",
-      "1499487791316",
       "1499209845662",
+      "1499800394698",
+      "1499822079571",
+      "1499487791316",
       "home-featured-product",
       "1499211987304"
     ]
