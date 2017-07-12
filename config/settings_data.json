@@ -301,10 +301,10 @@
         "type": "customize-lights-twinkle",
         "settings": {
           "style": "default-style",
-          "title": "World’s First Smart Ukulele",
+          "title": "Designed For Everyone",
           "subtitle": "",
           "text": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
-          "button_text": "get it",
+          "button_text": "Buy Now",
           "button_link": "shopify:\/\/products\/populele-with-accessory",
           "content_image": "shopify:\/\/shop_images\/logo_50fcaa2a-97a2-4eda-9897-1b1ce8a00223.png"
         }
