@@ -23,16 +23,17 @@
     </div>
 
     <div class="home-promotion-image twinkle-wrap">
-      {% if section.settings.content_image %}
+      {% if section.settings.content_image_default and section.settings.content_image_twinkle %}
         <img
-          alt="{{ section.settings.content_image.alt }}"
-          src="https://cdn.shopify.com/s/files/1/2021/3861/files/populele-random1.jpg">
-        {% comment %}<img
-          src="https://cdn.shopify.com/s/files/1/2021/3861/files/populele-breath-in2.jpg"
-          class="light-breath-in">{% endcomment %}
+          alt="{{ section.settings.content_image_default.alt }}"
+          src="{{ section.settings.content_image_default | img_url: '1440x640' }}">
+        <img
+          alt="{{ section.settings.content_image_twinkle.alt }}"
+          src="{{ section.settings.content_image_twinkle | img_url: '1440x640' }}"
+          class="light-breath-in">
       {% else %}
         <img
-          alt="{{ section.settings.content_image.alt }}"
+          alt="{{ section.settings.content_image_default.alt }}"
           src="https://cdn.shopify.com/s/files/1/2021/3861/files/app-screenshot1-white.jpg">
         <img
           src="https://cdn.shopify.com/s/files/1/2021/3861/files/app-screenshot2-white.jpg"
@@ -97,15 +98,21 @@
     },
     {
       "type": "image_picker",
-      "id": "content_image",
-      "label": "Image",
-      "info": "1440 x 600px .jpg recommended"
+      "id": "content_image_default",
+      "label": "Default Image",
+      "info": "640 x 640px .jpg recommended"
+    },
+    {
+      "type": "image_picker",
+      "id": "content_image_twinkle",
+      "label": "Twinkle Image",
+      "info": "640 x 640px .jpg recommended"
     }
   ],
   "presets": [
     {
       "category": "Customize",
-      "name": "Welcome"
+      "name": "Welcome with Twinkle Images"
     }
   ]
 }

@@ -301,12 +301,13 @@
         "type": "customize-lights-twinkle",
         "settings": {
           "style": "default-style",
-          "title": "Designed for Everyone.",
+          "title": "The Worlds 1st Smart Ukulele.",
           "subtitle": "Fast & Fun",
-          "text": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
+          "text": "<p>Bringing technology and music together to make a truly unique, fun, and quick learning experience for begginers and advanced players alike.<\/p>",
           "button_text": "Buy Now",
           "button_link": "shopify:\/\/products\/populele",
-          "content_image": "shopify:\/\/shop_images\/logo_50fcaa2a-97a2-4eda-9897-1b1ce8a00223.png"
+          "content_image_default": "shopify:\/\/shop_images\/binggan1.jpg",
+          "content_image_twinkle": "shopify:\/\/shop_images\/binggan2.jpg"
         }
       },
       "1499198570990": {
@@ -330,7 +331,8 @@
           "text": "<p>We've developed an easy and fun to use app offering everything you need for learning an instrument.<\/p>",
           "button_text": "learn more",
           "button_link": "shopify:\/\/pages\/app",
-          "content_image": ""
+          "content_image_default": "",
+          "content_image_twinkle": ""
         }
       },
       "1499211987304": {
@@ -346,7 +348,8 @@
           "text": "<p>Compatible with most of the smart devices on the market.<\/p>",
           "button_text": "",
           "button_link": "",
-          "content_image": ""
+          "content_image_default": "",
+          "content_image_twinkle": ""
         }
       },
       "template-article": {
@@ -516,23 +519,11 @@
           "button_link": "",
           "content_image": "shopify:\/\/shop_images\/Screen_Shot_2017-07-12_at_10.38.37_PM.png"
         }
-      },
-      "1499913638087": {
-        "type": "app-record-and-share",
-        "settings": {
-          "style": "default-style",
-          "title": "The Worlds 1st Smart Ukulele.",
-          "subtitle": "Fast & Fun",
-          "text": "<p>Bringing technology and music together to make a truly unique, fun, and quick learning experience for begginers and advanced players alike.&nbsp;<\/p>",
-          "button_text": "Buy Now",
-          "button_link": "shopify:\/\/products\/populele",
-          "content_image": "shopify:\/\/shop_images\/binggan1.png"
-        }
       }
     },
     "content_for_index": [
       "1496270902201",
-      "1499913638087",
+      "1499131033415",
       "1499093515292",
       "1499198570990",
       "1499209845662",
@@ -540,8 +531,7 @@
       "1499822079571",
       "1499487791316",
       "home-featured-product",
-      "1499211987304",
-      "1499131033415"
+      "1499211987304"
     ]
   },
   "presets": {
