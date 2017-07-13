@@ -205,7 +205,7 @@
         "type": "bg_video",
         "settings": {
           "title": "Populele",
-          "caption": "<p>Learn Music Fast &amp; Fun<\/p>\n<p><\/p>",
+          "caption": "<p>Changing the way people learn to play music, forever<\/p>",
           "button_text": "Shop   Now",
           "button_link": "shopify:\/\/collections\/frontpage",
           "video_button_text": "Watch Video",
@@ -302,7 +302,7 @@
         "settings": {
           "style": "default-style",
           "title": "Designed for Everyone.",
-          "subtitle": "Fast & Fun.",
+          "subtitle": "Fast & Fun",
           "text": "<p>For anyone who's yearned to learn an instrument, Populele can make it happen in minutes.<\/p>",
           "button_text": "Buy Now",
           "button_link": "shopify:\/\/products\/populele",
@@ -314,7 +314,7 @@
         "settings": {
           "style": "black-style",
           "title": "Music Library",
-          "caption": "<p><strong>Find your favorite songs in our continuously updated library. <\/strong><\/p>\n<p><strong>Can't find it? Tell us, we will add it for you.<\/strong><\/p>",
+          "caption": "<p><strong>Find and learn to play your favorite songs in our music library that is continuously updated. <\/strong><\/p>\n<p><strong>Can't find your favorite? Let us know, we'll add it<\/strong><\/p>",
           "button_text": "",
           "button_link": "",
           "image": "shopify:\/\/shop_images\/streaming-background1.jpg",
@@ -326,10 +326,10 @@
         "settings": {
           "style": "default-style",
           "title": "Populele Game App.",
-          "subtitle": "Play & Learn.",
-          "text": "<p><\/p>\n<p>Easy to use app offers gamified learning experience and everything you need (includes built-in tuner, chords book, song library, etc.) for learning an Instrument.&nbsp;<\/p>",
-          "button_text": "",
-          "button_link": "",
+          "subtitle": "Play & Learn",
+          "text": "<p>We've developed an easy and fun to use app offering everything you need for learning an instrument.<\/p>",
+          "button_text": "learn more",
+          "button_link": "shopify:\/\/pages\/app",
           "content_image": ""
         }
       },
@@ -342,8 +342,8 @@
         "settings": {
           "style": "default-style",
           "title": "Download",
-          "subtitle": "",
-          "text": "<p>Use this area to promote a single item with an image on the right.<\/p>",
+          "subtitle": "iOS & Android",
+          "text": "<p>Compatible with most of the smart devices on the market.<\/p>",
           "button_text": "",
           "button_link": "",
           "content_image": ""
@@ -433,7 +433,7 @@
               "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
               "button_text": "",
               "button_link": "",
-              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+              "video_url": "https:\/\/www.youtube.com\/watch?v=fB7MwmjXPlU"
             }
           },
           "1499524837465": {
@@ -463,9 +463,9 @@
         "type": "home-promotion",
         "settings": {
           "style": "default-style",
-          "title": "Welcome",
-          "subtitle": "",
-          "text": "<p>Use this area to promote a single item with an image on the right.<\/p>",
+          "title": "Populele Game App.",
+          "subtitle": "Game & Tools",
+          "text": "<p>Learn music in a fun new way. One app provides everything you need.<\/p>",
           "button_text": "",
           "button_link": "",
           "content_image": "shopify:\/\/shop_images\/populeleWithApp.jpg"
@@ -496,31 +496,43 @@
       "1499800394698": {
         "type": "home-image-with-text-overlay",
         "settings": {
-          "style": "default-style",
+          "style": "black-style",
           "title": "Smart & Slim.",
           "caption": "<p><\/p>\n<p>&nbsp;<\/p>\n<p><\/p>\n<p><\/p>\n<p><\/p>\n<p><\/p>",
           "button_text": "",
           "button_link": "",
           "image": "shopify:\/\/shop_images\/banner2_a08a954a-9490-4529-9482-16aabd284a30.jpg",
-          "overlay_opacity": "10"
+          "overlay_opacity": "0"
         }
       },
       "1499822079571": {
         "type": "app-record-and-share",
         "settings": {
           "style": "default-style",
-          "title": "Welcome",
-          "subtitle": "This is the featured promotion section.",
-          "text": "<p>Use this area to promote a single item with an image on the right.<\/p>",
+          "title": "Premium Quality.",
+          "subtitle": "Wireless & LEDs",
+          "text": "<p>Smart fretboard lights up to show exactly where your fingers go.<\/p>",
           "button_text": "",
           "button_link": "",
-          "content_image": "shopify:\/\/shop_images\/indiegogo_640_2_15_db2aff2b-3b3b-470f-95e6-1ec82d0146f8.jpg"
+          "content_image": "shopify:\/\/shop_images\/Screen_Shot_2017-07-12_at_10.38.37_PM.png"
+        }
+      },
+      "1499913638087": {
+        "type": "app-record-and-share",
+        "settings": {
+          "style": "default-style",
+          "title": "The Worlds 1st Smart Ukulele.",
+          "subtitle": "Fast & Fun",
+          "text": "<p>Bringing technology and music together to make a truly unique, fun, and quick learning experience for begginers and advanced players alike.&nbsp;<\/p>",
+          "button_text": "Buy Now",
+          "button_link": "shopify:\/\/products\/populele",
+          "content_image": "shopify:\/\/shop_images\/binggan1.png"
         }
       }
     },
     "content_for_index": [
       "1496270902201",
-      "1499131033415",
+      "1499913638087",
       "1499093515292",
       "1499198570990",
       "1499209845662",
@@ -528,7 +540,8 @@
       "1499822079571",
       "1499487791316",
       "home-featured-product",
-      "1499211987304"
+      "1499211987304",
+      "1499131033415"
     ]
   },
   "presets": {
