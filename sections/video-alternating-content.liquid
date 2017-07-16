@@ -1,0 +1,259 @@
+<section
+  class="module-container {{ section.settings.style }} {% if section.settings.show_borders %}borders{% endif %}"
+  data-section-id="{{ section.id }}"
+  data-section-type="alternating-features">
+  <div class="module-inner home-left-right-features">
+    {% if section.settings.title != blank %}
+      <h1 class="section-title">{{ section.settings.title | escape  }}</h1>
+    {% endif %}
+
+    {% for block in section.blocks %}
+      {% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+
+      {% assign has_button = false %}
+      {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+        {% assign has_button = true %}
+      {% endif %}
+
+      <article class="home-left-right-feature clearfix media-aligned-{{ block.settings.media_alignment }}" {{ block.shopify_attributes }}>
+
+        <div class="home-left-right-media">
+          {% if block.type == 'image' %}
+            {% if block.settings.image %}
+              <img
+                class="feature-image"
+                alt="{{ block.settings.image.alt | escape }}"
+                src="{{ block.settings.image | img_url: '660x440' }}">
+            {% else %}
+              {{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg feature-image' }}
+            {% endif %}
+          {% elsif block.type == 'video' %}
+            <div class="video-wrapper">
+              {% if block.settings.video_url != blank %}
+                {% if block.settings.video_url.type == "youtube" %}
+                  <iframe
+                    src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?rel=0&showinfo=0&vq=720&autoplay=1&mute=1&controls=0&showinfo=0&rel=0​&modestbranding=1&loop=1&playlist={{ block.settings.video_url.id }}"
+                    width="850"
+                    height="500"
+                    frameborder="0"
+                    allowfullscreen></iframe>
+                {% endif %}
+                {% if block.settings.video_url.type == "vimeo" %}
+                  <iframe
+                    src="//player.vimeo.com/video/{{ block.settings.video_url.id }}?byline=0&portrait=0&badge=0"
+                    width="850"
+                    height="480"
+                    frameborder="0"
+                    allowfullscreen></iframe>
+                {% endif %}
+              {% else %}
+                <iframe
+                  src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720"
+                  width="850"
+                  height="480"
+                  frameborder="0"></iframe>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+
+        <div class="home-left-right-text">
+          {% if block.settings.title != blank %}
+            <h3 class="content-title">{{ block.settings.title | escape }}</h3>
+          {% endif %}
+
+          {% if block.settings.caption != blank or has_button %}
+            <div class="rte">
+              {% if block.settings.caption != blank %}
+                <p>{{ block.settings.caption | escape }}</p>
+              {% endif %}
+
+              {% if has_button %}
+                <p>
+                  <a href="{{ block.settings.button_link }}">{{ block.settings.button_text | escape }}</a>
+                </p>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Alternating content",
+  "max_blocks": 3,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "[Alternating content](http://cdn.pixelunion.net/startup/alternating-features-screenshot.png) is designed to explain product specifics in a clean and organized format. This section can display up to three features with alternating alignments."
+    },
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_borders",
+      "label": "Show border between features",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "select",
+          "id": "media_alignment",
+          "label": "Image alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Image on left"
+            },
+            {
+              "value": "right",
+              "label": "Image on right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Alternating content"
+        },
+        {
+          "type": "textarea",
+          "id": "caption",
+          "label": "Text",
+          "default": "Employ up to three alternating features with an option to align images or videos to the left/right and include a call to action below."
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link URL"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "660 x 440px .png recommended"
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "settings": [
+        {
+          "type": "select",
+          "id": "media_alignment",
+          "label": "Video alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Video on left"
+            },
+            {
+              "value": "right",
+              "label": "Video on right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Alternating content"
+        },
+        {
+          "type": "textarea",
+          "id": "caption",
+          "label": "Text",
+          "default": "Employ up to three alternating features with an option to align images or videos to the left/right and include a call to action below."
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link URL"
+        },
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "label": "Youtube or Vimeo link",
+          "accept": [
+            "youtube",
+            "vimeo"
+          ],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "App",
+      "name": "Alternating content",
+      "blocks": [
+        {
+          "type": "image",
+          "settings": {
+            "media_alignment": "left"
+          }
+        },
+        {
+          "type": "video",
+          "settings": {
+            "media_alignment": "right"
+          }
+        },
+        {
+          "type": "image",
+          "settings": {
+            "media_alignment": "left"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

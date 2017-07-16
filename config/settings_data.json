@@ -314,7 +314,7 @@
         "type": "home-image-with-text-overlay",
         "settings": {
           "style": "black-style",
-          "title": "Music Library",
+          "title": "Music Library.",
           "caption": "<p><strong>Find and learn to play your favorite songs in our music library that is continuously updated. <\/strong><\/p>\n<p><strong>Can't find your favorite? Let us know, we'll add it<\/strong><\/p>",
           "button_text": "",
           "button_link": "",
@@ -404,7 +404,7 @@
           "1499488009919"
         ],
         "settings": {
-          "style": "default-style",
+          "style": "contrast-style",
           "title": "As Seen In"
         }
       },
@@ -420,9 +420,9 @@
           "1499524824469": {
             "type": "video",
             "settings": {
-              "media_alignment": "right",
+              "media_alignment": "left",
               "title": "Game Mode",
-              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "caption": "Helps you learn ukulele basics from plucking to strumming, and left-hand techniques to basic chords and songs.",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=E1o3O3TMim8"
@@ -431,9 +431,9 @@
           "1499524833445": {
             "type": "video",
             "settings": {
-              "media_alignment": "left",
-              "title": "Alternating content",
-              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "media_alignment": "right",
+              "title": "Tools",
+              "caption": "Includes the Tuner, Chords Archive, Dazzle Mode, and Customized LED Patterns. Use this section to learn the basics and shine with the LED options.",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=fB7MwmjXPlU"
@@ -442,9 +442,9 @@
           "1499524837465": {
             "type": "video",
             "settings": {
-              "media_alignment": "right",
+              "media_alignment": "left",
               "title": "Song Library",
-              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "caption": "Includes more than 100 popular songs to learn to play. We’ll continually update the list - let us know what you’d like added.",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=uGAwwqxB0Co"
@@ -459,7 +459,7 @@
         "settings": {
           "style": "default-style",
           "title": "",
-          "show_borders": false
+          "show_borders": true
         }
       },
       "home-promotion": {
@@ -490,7 +490,7 @@
           "style": "default-style",
           "title": "Record & Share",
           "subtitle": "",
-          "text": "<p>Use this area to promote a single item with an image on the right..<\/p>",
+          "text": "<p>Interested in sharing your progress with others? Go to Profile to record and share your music. You can make other adjustments in the Profile section as well.<\/p>",
           "button_text": "",
           "button_link": "",
           "content_image": "shopify:\/\/shop_images\/11.2_c2e837d5-4fb8-4d45-b71a-dced23a9d8fa.jpg"
@@ -519,6 +519,102 @@
           "button_link": "",
           "content_image": "shopify:\/\/shop_images\/Screen_Shot_2017-07-12_at_10.38.37_PM.png"
         }
+      },
+      "1499980640341": {
+        "type": "home-alternating-content",
+        "blocks": {
+          "1499980640341-1": {
+            "type": "video",
+            "settings": {
+              "media_alignment": "right",
+              "title": "Introduction",
+              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=yXq37YgmPlI&list=PLWiFjuhdJsVpe1JOI6JlSsjkeY4TRmeMy&index=1"
+            }
+          },
+          "1499980671129": {
+            "type": "video",
+            "settings": {
+              "media_alignment": "left",
+              "title": "Tuning",
+              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=CSuYmvQka-Y&list=PLWiFjuhdJsVpe1JOI6JlSsjkeY4TRmeMy&index=6"
+            }
+          },
+          "1499980675334": {
+            "type": "video",
+            "settings": {
+              "media_alignment": "right",
+              "title": "Million Years Ago",
+              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "button_text": "More Tutorial Videos",
+              "button_link": "https:\/\/www.youtube.com\/watch?v=yXq37YgmPlI&list=PLWiFjuhdJsVpe1JOI6JlSsjkeY4TRmeMy",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=7BuCe5YFOmA&index=22&list=PLWiFjuhdJsVpe1JOI6JlSsjkeY4TRmeMy"
+            }
+          }
+        },
+        "block_order": [
+          "1499980640341-1",
+          "1499980671129",
+          "1499980675334"
+        ],
+        "settings": {
+          "style": "contrast-style",
+          "title": "How You Will Learn",
+          "show_borders": true
+        }
+      },
+      "video-alternating-content": {
+        "type": "video-alternating-content",
+        "blocks": {
+          "1500000740877": {
+            "type": "video",
+            "settings": {
+              "media_alignment": "right",
+              "title": "Alternating content",
+              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+            }
+          },
+          "1500000746035": {
+            "type": "video",
+            "settings": {
+              "media_alignment": "right",
+              "title": "Alternating content",
+              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+            }
+          },
+          "1500000748860": {
+            "type": "video",
+            "settings": {
+              "media_alignment": "right",
+              "title": "Alternating content",
+              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+            }
+          }
+        },
+        "block_order": [
+          "1500000740877",
+          "1500000746035",
+          "1500000748860"
+        ],
+        "settings": {
+          "style": "default-style",
+          "title": "",
+          "show_borders": false
+        }
       }
     },
     "content_for_index": [
@@ -527,6 +623,7 @@
       "1499093515292",
       "1499198570990",
       "1499209845662",
+      "1499980640341",
       "1499800394698",
       "1499822079571",
       "1499487791316",
