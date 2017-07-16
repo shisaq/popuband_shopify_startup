@@ -1722,7 +1722,7 @@ textarea {
   @include breakpoint(s) {
     display: block;
     width: 100%;
-    padding-left: 0;
+    // padding-left: 0;
     margin-top: $gutter-half;
   }
 }
@@ -7215,4 +7215,36 @@ $slideshow-gutter: 70px + $gutter;
 
 .content-title {
   font-size: rem(30px);
+}
+
+/* footer newsletter */
+.footer-newsletter {
+  max-width: 45%;
+  padding-left: $gutter;
+  float: right;
+  margin-bottom: $gutter*2;
+
+  @include lt-ie9 {
+    padding-left: 0;
+  }
+
+  @include breakpoint(m) {
+    max-width: 100%;
+    display: block;
+    padding-left: 0;
+    float: none;
+    clear: left;
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  p {
+    margin-bottom: 25px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
 }

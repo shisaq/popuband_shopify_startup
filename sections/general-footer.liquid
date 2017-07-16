@@ -62,7 +62,7 @@
 
     {% endif %}
 
-    {% if section.settings.show_share_buttons %}
+{% comment %}    {% if section.settings.show_share_buttons %}
       <div class="spread-the-word">
         {% if section.settings.show_headings %}
           <h2 class="footer-title">{{ 'general.social.share_title' | t }}</h2>
@@ -88,6 +88,24 @@
         <a class="share-icon icon-pin" href="//pinterest.com/pin/create/button/?url={{ shop.url }}{% if pinterest_image != blank %}&amp;media={{ pinterest_image }}{% endif %}&amp;description={{ shop.name }}" target="_blank">{{ 'general.social.pinterest' | t }}</a>
         <a class="share-icon icon-plus" href="//plus.google.com/share?url={{ shop.url }}" target="_blank">{{ 'general.social.google' | t }}</a>
         <a class="share-icon icon-fancy" href="//www.thefancy.com/fancyit?ItemURL={{ shop.url }}&amp;Title={{ shop.name }}" target="_blank">{{ 'general.social.fancy' | t }}</a>
+      </div>
+    {% endif %}{% endcomment %}
+
+    {% if section.settings.footer_newsletter %}
+      <div class="footer-newsletter">
+        {% if section.settings.show_headings %}
+          <h2 class="footer-title">{{ 'general.general.customize_subscribe' | t }}</h2>
+        {% endif %}
+
+        <form action="//popuband.us15.list-manage.com/subscribe/post?u=efa736a1b423705d805813b09&amp;id=3d1a165e31" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div id="mc_embed_signup_scroll">
+
+            <input type="email" value="" name="EMAIL" class="input-field inline-field-input footer-newsletter-input" id="mce-EMAIL" placeholder="{{ 'general.general.email_placeholder' | t }}" required>
+            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="inline-field-submit button footer-newsletter-submit">
+            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_efa736a1b423705d805813b09_3d1a165e31" tabindex="-1" value=""></div>
+          </div>
+        </form>
       </div>
     {% endif %}
 
@@ -119,8 +137,8 @@
     },
     {
       "type": "checkbox",
-      "id": "show_share_buttons",
-      "label": "Show share buttons",
+      "id": "footer_newsletter",
+      "label": "Subscribe Us",
       "default": true
     },
     {

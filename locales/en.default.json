@@ -24,6 +24,7 @@
       "subtotal": "Subtotal",
       "total": "Total",
       "subscribe": "Subscribe",
+      "customize_subscribe": "Subscribe Us",
       "copyright_text_html": "&copy; {{ year }}. All rights reserved."
     },
     "breadcrumbs": {

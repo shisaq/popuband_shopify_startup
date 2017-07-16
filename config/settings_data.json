@@ -88,7 +88,7 @@
       "mailchimp-newsletter": {
         "type": "mailchimp-newsletter",
         "settings": {
-          "enable": true,
+          "enable": false,
           "style": "default-style",
           "title": "",
           "caption": ""
@@ -176,7 +176,7 @@
         "type": "general-footer",
         "settings": {
           "show_headings": true,
-          "show_share_buttons": true,
+          "footer_newsletter": true,
           "menu_1": "footer",
           "menu_2": "main-menu",
           "show_payment_icons": true
