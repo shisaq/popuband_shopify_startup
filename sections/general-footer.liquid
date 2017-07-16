@@ -111,7 +111,7 @@
 
     <div role="contentinfo" class="copyright footer-module">
       {% capture year %}{{ "now" | date: "%Y" }}{% endcapture %}
-      <p>{{ 'general.general.copyright_text_html' | t: year: year }} <a href="/">{{ shop.name }}.</a></p>
+      <p>{{ 'general.general.copyright_text_html' | t: year: year }}</p>
     </div>
 
     {% if shop.enabled_payment_types.size > 0 and section.settings.show_payment_icons %}
