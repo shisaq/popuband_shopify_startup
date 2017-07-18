@@ -5,41 +5,14 @@
   <div class="module-inner module-inline-items home-inline-features">
 
     {% if section.settings.title != blank %}
-      <h3 class="section-title">{{ section.settings.title | escape }}</h3>
+      <h3 class="feature-title">{{ section.settings.title | escape }}</h3>
     {% endif %}
 
     {% for block in section.blocks %}
       {% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
       {% assign feature_video = block.settings.video %}
 
-      <div class="module-inline-item home-inline-feature" {{ block.shopify_attributes }}>
-        <div class="video-wrapper">
-          {% if block.settings.video_url != blank %}
-            {% if block.settings.video_url.type == "youtube" %}
-              <iframe
-                src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?rel=0&showinfo=0&vq=720&autoplay=1&mute=1&controls=0&showinfo=0&rel=0​&modestbranding=1&loop=1&playlist={{ block.settings.video_url.id }}"
-                width="850"
-                height="500"
-                frameborder="0"
-                allowfullscreen></iframe>
-            {% endif %}
-            {% if block.settings.video_url.type == "vimeo" %}
-              <iframe
-                src="//player.vimeo.com/video/{{ block.settings.video_url.id }}?byline=0&portrait=0&badge=0"
-                width="850"
-                height="480"
-                frameborder="0"
-                allowfullscreen></iframe>
-            {% endif %}
-          {% else %}
-            <iframe
-              src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720"
-              width="850"
-              height="480"
-              frameborder="0"></iframe>
-          {% endif %}
-        </div>
-
+      <div class="module-inline-item home-inline-feature video-list-padding" {{ block.shopify_attributes }}>
         <article class="home-inline-text">
           {% if block.settings.title != blank %}
             <h1 class="feature-title">{{ block.settings.title | escape }}</h1>
@@ -57,6 +30,36 @@
             </p>
           {% endif %}
         </article>
+        <div class="video-wrapper">
+          {% if block.settings.video_url != blank %}
+            {% if block.settings.video_url.type == "youtube" %}
+              <iframe
+                src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?rel=0&showinfo=0&vq=720&autoplay=0&mute=0&controls=1&&rel=0​&modestbranding=1&loop=0&playlist={{ block.settings.video_url.id }}"
+                width="850"
+                height="600"
+                frameborder="0"
+                allowfullscreen="allowfullscreen"
+                mozallowfullscreen="mozallowfullscreen"
+                msallowfullscreen="msallowfullscreen"
+                oallowfullscreen="oallowfullscreen"
+                webkitallowfullscreen="webkitallowfullscreen"></iframe>
+            {% endif %}
+            {% if block.settings.video_url.type == "vimeo" %}
+              <iframe
+                src="//player.vimeo.com/video/{{ block.settings.video_url.id }}?byline=0&portrait=0&badge=0"
+                width="850"
+                height="480"
+                frameborder="0"
+                allowfullscreen></iframe>
+            {% endif %}
+          {% else %}
+            <iframe
+              src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720"
+              width="850"
+              height="480"
+              frameborder="0"></iframe>
+          {% endif %}
+        </div>
       </div>
     {% endfor %}
 
@@ -122,10 +125,14 @@
           "label": "Link URL"
         },
         {
-          "type": "video",
-          "id": "video",
-          "label": "Video",
-          "info": "660 x 275px .png recommended"
+          "type": "video_url",
+          "id": "video_url",
+          "label": "Youtube or Vimeo link",
+          "accept": [
+            "youtube",
+            "vimeo"
+          ],
+          "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
         }
       ]
     }
