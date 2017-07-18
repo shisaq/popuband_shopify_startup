@@ -575,33 +575,33 @@
             "type": "video",
             "settings": {
               "media_alignment": "right",
-              "title": "Alternating content",
-              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "title": "Introducing Populele",
+              "caption": "The World's 1st Smart Ukulele. Learn & Play your first song in 15mins.",
               "button_text": "",
               "button_link": "",
-              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+              "video_url": "https:\/\/youtu.be\/DMcyuOM0lVQ"
             }
           },
           "1500000746035": {
             "type": "video",
             "settings": {
               "media_alignment": "right",
-              "title": "Alternating content",
-              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "title": "Populele Originals - Live Your Beliefs",
+              "caption": "Write and share your original music with you friends.",
               "button_text": "",
               "button_link": "",
-              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+              "video_url": "https:\/\/youtu.be\/W5Fun4RDDok"
             }
           },
           "1500000748860": {
             "type": "video",
             "settings": {
               "media_alignment": "right",
-              "title": "Alternating content",
-              "caption": "Employ up to three alternating features with an option to align images or videos to the left\/right and include a call to action below.",
+              "title": "Ukulele Teacher Unboxing Video ~",
+              "caption": "WORLD'S FIRST SMART UKULELE! (UNBOXING THE POPULELE!)",
               "button_text": "",
               "button_link": "",
-              "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc"
+              "video_url": "https:\/\/youtu.be\/8q8ANU2_ocw"
             }
           }
         },
@@ -614,6 +614,83 @@
           "style": "default-style",
           "title": "",
           "show_borders": false
+        }
+      },
+      "app-text-columns-with-videos": {
+        "type": "app-text-columns-with-videos",
+        "blocks": {
+          "1500399467161": {
+            "type": "text_column",
+            "settings": {
+              "title": "Game Mode",
+              "caption": "",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=E1o3O3TMim8"
+            }
+          },
+          "1500399516995": {
+            "type": "text_column",
+            "settings": {
+              "title": "Tools",
+              "caption": "",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=fB7MwmjXPlU"
+            }
+          },
+          "1500399558178": {
+            "type": "text_column",
+            "settings": {
+              "title": "Song Library",
+              "caption": "",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=uGAwwqxB0Co"
+            }
+          },
+          "1500399725679": {
+            "type": "text_column",
+            "settings": {
+              "title": "Bluetooth Connection",
+              "caption": "",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=x9-28IEbpPo"
+            }
+          },
+          "1500399736132": {
+            "type": "text_column",
+            "settings": {
+              "title": "Tuning",
+              "caption": "",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=CSuYmvQka-Y"
+            }
+          },
+          "1500399738794": {
+            "type": "text_column",
+            "settings": {
+              "title": "Chord Switching",
+              "caption": "",
+              "button_text": "",
+              "button_link": "",
+              "video_url": "https:\/\/www.youtube.com\/watch?v=FhaeGOT7LyE"
+            }
+          }
+        },
+        "block_order": [
+          "1500399467161",
+          "1500399516995",
+          "1500399558178",
+          "1500399725679",
+          "1500399736132",
+          "1500399738794"
+        ],
+        "settings": {
+          "style": "default-style",
+          "title": "App Conversations"
         }
       }
     },
