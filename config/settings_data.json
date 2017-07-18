@@ -331,8 +331,8 @@
           "text": "<p>We've developed an easy and fun to use app offering everything you need for learning an instrument.<\/p>",
           "button_text": "learn more",
           "button_link": "shopify:\/\/pages\/app",
-          "content_image_default": "",
-          "content_image_twinkle": ""
+          "content_image_default": "shopify:\/\/shop_images\/app-screenshot1-white.jpg",
+          "content_image_twinkle": "shopify:\/\/shop_images\/songs-covers.jpg"
         }
       },
       "1499211987304": {
@@ -348,8 +348,8 @@
           "text": "<p>Compatible with most of the smart devices on the market.<\/p>",
           "button_text": "",
           "button_link": "",
-          "content_image_default": "",
-          "content_image_twinkle": ""
+          "content_image_default": "shopify:\/\/shop_images\/app-screenshot1-white.jpg",
+          "content_image_twinkle": "shopify:\/\/shop_images\/songs-covers.jpg"
         }
       },
       "template-article": {
