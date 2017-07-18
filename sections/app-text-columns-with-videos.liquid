@@ -1,0 +1,152 @@
+<section
+  class="module-container {{ section.settings.style }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="inline-feature">
+  <div class="module-inner module-inline-items home-inline-features">
+
+    {% if section.settings.title != blank %}
+      <h3 class="section-title">{{ section.settings.title | escape }}</h3>
+    {% endif %}
+
+    {% for block in section.blocks %}
+      {% capture current %}{% cycle 1, 2, 3 %}{% endcapture %}
+      {% assign feature_video = block.settings.video %}
+
+      <div class="module-inline-item home-inline-feature" {{ block.shopify_attributes }}>
+        <div class="video-wrapper">
+          {% if block.settings.video_url != blank %}
+            {% if block.settings.video_url.type == "youtube" %}
+              <iframe
+                src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?rel=0&showinfo=0&vq=720&autoplay=1&mute=1&controls=0&showinfo=0&rel=0​&modestbranding=1&loop=1&playlist={{ block.settings.video_url.id }}"
+                width="850"
+                height="500"
+                frameborder="0"
+                allowfullscreen></iframe>
+            {% endif %}
+            {% if block.settings.video_url.type == "vimeo" %}
+              <iframe
+                src="//player.vimeo.com/video/{{ block.settings.video_url.id }}?byline=0&portrait=0&badge=0"
+                width="850"
+                height="480"
+                frameborder="0"
+                allowfullscreen></iframe>
+            {% endif %}
+          {% else %}
+            <iframe
+              src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720"
+              width="850"
+              height="480"
+              frameborder="0"></iframe>
+          {% endif %}
+        </div>
+
+        <article class="home-inline-text">
+          {% if block.settings.title != blank %}
+            <h1 class="feature-title">{{ block.settings.title | escape }}</h1>
+          {% endif %}
+
+          {% if block.settings.caption != blank%}
+            <div class="rte">
+              <p>{{ block.settings.caption }}</p>
+            </div>
+          {% endif %}
+
+          {% if block.settings.button_link != blank and block.settings.button_text != blank %}
+            <p class="home-inline-cta">
+              <a href="{{ block.settings.button_link }}">{{ block.settings.button_text | escape }}</a>
+            </p>
+          {% endif %}
+        </article>
+      </div>
+    {% endfor %}
+
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Text columns with videos",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Text columns with video"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_column",
+      "name": "Columnd",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Feature title"
+        },
+        {
+          "type": "richtext",
+          "id": "caption",
+          "label": "Text",
+          "default": "<p>Display up to six features with an option to toggle images on or off, and add unique calls to action.</p>"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Link URL"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video",
+          "info": "660 x 275px .png recommended"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "App Page",
+      "name": "Text columns with videos",
+      "blocks": [
+        {
+          "type": "text_column"
+        },
+        {
+          "type": "text_column"
+        },
+        {
+          "type": "text_column"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}
