@@ -704,6 +704,18 @@
           "image": "shopify:\/\/shop_images\/IMG_9181.jpg",
           "media_layout": "regular"
         }
+      },
+      "app-promotion": {
+        "type": "app-promotion",
+        "settings": {
+          "style": "default-style",
+          "title": "Populele Game App.",
+          "subtitle": "Game & Tools",
+          "text": "<p>Learn music in a fun new way. One app provides everything you need.<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "content_image": "shopify:\/\/shop_images\/music-system.jpg"
+        }
       }
     },
     "content_for_index": [
