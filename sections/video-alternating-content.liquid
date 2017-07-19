@@ -59,13 +59,13 @@
 
         <div class="home-left-right-text">
           {% if block.settings.title != blank %}
-            <h3 class="content-title">{{ block.settings.title | escape }}</h3>
+            <h3 class="feature-title">{{ block.settings.title | escape }}</h3>
           {% endif %}
 
           {% if block.settings.caption != blank or has_button %}
             <div class="rte">
               {% if block.settings.caption != blank %}
-                <p>{{ block.settings.caption | escape }}</p>
+                <p class="video-description">{{ block.settings.caption | escape }}</p>
               {% endif %}
 
               {% if has_button %}
