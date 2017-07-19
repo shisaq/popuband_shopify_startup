@@ -25,7 +25,7 @@
       "total": "Total",
       "subscribe": "Subscribe",
       "customize_subscribe": "Subscribe Us",
-      "copyright_text_html": "Copywrite &copy; {{ year }} PopuBand Music Inc. All rights reserved."
+      "copyright_text_html": "Copyright &copy; {{ year }} PopuBand Music Inc. All rights reserved."
     },
     "breadcrumbs": {
       "home": "Home",

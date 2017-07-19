@@ -1,0 +1,146 @@
+{% assign media_layout = section.settings.media_layout %}
+{% assign image = section.settings.image %}
+{% assign has_content = false %}
+{% assign has_cta = false %}
+
+{%- if section.settings.title != blank or section.settings.caption != blank -%}
+  {% assign has_content = true %}
+{%- endif -%}
+
+{%- if section.settings.button_text != blank and section.settings.button_link != blank -%}
+  {% assign has_cta = true %}
+  {% assign has_content = true %}
+{%- endif -%}
+
+{% if image != blank %}
+  {% assign image_size = '1440x640' %}
+  {% assign background_image = image | img_url: image_size %}
+  {%- capture feature_image -%}
+    <img
+      class="feature-image"
+      alt="{{ image.alt | escape }}"
+      src="{{ image | img_url: image_size }}">
+  {%- endcapture -%}
+{% else %}
+  {%- capture background_image -%}
+    {%- include 'placeholder_svg_uri' placeholder: 'lifestyle-1' -%}
+  {%- endcapture -%}
+  {%- capture feature_image -%}
+    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg feature-image' }}
+  {%- endcapture -%}
+{% endif %}
+
+{%- capture section_class -%}
+  {{ section.settings.style }}
+  full-width-{{ media_layout | replace: '_', '-' }}
+  {% unless has_content %}no-content{% endunless %}
+{%- endcapture -%}
+
+<section
+  class="module-container home-full-width-feature {{ section_class | strip_newlines }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="image-with-text"
+  data-image-with-text-layout="{{ media_layout }}">
+
+  <article class="module-inner home-full-width-feature-content" data-feature-content>
+    {%- if media_layout == 'highlight' -%}
+      {{ feature_image | strip }}
+    {%- endif -%}
+
+    {% if section.settings.title != blank %}
+      <h1 class="feature-title">{{ section.settings.title | escape }}</h1>
+    {% endif %}
+
+    {% if section.settings.caption != blank %}
+      <div class="rte">{{ section.settings.caption }}</div>
+    {% endif %}
+
+    {%- if media_layout == 'regular' -%}
+      {{ feature_image | strip }}
+    {%- endif -%}
+
+    {% if has_cta %}
+      <div class="home-module-cta">
+        <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_text | escape }}</a>
+      </div>
+    {% endif %}
+  </article>
+</section>
+
+{% schema %}
+{
+  "name": "Image with text",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Image with text"
+    },
+    {
+      "type": "richtext",
+      "id": "caption",
+      "label": "Text",
+      "default": "<p>Select imagery and text that relates to your style and story.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "media_layout",
+      "label": "Layout",
+      "options": [
+        {
+          "value": "regular",
+          "label": "Text above"
+        },
+        {
+          "value": "highlight",
+          "label": "Text below"
+        }
+      ],
+      "default": "regular"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Image",
+      "name": "Image with text"
+    }
+  ]
+}
+
+{% endschema %}

@@ -209,7 +209,7 @@
           "button_text": "Shop   Now",
           "button_link": "shopify:\/\/collections\/frontpage",
           "video_button_text": "Watch Video",
-          "video_button_link": "https:\/\/youtu.be\/DMcyuOM0lVQ",
+          "video_button_link": "https:\/\/popuband.com\/pages\/videos",
           "video_url": "https:\/\/www.youtube.com\/watch?v=WHsdZQOp-MY",
           "overlay_opacity": "50"
         }
@@ -691,6 +691,18 @@
         "settings": {
           "style": "default-style",
           "title": "App Conversations"
+        }
+      },
+      "video-image-with-text": {
+        "type": "video-image-with-text",
+        "settings": {
+          "style": "default-style",
+          "title": "Populele Videos",
+          "caption": "",
+          "button_text": "",
+          "button_link": "",
+          "image": "shopify:\/\/shop_images\/IMG_9181.jpg",
+          "media_layout": "regular"
         }
       }
     },
