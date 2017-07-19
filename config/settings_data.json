@@ -209,7 +209,7 @@
           "button_text": "Shop   Now",
           "button_link": "shopify:\/\/collections\/frontpage",
           "video_button_text": "Watch Video",
-          "video_button_link": "https:\/\/www.youtube.com\/watch?v=DMcyuOM0lVQ",
+          "video_button_link": "https:\/\/youtu.be\/DMcyuOM0lVQ",
           "video_url": "https:\/\/www.youtube.com\/watch?v=WHsdZQOp-MY",
           "overlay_opacity": "50"
         }
@@ -466,12 +466,12 @@
         "type": "home-promotion",
         "settings": {
           "style": "default-style",
-          "title": "Populele Game App.",
-          "subtitle": "Game & Tools",
-          "text": "<p>Learn music in a fun new way. One app provides everything you need.<\/p>",
+          "title": "Populele Videos",
+          "subtitle": "",
+          "text": "",
           "button_text": "",
           "button_link": "",
-          "content_image": "shopify:\/\/shop_images\/music-system.jpg"
+          "content_image": "shopify:\/\/shop_images\/uke1.jpg"
         }
       },
       "app-download-badges": {
