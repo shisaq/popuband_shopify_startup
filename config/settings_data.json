@@ -571,17 +571,6 @@
       "video-alternating-content": {
         "type": "video-alternating-content",
         "blocks": {
-          "1500000740877": {
-            "type": "video",
-            "settings": {
-              "media_alignment": "right",
-              "title": "Introducing Populele",
-              "caption": "The World's 1st Smart Ukulele. Learn & Play your first song in 15mins.",
-              "button_text": "",
-              "button_link": "",
-              "video_url": "https:\/\/youtu.be\/DMcyuOM0lVQ"
-            }
-          },
           "1500000746035": {
             "type": "video",
             "settings": {
@@ -596,7 +585,7 @@
           "1500000748860": {
             "type": "video",
             "settings": {
-              "media_alignment": "right",
+              "media_alignment": "left",
               "title": "Ukulele Teacher Unboxing Video",
               "caption": "WORLD'S FIRST SMART UKULELE! (UNBOXING THE POPULELE!)",
               "button_text": "",
@@ -606,7 +595,6 @@
           }
         },
         "block_order": [
-          "1500000740877",
           "1500000746035",
           "1500000748860"
         ],
@@ -715,6 +703,18 @@
           "button_text": "",
           "button_link": "",
           "content_image": "shopify:\/\/shop_images\/music-system.jpg"
+        }
+      },
+      "video-video-with-text": {
+        "type": "video-video-with-text",
+        "settings": {
+          "style": "default-style",
+          "title": "Introducing Populele",
+          "caption": "<p>The World's 1st Smart Ukulele. Learn &amp; Play your first song in 15mins.<\/p>",
+          "button_text": "",
+          "button_link": "",
+          "video_url": "https:\/\/www.youtube.com\/watch?v=DMcyuOM0lVQ",
+          "media_layout": "regular"
         }
       }
     },

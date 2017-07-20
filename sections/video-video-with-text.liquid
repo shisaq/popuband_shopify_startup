@@ -1,5 +1,5 @@
 {% assign media_layout = section.settings.media_layout %}
-{% assign image = section.settings.image %}
+{% assign video_url = section.settings.video_url %}
 {% assign has_content = false %}
 {% assign has_cta = false %}
 
@@ -11,24 +11,6 @@
   {% assign has_cta = true %}
   {% assign has_content = true %}
 {%- endif -%}
-
-{% if image != blank %}
-  {% assign image_size = '1440x640' %}
-  {% assign background_image = image | img_url: image_size %}
-  {%- capture feature_image -%}
-    <img
-      class="feature-image"
-      alt="{{ image.alt | escape }}"
-      src="{{ image | img_url: image_size }}">
-  {%- endcapture -%}
-{% else %}
-  {%- capture background_image -%}
-    {%- include 'placeholder_svg_uri' placeholder: 'lifestyle-1' -%}
-  {%- endcapture -%}
-  {%- capture feature_image -%}
-    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg feature-image' }}
-  {%- endcapture -%}
-{% endif %}
 
 {%- capture section_class -%}
   {{ section.settings.style }}
@@ -43,10 +25,6 @@
   data-image-with-text-layout="{{ media_layout }}">
 
   <article class="module-inner home-full-width-feature-content" data-feature-content>
-    {%- if media_layout == 'highlight' -%}
-      {{ feature_image | strip }}
-    {%- endif -%}
-
     {% if section.settings.title != blank %}
       <h1 class="feature-title">{{ section.settings.title | escape }}</h1>
     {% endif %}
@@ -55,9 +33,32 @@
       <div class="rte">{{ section.settings.caption }}</div>
     {% endif %}
 
-    {%- if media_layout == 'regular' -%}
-      {{ feature_image | strip }}
-    {%- endif -%}
+    <div class="video-wrapper">
+      {% if video_url != blank %}
+        {% if video_url.type == "youtube" %}
+          <iframe
+            src="//www.youtube.com/embed/{{ video_url.id }}?rel=0&showinfo=0&vq=720"
+            width="850"
+            height="480"
+            frameborder="0"
+            allowfullscreen></iframe>
+        {% endif %}
+        {% if block.settings.video_url.type == "vimeo" %}
+          <iframe
+            src="//player.vimeo.com/video/{{ video_url.id }}?byline=0&portrait=0&badge=0"
+            width="850"
+            height="480"
+            frameborder="0"
+            allowfullscreen></iframe>
+        {% endif %}
+      {% else %}
+        <iframe
+          src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720"
+          width="850"
+          height="480"
+          frameborder="0"></iframe>
+      {% endif %}
+    </div>
 
     {% if has_cta %}
       <div class="home-module-cta">
@@ -69,7 +70,7 @@
 
 {% schema %}
 {
-  "name": "Image with text",
+  "name": "Video with text",
   "settings": [
     {
       "type": "select",
@@ -95,13 +96,13 @@
       "type": "text",
       "id": "title",
       "label": "Heading",
-      "default": "Image with text"
+      "default": "Video with text"
     },
     {
       "type": "richtext",
       "id": "caption",
       "label": "Text",
-      "default": "<p>Select imagery and text that relates to your style and story.</p>"
+      "default": "<p>Select video and text that relates to your style and story.</p>"
     },
     {
       "type": "text",
@@ -114,9 +115,14 @@
       "label": "Link URL"
     },
     {
-      "type": "image_picker",
-      "id": "image",
-      "label": "Image"
+      "type": "video_url",
+      "id": "video_url",
+      "label": "Youtube or Vimeo link",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
     },
     {
       "type": "select",
@@ -138,7 +144,7 @@
   "presets": [
     {
       "category": "Video Page",
-      "name": "Image with text"
+      "name": "Video with text"
     }
   ]
 }
