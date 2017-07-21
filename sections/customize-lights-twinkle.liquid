@@ -17,8 +17,9 @@
         {{ section.settings.text }}
       {% endif %}
 
-      {% if section.settings.button_text != blank and section.settings.button_link != blank %}
-        <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_text | escape }}</a>
+      {% if section.settings.android_link != blank and section.settings.ios_link != blank %}
+        <a href="{{ section.settings.android_link }}"><img class="download-badge" alt='Get it on Google Play' src='https://cdn.shopify.com/s/files/1/2021/3861/files/google-play-badge.png'/></a>
+        <a href="{{ section.settings.ios_link }}"><img class="download-badge" alt='Get it on App Store' src='https://cdn.shopify.com/s/files/1/2021/3861/files/app-store-badge.png'/></a>
       {% endif %}
     </div>
 
@@ -87,14 +88,14 @@
       "default": "<p>Use this area to promote a single item with an image on the right.</p>"
     },
     {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button text"
+      "type": "url",
+      "id": "android_link",
+      "label": "Android Link URL"
     },
     {
       "type": "url",
-      "id": "button_link",
-      "label": "Link URL"
+      "id": "ios_link",
+      "label": "iOS Link URL"
     },
     {
       "type": "image_picker",

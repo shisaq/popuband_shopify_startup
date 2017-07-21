@@ -304,8 +304,8 @@
           "title": "The World’s First Smart Ukulele",
           "subtitle": "Fast & Fun",
           "text": "<p>Bringing technology and music together to make a truly unique, fun, and quick learning experience for begginers and advanced players alike.<\/p>",
-          "button_text": "Buy Now",
-          "button_link": "shopify:\/\/products\/populele",
+          "android_link": "",
+          "ios_link": "",
           "content_image_default": "shopify:\/\/shop_images\/binggan1.jpg",
           "content_image_twinkle": "shopify:\/\/shop_images\/binggan2.jpg"
         }
@@ -326,11 +326,11 @@
         "type": "customize-lights-twinkle",
         "settings": {
           "style": "default-style",
-          "title": "Populele Game App.",
+          "title": "The Populele App.",
           "subtitle": "Play & Learn",
-          "text": "<p>We've developed an easy and fun to use app offering everything you need for learning an instrument.<\/p>",
-          "button_text": "learn more",
-          "button_link": "shopify:\/\/pages\/app",
+          "text": "<p>A place to teach yourself the ukulele; A music tool center presenting tuner, chord library, and more; A song library supporting your music dream.<\/p>",
+          "android_link": "",
+          "ios_link": "",
           "content_image_default": "shopify:\/\/shop_images\/app-screenshot1-white.jpg",
           "content_image_twinkle": "shopify:\/\/shop_images\/songs-covers.jpg"
         }
@@ -344,12 +344,12 @@
         "settings": {
           "style": "default-style",
           "title": "Download",
-          "subtitle": "iOS & Android",
+          "subtitle": "Android & iOS",
           "text": "<p>Compatible with most of the smart devices on the market.<\/p>",
-          "button_text": "",
-          "button_link": "",
-          "content_image_default": "shopify:\/\/shop_images\/app-screenshot1-white.jpg",
-          "content_image_twinkle": "shopify:\/\/shop_images\/songs-covers.jpg"
+          "android_link": "https:\/\/play.google.com\/store\/apps\/details?id=com.gt.populeleinternational",
+          "ios_link": "https:\/\/itunes.apple.com\/us\/app\/populele-international\/id1241571882",
+          "content_image_default": "shopify:\/\/shop_images\/app_download_interface_3fd59918-f614-46be-a34e-ea8551e3b98b.jpg",
+          "content_image_twinkle": "shopify:\/\/shop_images\/app_download_interface_3fd59918-f614-46be-a34e-ea8551e3b98b.jpg"
         }
       },
       "template-article": {
@@ -422,7 +422,7 @@
             "settings": {
               "media_alignment": "left",
               "title": "Game Mode",
-              "caption": "Helps you learn ukulele basics from plucking to strumming, and left-hand techniques to basic chords and songs.",
+              "caption": "Learn ukulele skills with fun! Strumming, plucking, chord switching, and more.",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=E1o3O3TMim8"
@@ -433,7 +433,7 @@
             "settings": {
               "media_alignment": "right",
               "title": "Tools",
-              "caption": "Includes the Tuner, Chords Archive, Dazzle Mode, and Customized LED Patterns. Use this section to learn the basics and shine with the LED options.",
+              "caption": "Find tuner, chord library, and other useful tools all in one app. Turn on the dazzle mode or light up your own LED pattern and let you music shine!",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=fB7MwmjXPlU"
@@ -444,7 +444,7 @@
             "settings": {
               "media_alignment": "left",
               "title": "Song Library",
-              "caption": "Includes more than 100 popular songs to learn to play. We’ll continually update the list - let us know what you’d like added.",
+              "caption": "Learn over 100 songs in your library. Can’t find your favorite songs? Tell us. We’ll add them for you.",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=uGAwwqxB0Co"
@@ -490,7 +490,7 @@
           "style": "default-style",
           "title": "Record & Share",
           "subtitle": "",
-          "text": "<p>Interested in sharing your progress with others? Go to Profile to record and share your music. You can make other adjustments in the Profile section as well.<\/p>",
+          "text": "<p>One-click record and share your new, multi-track work.<\/p>",
           "button_text": "",
           "button_link": "",
           "content_image": "shopify:\/\/shop_images\/11.2_c2e837d5-4fb8-4d45-b71a-dced23a9d8fa.jpg"
@@ -713,7 +713,7 @@
           "caption": "<p>The World's 1st Smart Ukulele. Learn &amp; Play your first song in 15mins.<\/p>",
           "button_text": "",
           "button_link": "",
-          "video_url": "https:\/\/www.youtube.com\/watch?v=DMcyuOM0lVQ",
+          "video_url": "https:\/\/youtu.be\/GtDt9S4OJS4",
           "media_layout": "regular"
         }
       }
