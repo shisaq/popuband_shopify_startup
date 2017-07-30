@@ -67,6 +67,12 @@
     },
     "mailing_list": {
       "message": "Thanks for signing up!"
+    },
+    "crowdfunding_campaign": {
+      "funded": "funded",
+      "pledged": "pledged",
+      "backers": "backers",
+      "pledge_button": "Learn More"
     }
   },
   "blogs": {

@@ -1,0 +1,122 @@
+<div id="home-kickstarter" class="index-section home-kickstarter" data-section-id="{{ section.id }}" data-section-type="home-kickstarter">
+
+    <div class="home-kickstarter">
+
+        {% if section.settings.home-kickstarter-bg != blank %}
+          <span class="prlx-bg" style="background-image: url({{ section.settings.home-kickstarter-bg | img_url: '1024x' }})">
+              <img src="{{ section.settings.home-kickstarter-bg | img_url: '1024x' }}" alt="{{ section.settings.home-kickstarter-title | escape }}" />
+          </span>
+        {% endif %}
+
+        <div class="wrapper wrapper--margins">
+
+            <div class="kickstarter__content {% unless section.settings.home-kickstarter-bg %} text-center {% endunless %}">
+
+                {% unless section.settings.home-kickstarter-title == blank %}
+                  <h2>{{ section.settings.home-kickstarter-title | escape }}</h2>
+                {% endunless %}
+
+                {% unless section.settings.home-kickstarter-subtitle == blank %}
+                  <h3>{{ section.settings.home-kickstarter-subtitle | escape }}</h3>
+                {% endunless %}
+
+                <div class="kickstarter__meta kickstarter--{{ section.settings.home-kickstarter-style }}">
+                    <div class="kickstarter__graphic bar" data-value="{{ section.settings.home-kickstarter-percent | escape | remove: '%' }}" data-color="{{ settings.color_primary }}"></div>
+                    <div class="kickstarter__graphic pie" data-value="{{ section.settings.home-kickstarter-percent | escape | remove: '%' }}" data-color="{{ settings.color_primary }}"></div>
+                    <ul>
+                        {% unless section.settings.home-kickstarter-percent == blank %}
+                          <li><strong>{{ section.settings.home-kickstarter-percent | escape | remove: '%' }}%</strong><span>{{ 'general.crowdfunding_campaign.funded' | t }}</span></li>
+                        {% endunless %}
+                        {% unless section.settings.home-kickstarter-amount == blank %}
+                          <li><strong>{{ section.settings.home-kickstarter-amount | escape }}</strong><span>{{ 'general.crowdfunding_campaign.pledged' | t }}</span></li>
+                        {% endunless %}
+                        {% unless section.settings.home-kickstarter-backers == blank %}
+                          <li><strong>{{ section.settings.home-kickstarter-backers | escape }}</strong><span>{{ 'general.crowdfunding_campaign.backers' | t }}</span></li>
+                        {% endunless %}
+                    </ul>
+                </div>
+
+                {% if section.settings.home-kickstarter-url != blank %}
+                <a href="{{ section.settings.home-kickstarter-url | escape }}" class="btn btn--regular btn--dark btn--outline">{{ 'general.crowdfunding_campaign.pledge_button' | t }}</a>
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+    {
+        "name": "Campaign tracker",
+        "settings": [
+          {
+            "type": "text",
+            "id": "home-kickstarter-title",
+            "default": "Crowdfunding",
+            "label": "Title"
+          },
+          {
+            "type": "text",
+            "id": "home-kickstarter-subtitle",
+            "default": "Campaign tracker",
+            "label": "Subtitle"
+          },
+          {
+            "type": "select",
+            "id": "home-kickstarter-style",
+            "default":"pie",
+            "label": "Stats style",
+            "options": [
+              {
+                "value": "pie",
+                "label": "Pie with smaller stats"
+              },
+              {
+                "value": "bar",
+                "label": "Bar with larger stats"
+              }
+            ]
+          },
+          {
+            "type": "image_picker",
+            "id": "home-kickstarter-bg",
+            "label": "Background image",
+            "info": "Light background on the left side"
+          },
+          {
+            "type": "header",
+            "content": "Campaign details"
+          },
+          {
+            "type": "text",
+            "id": "home-kickstarter-percent",
+            "default": "75",
+            "label": "Funded percent"
+          },
+          {
+            "type": "text",
+            "id": "home-kickstarter-amount",
+            "default": "$1000",
+            "label": "Funded amount"
+          },
+          {
+            "type": "text",
+            "id": "home-kickstarter-backers",
+            "default": "10",
+            "label": "Number of backers"
+          },
+          {
+            "type": "text",
+            "id": "home-kickstarter-url",
+            "default": "https://www.shopify.com",
+            "label": "Project URL"
+          }
+        ],
+        "presets": [
+            {
+            "name": "Crowdfunding Showcase",
+            "category": "Customization"
+         }
+        ]
+    }
+{% endschema %}

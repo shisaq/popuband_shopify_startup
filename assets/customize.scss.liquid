@@ -286,3 +286,166 @@
 .video-description {
     font-size: 20px;
 }
+
+/* crowdfunding section */
+.home-kickstarter {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+  .home-kickstarter h2, .home-kickstarter .h2 {
+    font-size: 2.85714em;
+    line-height: 1.2;
+    margin-bottom: 30px; }
+    .home-section:first-child .home-kickstarter h2, .home-section:first-child .home-kickstarter .h2 {
+      font-size: 3.85714em; }
+  .home-kickstarter h3, .home-kickstarter .h3 {
+    font-size: 1.14286em;
+    line-height: 1.6;
+    color: /*!setting.color_text_general{*/#343434/*}*/;
+    max-width: 40%; }
+    @media screen and (max-width: 1025px) {
+      .home-kickstarter h3, .home-kickstarter .h3 {
+        max-width: 70%; } }
+    @media screen and (max-width: 767px) {
+      .home-kickstarter h3, .home-kickstarter .h3 {
+        max-width: 100%; } }
+  @media screen and (max-width: 767px) {
+    .home-kickstarter {
+      text-align: center; }
+      .home-kickstarter .prlx-bg {
+        position: relative;
+        background-image: none; }
+        .home-kickstarter .prlx-bg img {
+          display: block; }
+      .home-kickstarter h2, .home-kickstarter .h2 {
+        font-size: 2.28571em !important; } }
+  @media screen and (max-width: 480px) {
+    .home-kickstarter h2, .home-kickstarter .h2 {
+      font-size: 1.57143em !important; }
+    .home-kickstarter h3, .home-kickstarter .h3 {
+      font-size: 1em;
+      line-height: 1.5; } }
+
+.kickstarter__meta {
+  margin: 30px 0 45px;
+  position: relative; }
+  @media screen and (max-width: 767px) {
+    .kickstarter__meta {
+      margin: 30px auto; }
+      .kickstarter__meta ul {
+        padding-top: 30px; } }
+  .kickstarter__meta ul {
+    margin: 0;
+    *zoom: 1; }
+    .kickstarter__meta ul:before, .kickstarter__meta ul:after {
+      content: " ";
+      display: table; }
+    .kickstarter__meta ul:after {
+      clear: both; }
+  .kickstarter__meta li {
+    float: left;
+    margin-left: 50px; }
+    .kickstarter__meta li:first-child {
+      margin-left: 0; }
+    @media screen and (max-width: 767px) {
+      .kickstarter__meta li {
+        float: none;
+        display: inline-block; } }
+    @media screen and (max-width: 480px) {
+      .kickstarter__meta li {
+        margin-left: 30px; } }
+  .kickstarter__meta strong {
+    display: block;
+    font-family: Montserrat, sans-serif; }
+  .kickstarter__meta span {
+    display: block;
+    color: /*!setting.color_text_alternate{*/#7a7a7a/*}*/;
+    font-size: 0.92857em;
+    line-height: 1; }
+  .kickstarter__meta .kickstarter__graphic {
+    position: absolute;
+    top: 0;
+    left: 0; }
+    .kickstarter__meta .kickstarter__graphic.pie {
+      width: 55px;
+      height: 55px; }
+      .kickstarter__meta .kickstarter__graphic.pie canvas {
+        -webkit-transform: rotate(-90deg) scale(0.5);
+        -ms-transform: rotate(-90deg) scale(0.5);
+        transform: rotate(-90deg) scale(0.5);
+        -webkit-transform-origin: 20% 40%;
+        -ms-transform-origin: 20% 40%;
+        transform-origin: 20% 40%;
+        position: absolute;
+        top: 2px;
+        left: 0; }
+    .kickstarter__meta .kickstarter__graphic.bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 13px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      background: rgba(0, 0, 0, 0.1); }
+      .kickstarter__meta .kickstarter__graphic.bar .value {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 13px;
+        border-radius: 10px;
+        background: /*!setting.color_primary{*/#ffa726/*}*/;
+        transition: width 500ms linear; }
+      @media screen and (max-width: 767px) {
+        .kickstarter__meta .kickstarter__graphic.bar {
+          position: relative;
+          left: 50%;
+          margin-left: -200px; } }
+      @media screen and (max-width: 480px) {
+        .kickstarter__meta .kickstarter__graphic.bar {
+          left: 0;
+          margin-left: 0;
+          max-width: none; } }
+  .kickstarter__meta.kickstarter--pie {
+    padding-left: 90px; }
+    .kickstarter__meta.kickstarter--pie strong {
+      font-size: 1.71429em; }
+    .kickstarter__meta.kickstarter--pie span {
+      margin-top: -3px; }
+    .kickstarter__meta.kickstarter--pie .kickstarter__graphic.bar {
+      display: none; }
+    @media screen and (max-width: 767px) {
+      .kickstarter__meta.kickstarter--pie {
+        padding-left: 0; }
+        .kickstarter__meta.kickstarter--pie .kickstarter__graphic.bar {
+          display: block; }
+        .kickstarter__meta.kickstarter--pie .kickstarter__graphic.pie {
+          display: none; } }
+  .kickstarter__meta.kickstarter--bar {
+    padding-top: 45px;
+    margin-top: 55px;
+    max-width: 410px; }
+    .kickstarter__meta.kickstarter--bar strong {
+      font-size: 2.85714em; }
+    .kickstarter__meta.kickstarter--bar span {
+      margin-top: 2px; }
+    @media screen and (max-width: 767px) {
+      .kickstarter__meta.kickstarter--bar {
+        padding-top: 0; } }
+    @media screen and (max-width: 480px) {
+      .kickstarter__meta.kickstarter--bar strong {
+        font-size: 1.42857em; } }
+    .kickstarter__meta.kickstarter--bar .kickstarter__graphic.pie {
+      display: none; }
+
+@media screen and (min-width: 767px) {
+  .text-center .kickstarter__meta {
+    margin: 30px auto;
+    display: inline-block; }
+  .text-center .btn {
+    display: table;
+    margin: auto; } }
+.kickstarter__content.text-center h3, .kickstarter__content.text-center .h3, .kickstarter__content.text-center .kickstarter--bar {
+  margin-left: auto;
+  margin-right: auto; }

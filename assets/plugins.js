@@ -567,6 +567,60 @@ if (typeof Object.create !== "function") {
 
 })(jQuery, window, document);
 
+// crowdfunding section
+if ($('.home-kickstarter').length > 0) {
+
+  // PIE
+
+  $('.kickstarter__graphic.pie').html('<canvas id="kickstarter__pie--help" width="110" height="110"></canvas><canvas id="kickstarter__pie" width="110" height="110"></canvas>');
+
+  var progress = 0,
+      pieI = null,
+      pieValue = Math.min( parseInt($('.kickstarter__graphic').data('value')) / 100, 1 ),
+      pieColor = $('.kickstarter__graphic').data('color'),
+      pieCanvas = document.getElementById('kickstarter__pie'),
+      context = pieCanvas.getContext('2d'),
+      centerX = pieCanvas.width / 2,
+      centerY = pieCanvas.height / 2,
+      radius = 45,
+      progress = 0;
+
+  context.lineWidth = 15;
+  context.strokeStyle = pieColor;
+  context.lineCap = 'round';
+
+  pieI = setInterval(function() {
+    progress = progress + 0.0025;
+    context.clearRect(0, 0, pieCanvas.width, pieCanvas.height);
+    context.beginPath();
+    context.arc(centerX, centerY, radius, 0, (2*progress) * Math.PI, false);
+    context.stroke();
+    if (progress >= pieValue) {
+      clearInterval(pieI);
+    }
+  }, 5);
+
+  var pieCanvasHelp = document.getElementById('kickstarter__pie--help'),
+      contextHelp = pieCanvasHelp.getContext('2d'),
+      centerXHelp = pieCanvasHelp.width / 2,
+      centerYHelp = pieCanvasHelp.height / 2,
+      radiusHelp = 45;
+
+  contextHelp.lineWidth = 15;
+  contextHelp.strokeStyle = '#e9e9e9';
+  contextHelp.lineCap = 'round';
+  contextHelp.beginPath();
+  contextHelp.arc(centerXHelp, centerYHelp, radiusHelp, 0, 2 * Math.PI, false);
+  contextHelp.stroke();
+
+  // BAR
+
+  var barValue = Math.min(parseInt($('.kickstarter__graphic.bar').data('value')), 100);
+  $('.kickstarter__graphic.bar').append('<div class="value"></div>');
+  $('.kickstarter__graphic.bar .value').css('width', barValue + '%');
+
+}
+
 /*!
  * Flickity PACKAGED v1.2.1
  * Touch, responsive, flickable galleries
