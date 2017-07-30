@@ -717,19 +717,6 @@
           "media_layout": "regular"
         }
       },
-      "test-crowdfunding": {
-        "type": "test-crowdfunding",
-        "settings": {
-          "home-kickstarter-title": "Populele x IndieGoGo",
-          "home-kickstarter-subtitle": "Thanks for backing us :)",
-          "home-kickstarter-style": "pie",
-          "background_image": "shopify:\/\/shop_images\/banner4_39471f3f-34a9-4ab7-a32c-2b7ceba72c08.jpg",
-          "home-kickstarter-percent": "1662",
-          "home-kickstarter-amount": "$470,919",
-          "home-kickstarter-backers": "3,316",
-          "home-kickstarter-url": "https:\/\/igg.me\/at\/populele"
-        }
-      },
       "module-faq": {
         "type": "module-faq",
         "blocks": {
