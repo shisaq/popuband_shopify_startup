@@ -577,7 +577,7 @@ if ($('.home-kickstarter').length > 0) {
   var progress = 0,
       pieI = null,
       pieValue = Math.min( parseInt($('.kickstarter__graphic').data('value')) / 100, 1 ),
-      pieColor = $('.kickstarter__graphic').data('color'),
+      pieColor = '#fa8c01',
       pieCanvas = document.getElementById('kickstarter__pie'),
       context = pieCanvas.getContext('2d'),
       centerX = pieCanvas.width / 2,

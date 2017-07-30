@@ -1,16 +1,16 @@
-<div id="home-kickstarter" class="index-section home-kickstarter" data-section-id="{{ section.id }}" data-section-type="home-kickstarter">
+{% assign background_image = section.settings.background_image %}
+{% if background_image != blank %}
+  {% assign image_size = '2048x2048' %}
+  {% assign bg_image = background_image | img_url: image_size %}
+{% endif %}
+
+<div id="home-kickstarter" class="index-section home-kickstarter" data-section-id="{{ section.id }}" data-section-type="home-kickstarter" style="background-image: url('{{ bg_image | strip }}')">
 
     <div class="home-kickstarter">
 
-        {% if section.settings.home-kickstarter-bg != blank %}
-          <span class="prlx-bg" style="background-image: url({{ section.settings.home-kickstarter-bg | img_url: '1024x' }})">
-              <img src="{{ section.settings.home-kickstarter-bg | img_url: '1024x' }}" alt="{{ section.settings.home-kickstarter-title | escape }}" />
-          </span>
-        {% endif %}
-
         <div class="wrapper wrapper--margins">
 
-            <div class="kickstarter__content {% unless section.settings.home-kickstarter-bg %} text-center {% endunless %}">
+            <div class="kickstarter__content text-center">
 
                 {% unless section.settings.home-kickstarter-title == blank %}
                   <h2>{{ section.settings.home-kickstarter-title | escape }}</h2>
@@ -79,7 +79,7 @@
           },
           {
             "type": "image_picker",
-            "id": "home-kickstarter-bg",
+            "id": "background_image",
             "label": "Background image",
             "info": "Light background on the left side"
           },

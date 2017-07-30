@@ -37,7 +37,7 @@
     "social_twitter_url": "https:\/\/twitter.com\/PopubandMusic",
     "social_google_url": "",
     "social_pinterest_url": "",
-    "social_instagram_url": "https:\/\/www.instagram.com\/populele.us\/",
+    "social_instagram_url": "https:\/\/www.instagram.com\/popuband.us\/",
     "social_vimeo_url": "",
     "social_youtube_url": "https:\/\/www.youtube.com\/channel\/UCBf5GNWHsrHxtf7NWKQ5_0A",
     "social_rss_url": "",
@@ -716,6 +716,51 @@
           "video_url": "https:\/\/youtu.be\/GtDt9S4OJS4",
           "media_layout": "regular"
         }
+      },
+      "test-crowdfunding": {
+        "type": "test-crowdfunding",
+        "settings": {
+          "home-kickstarter-title": "Populele x IndieGoGo",
+          "home-kickstarter-subtitle": "Thanks for backing us :)",
+          "home-kickstarter-style": "pie",
+          "background_image": "shopify:\/\/shop_images\/banner4_39471f3f-34a9-4ab7-a32c-2b7ceba72c08.jpg",
+          "home-kickstarter-percent": "1662",
+          "home-kickstarter-amount": "$470,919",
+          "home-kickstarter-backers": "3,316",
+          "home-kickstarter-url": "https:\/\/igg.me\/at\/populele"
+        }
+      },
+      "module-faq": {
+        "type": "module-faq",
+        "blocks": {
+          "module-faq-0": {
+            "type": "faq",
+            "settings": {
+              "title": "When will my order arrive?",
+              "content": "<p>Save yourself the time and trouble of writing the same email over and over again by listing your most commonly asked questions and answers here. A dedicated FAQ page should help address the basic needs of your customers, cutting down on customer service emails, increasing conversions, and creating a more satisfying shopping experience!<\/p>"
+            }
+          },
+          "module-faq-1": {
+            "type": "faq",
+            "settings": {
+              "title": "Can I return an item if I'm dissatisfied?",
+              "content": "<p>Save yourself the time and trouble of writing the same email over and over again by listing your most commonly asked questions and answers here. A dedicated FAQ page should help address the basic needs of your customers, cutting down on customer service emails, increasing conversions, and creating a more satisfying shopping experience!<\/p>"
+            }
+          },
+          "module-faq-2": {
+            "type": "faq",
+            "settings": {
+              "title": "Can I change or cancel my order?",
+              "content": "<p>Save yourself the time and trouble of writing the same email over and over again by listing your most commonly asked questions and answers here. A dedicated FAQ page should help address the basic needs of your customers, cutting down on customer service emails, increasing conversions, and creating a more satisfying shopping experience!<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "module-faq-0",
+          "module-faq-1",
+          "module-faq-2"
+        ],
+        "settings": {}
       }
     },
     "content_for_index": [
