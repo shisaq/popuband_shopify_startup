@@ -162,9 +162,9 @@
         ],
         "settings": {
           "style": "default-style",
-          "title": "Learn, Play, Share - All in One.",
+          "title": "Learn, Play, Share - All in One",
           "product": "populele",
-          "description": "<p>Now, your should start your journey to learn music Fast &amp; Fun.<\/p>",
+          "description": "<p>Now you can start your journey to learn music fast and fun!<\/p>",
           "enable_zoom": true,
           "product_show_vendor": false,
           "linked_options": true,
@@ -304,6 +304,8 @@
           "title": "The World’s First Smart Ukulele",
           "subtitle": "Fast & Fun",
           "text": "<p>Bringing technology and music together to make a truly unique, fun, and quick learning experience for beginners and advanced players alike.<\/p>",
+          "button_text": "Buy Now",
+          "button_link": "shopify:\/\/collections\/all",
           "android_link": "",
           "ios_link": "",
           "content_image_default": "shopify:\/\/shop_images\/binggan1.jpg",
@@ -314,8 +316,8 @@
         "type": "home-image-with-text-overlay",
         "settings": {
           "style": "black-style",
-          "title": "Music Library.",
-          "caption": "<p><strong>Find and learn to play your favorite songs in our music library that is continuously updated. <\/strong><\/p>\n<p><strong>Can't find your favorite? Let us know, we'll add it<\/strong><\/p>",
+          "title": "Music Library",
+          "caption": "<p><strong>Learn to play your favorite songs in our music library that is continuously updated. <\/strong><\/p>\n<p><strong>Can't find your favorite? Let us know, we'll add it!<\/strong><\/p>",
           "button_text": "",
           "button_link": "",
           "image": "shopify:\/\/shop_images\/streaming-background1.jpg",
@@ -326,9 +328,11 @@
         "type": "customize-lights-twinkle",
         "settings": {
           "style": "default-style",
-          "title": "The Populele App.",
+          "title": "The Populele App",
           "subtitle": "Play & Learn",
           "text": "<p>A place to teach yourself the ukulele; A music tool center presenting tuner, chord library, and more; A song library supporting your music dream.<\/p>",
+          "button_text": "",
+          "button_link": "",
           "android_link": "",
           "ios_link": "",
           "content_image_default": "shopify:\/\/shop_images\/app-screenshot1-white.jpg",
@@ -346,6 +350,8 @@
           "title": "Download",
           "subtitle": "Android & iOS",
           "text": "<p>Compatible with most of the smart devices on the market.<\/p>",
+          "button_text": "",
+          "button_link": "",
           "android_link": "https:\/\/play.google.com\/store\/apps\/details?id=com.gt.populeleinternational",
           "ios_link": "https:\/\/itunes.apple.com\/us\/app\/populele-international\/id1241571882",
           "content_image_default": "shopify:\/\/shop_images\/app_download_interface_3fd59918-f614-46be-a34e-ea8551e3b98b.jpg",
@@ -367,7 +373,7 @@
           "1499487791316-0": {
             "type": "testimonial",
             "settings": {
-              "quote": "Like any stringed instrument, learning chords is a bit of pain. We can solve this with technology.",
+              "quote": "\"Like any stringed instrument, learning chords is a bit of pain. We can solve this with technology.\"",
               "source": "The Verge",
               "avatar": "shopify:\/\/shop_images\/theverge.png"
             }
@@ -375,7 +381,7 @@
           "1499487791316-1": {
             "type": "testimonial",
             "settings": {
-              "quote": "It connects to an app where users can get instant feedback and correct themselves.",
+              "quote": "\"It connects to an app where users can get instant feedback and correct themselves.\"",
               "source": "CNBC",
               "avatar": "shopify:\/\/shop_images\/cnbc.png"
             }
@@ -383,7 +389,7 @@
           "1499487996217": {
             "type": "testimonial",
             "settings": {
-              "quote": "A wild new startup is about to unleash Populele, an electric Ukulele that will teach you how to play old Uke standards like Ukulele Lady, D’yer Maker, and Tiptoe Through The Tulips.",
+              "quote": "\"A wild new startup is about to unleash Populele, an electric Ukulele that will teach you how to play old Uke standards like Ukulele Lady, D’yer Maker, and Tiptoe Through The Tulips.\"",
               "source": "TechCrunch",
               "avatar": "shopify:\/\/shop_images\/techcrunch.png"
             }
@@ -391,7 +397,7 @@
           "1499488009919": {
             "type": "testimonial",
             "settings": {
-              "quote": "This is an awesome ukulele: fun, educational, and just plain cool; it's a really good entry-level uke in its own right, it's a lot of fun to play with the app, too.",
+              "quote": "\"This is an awesome ukulele: fun, educational, and just plain cool; it's a really good entry-level uke in its own right, it's a lot of fun to play with the app, too.\"",
               "source": "The Ukulele Teacher",
               "avatar": "shopify:\/\/shop_images\/theukuleletercher.png"
             }
@@ -433,7 +439,7 @@
             "settings": {
               "media_alignment": "right",
               "title": "Tools",
-              "caption": "Find tuner, chord library, and other useful tools all in one app. Turn on the dazzle mode or light up your own LED pattern and let you music shine!",
+              "caption": "Find tuner, chord library, and other useful tools all in one app. Turn on the dazzle mode or light up your own LED pattern and let your music shine!",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=fB7MwmjXPlU"
@@ -500,7 +506,7 @@
         "type": "home-image-with-text-overlay",
         "settings": {
           "style": "black-style",
-          "title": "Smart & Slim.",
+          "title": "Smart & Slim",
           "caption": "<p><\/p>\n<p>&nbsp;<\/p>\n<p><\/p>\n<p><\/p>\n<p><\/p>\n<p><\/p>",
           "button_text": "",
           "button_link": "",
@@ -512,7 +518,7 @@
         "type": "app-record-and-share",
         "settings": {
           "style": "default-style",
-          "title": "Premium Quality.",
+          "title": "Premium Quality",
           "subtitle": "Wireless & LEDs",
           "text": "<p>Smart fretboard lights up to show exactly where your fingers go.<\/p>",
           "button_text": "",
@@ -528,7 +534,7 @@
             "settings": {
               "media_alignment": "right",
               "title": "Introduction",
-              "caption": "Unlock the ukulele skills all by yourself, easily and with fun! Enjoy being your own teacher!",
+              "caption": "With ease and fun, unlock your ukulele skills all by yourself and enjoy being your own teacher!",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=VAuRCVddwL4"
@@ -697,9 +703,9 @@
         "type": "app-promotion",
         "settings": {
           "style": "default-style",
-          "title": "Populele Game App.",
+          "title": "Populele Game App",
           "subtitle": "Game & Tools",
-          "text": "<p>Learn music in a fun new way. One app provides everything you need.<\/p>",
+          "text": "<p>One app is all you need to learn music in a fun new way!<\/p>",
           "button_text": "",
           "button_link": "",
           "content_image": "shopify:\/\/shop_images\/music-system.jpg"
