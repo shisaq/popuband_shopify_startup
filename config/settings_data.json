@@ -197,7 +197,7 @@
         "settings": {
           "product_show_vendor": false,
           "enable_order_notes": true,
-          "show_shipping_calculator": true,
+          "show_shipping_calculator": false,
           "shipping_calculator_default_country": "United States"
         }
       },
