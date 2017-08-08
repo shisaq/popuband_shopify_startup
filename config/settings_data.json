@@ -706,8 +706,8 @@
           "title": "Populele Game App",
           "subtitle": "Game & Tools",
           "text": "<p>One app is all you need to learn music in a fun new way!<\/p>",
-          "button_text": "",
-          "button_link": "",
+          "button_text": "Shop Now",
+          "button_link": "shopify:\/\/collections\/all",
           "content_image": "shopify:\/\/shop_images\/music-system.jpg"
         }
       },
