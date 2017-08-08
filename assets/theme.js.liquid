@@ -3550,15 +3550,3 @@ $(function() {
   window.theme = new ThemeView();
   return theme.render();
 });
-
-// create a date picker to make a shipment delay
-$(document).ready( function() {
-  $(function() {
-    $("#date").datepicker( {
-      dateFormat: 'yy/mm/dd',
-      minDate: '2017/08/15',
-      maxDate: '+3M'
-    } );
-    $('#date').datepicker('setDate', '2017/08/15');
-  });
-});
