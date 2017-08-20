@@ -769,6 +769,94 @@
           "home-kickstarter-url": "https:\/\/igg.me\/at\/populele",
           "overlay_opacity": "70"
         }
+      },
+      "press-image-with-text-overlay": {
+        "type": "press-image-with-text-overlay",
+        "settings": {
+          "style": "black-style",
+          "title": "NEWSROOM",
+          "caption": "<p>This real Uke's 72-LED smart fretboard connects with our app via Bluetooth to show exactly how to play your favorite songs, giving beginners a quick and satisfying way to start their musical journey, and helping the experienced take their repertoire to the next level.<\/p>",
+          "button_text": "get in touch",
+          "button_link": "mailto:press@popuband.com",
+          "image": "shopify:\/\/shop_images\/Picture1.png",
+          "overlay_opacity": "10"
+        }
+      },
+      "press-testimonials": {
+        "type": "press-testimonials",
+        "blocks": {
+          "1503193519794": {
+            "type": "testimonial",
+            "settings": {
+              "caption": "If you like to linger where it's shady the Populele want to linger too",
+              "content": "If music be the food of love then get ready to hit the Old Country Buffet. A wild new startup is about to unleash Populele, an electric Ukulele that will teach you how to play old Uke standards like Ukulele Lady, D’yer Maker, and Tiptoe Through The Tulips.",
+              "button_text": "Read More",
+              "button_link": "https:\/\/techcrunch.com\/2017\/03\/20\/if-you-like-to-linger-where-its-shady-the-populele-wants-to-linger-too\/",
+              "avatar": ""
+            }
+          },
+          "1503193601217": {
+            "type": "testimonial",
+            "settings": {
+              "caption": "The World's First Smart Ukulele",
+              "content": "The company says it's like a \"real life Guitar Hero\" for the ukulele.",
+              "button_text": "Read More",
+              "button_link": "https:\/\/www.cnbc.com\/video\/2017\/03\/10\/the-worlds-first-smart-ukulele.html",
+              "avatar": ""
+            }
+          },
+          "1503193653255": {
+            "type": "testimonial",
+            "settings": {
+              "caption": "This Smart Ukulele Will Teach You to Play at Your Own Pace",
+              "content": "What if that teacher were the instrument itself? There is now a smart ukulele that can teach you how to play through tech applications and interactive lessons.",
+              "button_text": "Read More",
+              "button_link": "https:\/\/techdigg.com\/2017\/05\/04\/this-smart-ukulele-will-teach-you-to-play-at-your-own-pace\/",
+              "avatar": ""
+            }
+          },
+          "1503193686431": {
+            "type": "testimonial",
+            "settings": {
+              "caption": "Follow-me learning ukulele is promised to get you playing in minutes",
+              "content": "Light-led learning is a great way to nail full songs in double quick fashion. Joining follow-me LED system for piano and guitar is the Populele.",
+              "button_text": "Read More",
+              "button_link": "http:\/\/newatlas.com\/populele-smart-ukulele\/48439\/",
+              "avatar": ""
+            }
+          },
+          "1503193707843": {
+            "type": "testimonial",
+            "settings": {
+              "caption": "The Populele taught me how to play ukulele in 15 mins",
+              "content": "If you want to learn a chord on Populele, you tap that chord in the app and the finger positions light up. This doesn't just help you play the chord that one time, but gives you a mental picture of the chord that made it easier for me to remember.",
+              "button_text": "Read More",
+              "button_link": "https:\/\/www.theverge.com\/circuitbreaker\/2017\/1\/6\/14192116\/populele-smart-ukelele-hands-on-ces-2017",
+              "avatar": ""
+            }
+          }
+        },
+        "block_order": [
+          "1503193519794",
+          "1503193601217",
+          "1503193653255",
+          "1503193686431",
+          "1503193707843"
+        ],
+        "settings": {
+          "style": "default-style",
+          "title": "In the News"
+        }
+      },
+      "press-download-assets": {
+        "type": "press-download-assets",
+        "settings": {
+          "style": "default-style",
+          "title": "",
+          "image": "shopify:\/\/shop_images\/popuband-card.jpg",
+          "cname1": "Press Kit",
+          "cname2": "Brand Assets"
+        }
       }
     },
     "content_for_index": [

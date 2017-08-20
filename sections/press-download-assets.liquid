@@ -1,0 +1,122 @@
+{% assign image = section.settings.image %}
+
+{% if image != blank %}
+  {% assign image_size = '640x640' %}
+  {% assign background_image = image | img_url: image_size %}
+  {%- capture feature_image -%}
+    <img
+      class="feature-image"
+      alt="{{ image.alt | escape }}"
+      src="{{ image | img_url: image_size }}">
+  {%- endcapture -%}
+{% else %}
+  {%- capture background_image -%}
+    {%- include 'placeholder_svg_uri' placeholder: 'lifestyle-1' -%}
+  {%- endcapture -%}
+  {%- capture feature_image -%}
+    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg feature-image' }}
+  {%- endcapture -%}
+{% endif %}
+
+<section
+  class="module-container {{ section.settings.style }} rows-of-2"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-blog">
+  <div class="module-inner home-featured-blog">
+
+    {% if section.settings.title != blank %}
+      <h1 class="section-title">{{ section.settings.title | escape }}</h1>
+    {% endif %}
+
+    {% for i in (1..2) %}
+      <article class="home-featured-blog-post download-assets">
+        <div class="featured-post-image">
+          {{ feature_image | strip }}
+        </div>
+
+        <div class="grey-bg">
+          {% if i == 1 %}
+            <h4 class="featured-post-excerpt">
+              {{ section.settings.cname1 | escape }}
+            </h4>
+            <a class="press-button" href="{{ section.settings.download_link1 }}" target="_new">Download</a>
+            {% else %}
+            <h4 class="featured-post-excerpt">
+              {{ section.settings.cname2 | escape }}
+            </h4>
+            <a class="press-button" href="{{ section.settings.download_link2 }}" target="_new">Download</a>
+            {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Download Assets",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Download Section"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "card image"
+    },
+    {
+      "type": "text",
+      "id": "cname1",
+      "label": "category name",
+      "default": "Press Kit"
+    },
+    {
+      "type": "text",
+      "id": "cname2",
+      "label": "category name",
+      "default": "Brand Assets"
+    },
+    {
+      "type": "url",
+      "id": "download_link1",
+      "label": "first link"
+    },
+    {
+      "type": "url",
+      "id": "download_link2",
+      "label": "second link"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Press",
+      "name": "Press Download Assets"
+    }
+  ]
+}
+
+{% endschema %}

@@ -6601,6 +6601,34 @@ $local-avatar-small: 40px;
   }
 }
 
+/* 1 testimonial for 1 line in press page */
+.press-testimonial {
+  position: relative;
+  float: left;
+  width: 100%;
+  padding: 0 $gutter;
+  margin-bottom: $gutter-vertical-large;
+  font-size: rem(16px);
+  text-align: left;
+
+  &:nth-of-type(2n + 1) { clear: left; }
+
+  @include breakpoint(s) {
+    width: 100%;
+    padding: 0;
+  }
+
+  .grid-of-1 & {
+    float: none;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include breakpoint(s) { width: 100%; }
+  }
+}
+/* end 1 testimonial for 1 line in press page */
+
 .home-testimonial-avatar {
   position: absolute;
   top: 0;
@@ -7246,5 +7274,65 @@ $slideshow-gutter: 70px + $gutter;
     &:first-child {
       margin-top: 0;
     }
+  }
+}
+
+/* press page read more button */
+.press-button {
+  display: inline-block;
+  padding: 12px 14px;
+  font-family: $button-font;
+  font-size: 16px;
+  font-weight: $button-font-weight;
+  // line-height: 2;
+  cursor: pointer;
+  border: 0;
+  border-radius: 5px;
+  -webkit-appearance: none;
+
+  @if $button-font-smoothed { @extend %font-smoothing; }
+
+  &,
+  .contrast-style &.secondary, // Allows .contrast-style .secondary to inherit .button styles
+  .contrast-style & {
+    color: $color-button-primary;
+    background: $color-accent;
+
+    &:hover {
+      color: $color-button-primary;
+      background: $color-accent-hover;
+    }
+  }
+
+  .accent-style & {
+    color: $color-accent;
+    background: $color-body-background;
+
+    &:hover {
+      color: $color-accent;
+      background: morph($color-body-background);
+    }
+  }
+
+  @if $button-capitalize {
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  &.secondary {
+    color: $color-button-secondary;
+    background: $color-button-secondary-background;
+
+    &:hover {
+      color: $color-button-secondary;
+      background: $color-button-secondary-background-hover;
+    }
+  }
+
+  &.disabled {
+    color: $color-button-disabled;
+    background: $color-button-disabled-background;
+    opacity: 1; // fix for iOS
   }
 }
