@@ -792,7 +792,7 @@
               "content": "If music be the food of love then get ready to hit the Old Country Buffet. A wild new startup is about to unleash Populele, an electric Ukulele that will teach you how to play old Uke standards like Ukulele Lady, D’yer Maker, and Tiptoe Through The Tulips.",
               "button_text": "Read More",
               "button_link": "https:\/\/techcrunch.com\/2017\/03\/20\/if-you-like-to-linger-where-its-shady-the-populele-wants-to-linger-too\/",
-              "avatar": ""
+              "avatar": "shopify:\/\/shop_images\/techcrunch.png"
             }
           },
           "1503193601217": {
@@ -802,7 +802,7 @@
               "content": "The company says it's like a \"real life Guitar Hero\" for the ukulele.",
               "button_text": "Read More",
               "button_link": "https:\/\/www.cnbc.com\/video\/2017\/03\/10\/the-worlds-first-smart-ukulele.html",
-              "avatar": ""
+              "avatar": "shopify:\/\/shop_images\/cnbc.png"
             }
           },
           "1503193653255": {
@@ -812,7 +812,7 @@
               "content": "What if that teacher were the instrument itself? There is now a smart ukulele that can teach you how to play through tech applications and interactive lessons.",
               "button_text": "Read More",
               "button_link": "https:\/\/techdigg.com\/2017\/05\/04\/this-smart-ukulele-will-teach-you-to-play-at-your-own-pace\/",
-              "avatar": ""
+              "avatar": "shopify:\/\/shop_images\/techdigg_b788a88f-6fc7-4b30-89a6-feb3b7f1eaad.png"
             }
           },
           "1503193686431": {
@@ -822,7 +822,7 @@
               "content": "Light-led learning is a great way to nail full songs in double quick fashion. Joining follow-me LED system for piano and guitar is the Populele.",
               "button_text": "Read More",
               "button_link": "http:\/\/newatlas.com\/populele-smart-ukulele\/48439\/",
-              "avatar": ""
+              "avatar": "shopify:\/\/shop_images\/newatlas.png"
             }
           },
           "1503193707843": {
@@ -832,7 +832,7 @@
               "content": "If you want to learn a chord on Populele, you tap that chord in the app and the finger positions light up. This doesn't just help you play the chord that one time, but gives you a mental picture of the chord that made it easier for me to remember.",
               "button_text": "Read More",
               "button_link": "https:\/\/www.theverge.com\/circuitbreaker\/2017\/1\/6\/14192116\/populele-smart-ukelele-hands-on-ces-2017",
-              "avatar": ""
+              "avatar": "shopify:\/\/shop_images\/theverge.png"
             }
           }
         },
@@ -855,7 +855,9 @@
           "title": "",
           "image": "shopify:\/\/shop_images\/popuband-card.jpg",
           "cname1": "Press Kit",
-          "cname2": "Brand Assets"
+          "cname2": "Brand Assets",
+          "download_link1": "",
+          "download_link2": "https:\/\/cdn.shopify.com\/s\/files\/1\/2021\/3861\/files\/Popuband_brand_assets.zip"
         }
       }
     },
