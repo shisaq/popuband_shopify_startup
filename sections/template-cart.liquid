@@ -112,16 +112,6 @@
       </script>
     </div> <!-- added on July 9th 2017 -->
 
-    {% comment %}create a datepicker to make a shipment delay{% endcomment %}
-    <div style="width:100%; clear:both;">
-      <p>
-        <label for="date" style="display: block;">Pick a delivery date: </label>
-        <input id="date" type="text" name="attributes[date]" value="{{ cart.attributes.date }}" readonly='true' />
-        <span style="display:block; color:#ff0000;" class="instructions">Attention: This item will be available around September 6, 2017.</span>
-      </p>
-    </div>
-    {% comment %}end datepicker{% endcomment %}
-
     <div class="cart-tools">
 
       {% if section.settings.enable_order_notes %}
