@@ -129,7 +129,7 @@
 
       <div class="cart-totals">
         <p class="cart-price">
-          <span class="money">{{ cart.total_price | money }}</span>
+          <span class="money"><span id="bk-cart-subtotal-price">{{ cart.total_price | money }}</span></span>
         </p>
         <p class="cart-message meta">{{ 'cart.general.tax_and_shipping' | t }}</p>
 
