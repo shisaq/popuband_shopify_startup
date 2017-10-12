@@ -1,0 +1,140 @@
+<section
+  class="module-container {{ section.settings.style }} grid-of-{{ section.blocks.size }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-testimonials">
+  <div class="module-inner home-testimonials">
+    {% if section.settings.title != blank %}
+      <h1 class="section-title">{{ section.settings.title | escape }}</h1>
+    {% endif %}
+
+    <ul class="cus-tes-wrapper">
+    {% for block in section.blocks %}
+      {% capture current %}{% cycle 1, 2 %}{% endcapture %}
+        <li class="customize-testimonial has-avatar" {{ block.shopify_attributes }}>
+          {% if block.settings.caption != blank  and block.settings.content != blank %}
+            <article class="cus-tes-quote">
+              <p class="testimonial-content cus-tes-content">
+                "{{ block.settings.content | escape }}"
+              </p>
+              {% if block.settings.avatar %}
+                <img class="customize-testimonial-avatar"
+                  alt="{{ block.settings.avatar.alt | escape }}"
+                  src="{{ block.settings.avatar | img_url: '60x60' }}">
+              {% else %}
+                {{ 'image' | placeholder_svg_tag: 'customize-testimonial-avatar placeholder-svg' }}
+              {% endif %}
+              <p class="testimonial-caption cus-tes-caption">
+                {{ block.settings.caption | escape }}<br>
+                <span class="cus-tes-address">{{ block.settings.address }}</span>
+              </p>
+            </article>
+          {% endif %}
+
+          {% if block.settings.button_text != blank and block.settings.button_link != blank %}
+            <p class="home-testimonial-quote-source">
+              <a class="press-button" href="{{ block.settings.button_link }}" target="_blank">{{ block.settings.button_text }}</a>
+            </p>
+          {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Customize Testimonials",
+  "settings": [
+    {
+      "type": "select",
+      "id": "style",
+      "label": "Style",
+      "options": [
+        {
+          "value": "default-style",
+          "label": "Default"
+        },
+        {
+          "value": "accent-style",
+          "label": "Accent"
+        },
+        {
+          "value": "contrast-style",
+          "label": "Contrast"
+        }
+      ],
+      "default": "default-style"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Testimonials"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "Caption",
+          "default": "News Title"
+        },
+        {
+          "type": "text",
+          "id": "address",
+          "label": "Address",
+          "default": "New Address"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content",
+          "default": "This is the content of a testimonial."
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Read More"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "image_picker",
+          "id": "avatar",
+          "label": "Avatar",
+          "info": "120 x 120px .jpg required"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Home",
+      "name": "Customize Testimonials",
+      "settings": {
+        "style": "default"
+      },
+      "blocks": [
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        },
+        {
+          "type": "testimonial"
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}

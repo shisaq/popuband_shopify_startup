@@ -860,69 +860,50 @@
           "download_link2": "https:\/\/cdn.shopify.com\/s\/files\/1\/2021\/3861\/files\/Popuband_brand_assets.zip"
         }
       },
-      "1507686773254": {
-        "type": "press-testimonials",
+      "1507776995608": {
+        "type": "customize-home-testimonials",
         "blocks": {
-          "1507686773254-0": {
+          "1507776995608-0": {
             "type": "testimonial",
             "settings": {
               "caption": "Christopher M.",
+              "address": "Washington",
               "content": "So excited. My son is on the autism spectrum and he loves learning from his iPad. He is so excited to get this and start to learn the ukulele. Excuse me, the Populele.",
               "button_text": "Read More",
               "button_link": "",
               "avatar": "shopify:\/\/shop_images\/001.png"
             }
           },
-          "1507686773254-1": {
+          "1507776995608-1": {
             "type": "testimonial",
             "settings": {
               "caption": "Carol L.",
+              "address": "California",
               "content": "I LOVE IT! ❤️ Just came yesterday, thank you. Now I can take it on vacation. It was packed well, the box is real nice, protected it well. I followed the instructions exactly, and it charged fine, app was easy to install, love the tuner! I have already learned 3 chords! The lessons and games are easy to follow. And such a Beautiful sound! It’s perfect…",
               "button_text": "Read More",
               "button_link": "",
               "avatar": "shopify:\/\/shop_images\/002.png"
             }
           },
-          "1507686913869": {
-            "type": "testimonial",
-            "settings": {
-              "caption": "Greg C.",
-              "content": "It works and sounds great, the bag is very nice too, 5 stars for the products, 4 stars for the box. Now, it’s time to practice!",
-              "button_text": "Read More",
-              "button_link": "",
-              "avatar": "shopify:\/\/shop_images\/003.png"
-            }
-          },
-          "1507686926045": {
+          "1507777123315": {
             "type": "testimonial",
             "settings": {
               "caption": "Doka C.",
+              "address": "California",
               "content": "Have had my uke for three days now. I love it. Turns out I don’t have any hidden uke talents :), but I am optimistic that the app and uke will help me out with that. Thank you for the fun training opportunity.",
               "button_text": "Read More",
               "button_link": "",
               "avatar": "shopify:\/\/shop_images\/004.png"
             }
-          },
-          "1507686934469": {
-            "type": "testimonial",
-            "settings": {
-              "caption": "Michael M.",
-              "content": "Very excited for this one! My daughter and I will learn it together!",
-              "button_text": "Read More",
-              "button_link": "",
-              "avatar": "shopify:\/\/shop_images\/005.png"
-            }
           }
         },
         "block_order": [
-          "1507686773254-0",
-          "1507686773254-1",
-          "1507686913869",
-          "1507686926045",
-          "1507686934469"
+          "1507776995608-0",
+          "1507776995608-1",
+          "1507777123315"
         ],
         "settings": {
-          "style": "default-style",
+          "style": "default",
           "title": "Testimonials"
         }
       }
@@ -931,7 +912,7 @@
       "1496270902201",
       "1499131033415",
       "1499093515292",
-      "1507686773254",
+      "1507776995608",
       "1499198570990",
       "1499209845662",
       "1499980640341",
