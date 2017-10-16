@@ -41,7 +41,7 @@
     "social_vimeo_url": "",
     "social_youtube_url": "https:\/\/www.youtube.com\/channel\/UCBf5GNWHsrHxtf7NWKQ5_0A",
     "social_rss_url": "",
-    "show-currency-switcher": false,
+    "show-currency-switcher": true,
     "currency-switcher-format": "money_with_currency_format",
     "currency-switcher-supported-currencies": "INR GBP CAD USD AUD EUR JPY",
     "currency-switcher-default": "USD",
@@ -206,7 +206,7 @@
         "settings": {
           "title": "Populele",
           "caption": "<p>Changing the way people learn to play music, forever<\/p>",
-          "button_text": "Shop   Now",
+          "button_text": "Shop Now",
           "button_link": "shopify:\/\/collections\/frontpage",
           "video_button_text": "Watch Video",
           "video_button_link": "https:\/\/popuband.com\/pages\/videos",
