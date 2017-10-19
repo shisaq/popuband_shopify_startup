@@ -389,7 +389,7 @@
           "1499487996217": {
             "type": "testimonial",
             "settings": {
-              "quote": "\"A wild new startup is about to unleash Populele, an electric Ukulele that will teach you how to play old Uke standards like Ukulele Lady, D’yer Maker, and Tiptoe Through The Tulips.\"",
+              "quote": "\"The best thing about the Populele then is how easily you can get started. The games show you how to chord a few notes and then start playing simple songs while the songbook lets you follow along.\"",
               "source": "TechCrunch",
               "avatar": "shopify:\/\/shop_images\/techcrunch.png"
             }
@@ -834,14 +834,25 @@
               "button_link": "https:\/\/www.theverge.com\/circuitbreaker\/2017\/1\/6\/14192116\/populele-smart-ukelele-hands-on-ces-2017",
               "avatar": "shopify:\/\/shop_images\/theverge.png"
             }
+          },
+          "1508418654725": {
+            "type": "testimonial",
+            "settings": {
+              "caption": "The Populele makes it fun\/easy to learn the “devil’s guitar”",
+              "content": "The best thing about the Populele then is how easily you can get started. The games show you how to chord a few notes and then start playing simple songs while the songbook lets you follow along.",
+              "button_text": "Read More",
+              "button_link": "https:\/\/techcrunch.com\/2017\/10\/17\/the-populele-makes-it-funeasy-to-learn-the-devils-guitar\/",
+              "avatar": "shopify:\/\/shop_images\/techcrunch.png"
+            }
           }
         },
         "block_order": [
-          "1503193519794",
+          "1508418654725",
           "1503193601217",
           "1503193653255",
           "1503193686431",
-          "1503193707843"
+          "1503193707843",
+          "1503193519794"
         ],
         "settings": {
           "style": "default-style",
