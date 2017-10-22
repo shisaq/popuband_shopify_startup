@@ -14,7 +14,7 @@
       {% endif %}
 
       {% if section.settings.text != blank %}
-        {{ section.settings.text }}
+        <p class="video-description">{{ section.settings.text | escape }}</p>
       {% endif %}
 
       {% if section.settings.button_text != blank and section.settings.button_link != blank %}
@@ -22,14 +22,37 @@
       {% endif %}
     </div>
 
-    <div class="home-promotion-image">
-      {% if section.settings.content_image %}
-        <img
-          alt="{{ section.settings.content_image.alt }}"
-          src="{{ section.settings.content_image | img_url: '1440x640' }}">
-      {% else %}
-        {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-      {% endif %}
+    <div class="home-left-right-media">
+      <div class="video-wrapper">
+        {% if section.settings.video_url != blank %}
+          {% if section.settings.video_url.type == "youtube" %}
+            <iframe
+              src="//www.youtube.com/embed/{{ section.settings.video_url.id }}?rel=0&showinfo=0&vq=720&autoplay=1&mute=1&controls=0&showinfo=0&rel=0​&modestbranding=1&loop=1&playlist={{ section.settings.video_url.id }}"
+              width="850"
+              height="500"
+              frameborder="0"
+              allowfullscreen="allowfullscreen"
+              mozallowfullscreen="mozallowfullscreen"
+              msallowfullscreen="msallowfullscreen"
+              oallowfullscreen="oallowfullscreen"
+              webkitallowfullscreen="webkitallowfullscreen"></iframe>
+          {% endif %}
+          {% if section.settings.video_url.type == "vimeo" %}
+            <iframe
+              src="//player.vimeo.com/video/{{ settings.video_url.id }}?byline=0&portrait=0&badge=0"
+              width="850"
+              height="480"
+              frameborder="0"
+              allowfullscreen></iframe>
+          {% endif %}
+        {% else %}
+          <iframe
+            src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720"
+            width="850"
+            height="480"
+            frameborder="0"></iframe>
+        {% endif %}
+      </div>
     </div>
 
   </article>
@@ -72,10 +95,10 @@
       "default": "This is the featured promotion section."
     },
     {
-      "type": "richtext",
+      "type": "text",
       "id": "text",
       "label": "Text",
-      "default": "<p>Use this area to promote a single item with an image on the right.</p>"
+      "default": "Use this area to promote a single item with an video on the right."
     },
     {
       "type": "text",
@@ -88,16 +111,20 @@
       "label": "Link URL"
     },
     {
-      "type": "image_picker",
-      "id": "content_image",
-      "label": "Image",
-      "info": "1440 x 600px .jpg recommended"
+      "type": "video_url",
+      "id": "video_url",
+      "label": "Youtube or Vimeo link",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
     }
   ],
   "presets": [
     {
-      "category": "Image",
-      "name": "Promotion"
+      "category": "App Page",
+      "name": "Video Promotion"
     }
   ]
 }

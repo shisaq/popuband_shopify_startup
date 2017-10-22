@@ -703,12 +703,12 @@
         "type": "app-promotion",
         "settings": {
           "style": "default-style",
-          "title": "Populele Game App",
-          "subtitle": "Game & Tools",
-          "text": "<p>One app is all you need to learn music in a fun new way!<\/p>",
+          "title": "Populele App",
+          "subtitle": "Gamified Learning & Tools",
+          "text": "One app is all you need to learn music in a fun new way!",
           "button_text": "Shop Now",
           "button_link": "shopify:\/\/collections\/all",
-          "content_image": "shopify:\/\/shop_images\/music-system.jpg"
+          "video_url": "https:\/\/www.youtube.com\/watch?v=VAuRCVddwL4"
         }
       },
       "video-video-with-text": {
@@ -785,13 +785,13 @@
       "press-testimonials": {
         "type": "press-testimonials",
         "blocks": {
-          "1503193519794": {
+          "1508418654725": {
             "type": "testimonial",
             "settings": {
-              "caption": "If you like to linger where it's shady the Populele want to linger too",
-              "content": "If music be the food of love then get ready to hit the Old Country Buffet. A wild new startup is about to unleash Populele, an electric Ukulele that will teach you how to play old Uke standards like Ukulele Lady, D’yer Maker, and Tiptoe Through The Tulips.",
+              "caption": "The Populele makes it fun\/easy to learn the “devil’s guitar”",
+              "content": "The best thing about the Populele then is how easily you can get started. The games show you how to chord a few notes and then start playing simple songs while the songbook lets you follow along.",
               "button_text": "Read More",
-              "button_link": "https:\/\/techcrunch.com\/2017\/03\/20\/if-you-like-to-linger-where-its-shady-the-populele-wants-to-linger-too\/",
+              "button_link": "https:\/\/techcrunch.com\/2017\/10\/17\/the-populele-makes-it-funeasy-to-learn-the-devils-guitar\/",
               "avatar": "shopify:\/\/shop_images\/techcrunch.png"
             }
           },
@@ -835,13 +835,13 @@
               "avatar": "shopify:\/\/shop_images\/theverge.png"
             }
           },
-          "1508418654725": {
+          "1503193519794": {
             "type": "testimonial",
             "settings": {
-              "caption": "The Populele makes it fun\/easy to learn the “devil’s guitar”",
-              "content": "The best thing about the Populele then is how easily you can get started. The games show you how to chord a few notes and then start playing simple songs while the songbook lets you follow along.",
+              "caption": "If you like to linger where it's shady the Populele want to linger too",
+              "content": "If music be the food of love then get ready to hit the Old Country Buffet. A wild new startup is about to unleash Populele, an electric Ukulele that will teach you how to play old Uke standards like Ukulele Lady, D’yer Maker, and Tiptoe Through The Tulips.",
               "button_text": "Read More",
-              "button_link": "https:\/\/techcrunch.com\/2017\/10\/17\/the-populele-makes-it-funeasy-to-learn-the-devils-guitar\/",
+              "button_link": "https:\/\/techcrunch.com\/2017\/03\/20\/if-you-like-to-linger-where-its-shady-the-populele-wants-to-linger-too\/",
               "avatar": "shopify:\/\/shop_images\/techcrunch.png"
             }
           }
