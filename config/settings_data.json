@@ -162,9 +162,9 @@
         ],
         "settings": {
           "style": "default-style",
-          "title": "Learn, Play, Share - All in One",
+          "title": "Learn, Play, Share.",
           "product": "populele",
-          "description": "<p>Now you can start your journey to learn music fast and fun!<\/p>",
+          "description": "<p>Anyone who's always yearned to learn an instrument can now make it happen in minutes with Populele. Time to start your fast and fun ukulele journey!<\/p>",
           "enable_zoom": true,
           "product_show_vendor": false,
           "linked_options": true,
@@ -208,7 +208,7 @@
           "caption": "<p>Changing the way people learn to play music, forever<\/p>",
           "button_text": "Shop Now",
           "button_link": "shopify:\/\/collections\/frontpage",
-          "video_button_text": "Watch Video",
+          "video_button_text": "Learn More",
           "video_button_link": "https:\/\/popuband.com\/pages\/videos",
           "video_url": "https:\/\/youtu.be\/g0gwjS1SzDI",
           "overlay_opacity": "50"
@@ -317,7 +317,7 @@
         "settings": {
           "style": "black-style",
           "title": "Music Library",
-          "caption": "<p><strong>Learn to play your favorite songs in our music library that is continuously updated. <\/strong><\/p>\n<p><strong>Can't find your favorite? Let us know, we'll add it!<\/strong><\/p>",
+          "caption": "<p><strong>Learn to play your favorite songs in our&nbsp;continuously updated music library. <\/strong><\/p>\n<p><strong>Can't find your favorite? Let us know, and we'll add it!<\/strong><\/p>",
           "button_text": "",
           "button_link": "",
           "image": "shopify:\/\/shop_images\/streaming-background1.jpg",
@@ -330,7 +330,7 @@
           "style": "default-style",
           "title": "The Populele App",
           "subtitle": "Play & Learn",
-          "text": "<p>A place to teach yourself the ukulele; A music tool center presenting tuner, chord library, and more; A song library supporting your music dream.<\/p>",
+          "text": "<p>A place to teach yourself the ukulele. A music tool&nbsp;hub with&nbsp;a tuner, a chord library, and more. A song library supporting your&nbsp;ukulele dreams.<\/p>",
           "button_text": "",
           "button_link": "",
           "android_link": "",
@@ -519,8 +519,8 @@
         "settings": {
           "style": "default-style",
           "title": "Premium Quality",
-          "subtitle": "Wireless & LEDs",
-          "text": "<p>Smart fretboard lights up to show exactly where your fingers go.<\/p>",
+          "subtitle": "Wireless LED Learning",
+          "text": "<p>Populele&rsquo;s fretboard lights up to show you exactly where your fingers go.<\/p>",
           "button_text": "",
           "button_link": "",
           "content_image": "shopify:\/\/shop_images\/Screen_Shot_2017-07-12_at_10.38.37_PM.png"
@@ -533,8 +533,8 @@
             "type": "video",
             "settings": {
               "media_alignment": "right",
-              "title": "Introduction",
-              "caption": "With ease and fun, unlock your ukulele skills all by yourself and enjoy being your own teacher!",
+              "title": "Gamified Instruction",
+              "caption": "Unlock your ukulele skills all by yourself with Populele’s 72-LED fretboard and in-app game mode. Being your own teacher is fun and easy with the right technology!",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=VAuRCVddwL4"
@@ -544,8 +544,8 @@
             "type": "video",
             "settings": {
               "media_alignment": "left",
-              "title": "Tuning",
-              "caption": "Tune your ukulele right here, any time. Find more useful tools in the App. Prepare yourself in the most convenient and precise way.",
+              "title": "In-App Tools",
+              "caption": "Teach yourself to tune your ukulele and more with Populele’s in-app tools.",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=CSuYmvQka-Y&list=PLWiFjuhdJsVpe1JOI6JlSsjkeY4TRmeMy&index=6"
@@ -555,8 +555,8 @@
             "type": "video",
             "settings": {
               "media_alignment": "right",
-              "title": "Million Years Ago",
-              "caption": "We demonstrate every single chord for you. Watch and practice the chords any time and as many times as you want!",
+              "title": "Tutorial Videos",
+              "caption": "We demonstrate every single chord for you. Watch any time and practice the chords as many times as you want! Find more tutorial videos on our YouTube channel.",
               "button_text": "More Tutorial Videos",
               "button_link": "https:\/\/www.youtube.com\/watch?v=yXq37YgmPlI&list=PLWiFjuhdJsVpe1JOI6JlSsjkeY4TRmeMy",
               "video_url": "https:\/\/www.youtube.com\/watch?v=7BuCe5YFOmA&index=22&list=PLWiFjuhdJsVpe1JOI6JlSsjkeY4TRmeMy"
@@ -581,8 +581,8 @@
             "type": "video",
             "settings": {
               "media_alignment": "right",
-              "title": "Populele Originals - Live Your Beliefs",
-              "caption": "Be inspired. Be creative. Share your originals with friends.",
+              "title": "Live Your Beliefs",
+              "caption": "Be inspired. Be creative. Share your Populele originals with friends.",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/youtu.be\/W5Fun4RDDok"
@@ -592,8 +592,8 @@
             "type": "video",
             "settings": {
               "media_alignment": "left",
-              "title": "Ukulele Teacher Unboxing Video",
-              "caption": "WORLD'S FIRST SMART UKULELE! (UNBOXING THE POPULELE!)",
+              "title": "Ukulele Teachers Approve",
+              "caption": "The Ukulele Teacher tries out the world’s first smart ukulele.",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/youtu.be\/8q8ANU2_ocw"
@@ -716,7 +716,7 @@
         "settings": {
           "style": "default-style",
           "title": "Introducing Populele",
-          "caption": "<p>The World's 1st Smart Ukulele. Learn &amp; Play your first song in 15mins.<\/p>",
+          "caption": "<p>The world's 1st smart ukulele. Play your first song in 15 minutes.<\/p>",
           "button_text": "",
           "button_link": "",
           "video_url": "https:\/\/youtu.be\/GtDt9S4OJS4",
@@ -759,7 +759,7 @@
         "type": "customize-crowdfunding",
         "settings": {
           "style": "default-style",
-          "home-kickstarter-title": "Populele x IndieGoGo",
+          "home-kickstarter-title": "Populele Wows IndieGoGo Backers",
           "home-kickstarter-subtitle": "",
           "home-kickstarter-style": "pie",
           "background_image": "shopify:\/\/shop_images\/banner1.jpg",
