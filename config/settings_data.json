@@ -349,7 +349,7 @@
           "style": "default-style",
           "title": "Download",
           "subtitle": "Android & iOS",
-          "text": "<p>Compatible with most of the smart devices on the market.<\/p>",
+          "text": "<p>Compatible with most smart devices on the market.<\/p>",
           "button_text": "",
           "button_link": "",
           "android_link": "https:\/\/play.google.com\/store\/apps\/details?id=com.gt.populeleinternational",
@@ -428,7 +428,7 @@
             "settings": {
               "media_alignment": "left",
               "title": "Game Mode",
-              "caption": "Learn ukulele skills with fun! Strumming, plucking, chord switching, and more.",
+              "caption": "Gamified ukulele lessons in strumming, plucking, chord switching, and more!",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=E1o3O3TMim8"
@@ -439,7 +439,7 @@
             "settings": {
               "media_alignment": "right",
               "title": "Tools",
-              "caption": "Find tuner, chord library, and other useful tools all in one app. Turn on the dazzle mode or light up your own LED pattern and let your music shine!",
+              "caption": "Find a tuner, a chord library, and other useful tools all in one app. Turn on the dazzle mode or create your own LED pattern in the app to let your music shine!",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=fB7MwmjXPlU"
@@ -450,7 +450,7 @@
             "settings": {
               "media_alignment": "left",
               "title": "Song Library",
-              "caption": "Learn over 100 songs in your library. Can’t find your favorite songs? Tell us. We’ll add them for you.",
+              "caption": "Choose from over 100 songs in the library. Can’t find your favorite songs? Tell us. We’ll add them for you.",
               "button_text": "",
               "button_link": "",
               "video_url": "https:\/\/www.youtube.com\/watch?v=uGAwwqxB0Co"
@@ -485,7 +485,7 @@
         "settings": {
           "style": "contrast-style",
           "title": "Download",
-          "caption": "",
+          "caption": "<p>Download the Populele app<\/p>",
           "google_link": "https:\/\/play.google.com\/store\/apps\/details?id=com.gt.populeleinternational",
           "apple_link": "https:\/\/itunes.apple.com\/us\/app\/populele-international\/id1241571882"
         }
@@ -496,7 +496,7 @@
           "style": "default-style",
           "title": "Record & Share",
           "subtitle": "",
-          "text": "<p>One-click record and share your new, multi-track work.<\/p>",
+          "text": "<p>Show friends your new ukulele skills with one-click recording and sharing.<\/p>",
           "button_text": "",
           "button_link": "",
           "content_image": "shopify:\/\/shop_images\/11.2_c2e837d5-4fb8-4d45-b71a-dced23a9d8fa.jpg"
@@ -705,7 +705,7 @@
           "style": "default-style",
           "title": "Populele App",
           "subtitle": "Gamified Learning & Tools",
-          "text": "One app is all you need to learn music in a fun new way!",
+          "text": "One app is all you need to learn music in a fun, new way!",
           "button_text": "Shop Now",
           "button_link": "shopify:\/\/collections\/all",
           "video_url": "https:\/\/www.youtube.com\/watch?v=VAuRCVddwL4"
