@@ -1,0 +1,96 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie10 lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 lt-ie10 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="shortcut icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon" />
+
+  {% if template == 'index' %}
+    <title>{{ shop.name }} | {{ page_title }}</title>
+  {% elsif template == '404' %}
+    <title>Page Not Found | {{ shop.name }}</title>
+  {% else %}
+    <title>{{ page_title }} | {{ shop.name }}</title>
+  {% endif %}
+
+  {% if page_description %}
+    <meta name="description" content="{{ page_description | escape }}" />
+  {% endif %}
+
+  <link rel="canonical" href="{{ canonical_url }}" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  {{ content_for_header }}
+
+  {% include 'social-meta' %}
+
+  {% if canonical_url == 'https://popuband.com/apps/help-center' %}
+    <!-- Start of popuband Zendesk Widget script --> <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="popuband.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}(); /*]]>*/</script> <!-- End of popuband Zendesk Widget script -->
+  {% endif %}
+
+  <!-- Theme CSS -->
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'customize.scss.css' | asset_url | stylesheet_tag }}
+
+  <!-- Third Party JS Libraries -->
+  {{ 'modernizr-2.7.1.min.js' | asset_url | script_tag }}
+
+  {% include 'fonts' %}
+
+  <!-- Store object -->
+  {% include 'theme-options' %}
+
+</head>
+
+<body class="template-{{ template | replace: '.', '-' | handle }} {% if customer %}customer-logged-in{% endif %}">
+
+  {% section 'general-header' %}
+
+  <main
+    class="main-content"
+    role="main"
+    data-main-content >
+
+    {% unless template contains 'index' or template contains 'product'%}
+      {% include 'breadcrumbs' %}
+    {% endunless %}
+
+    {{ content_for_layout }}
+  </main>
+
+  {% section 'mailchimp-newsletter' %}
+
+  {% section 'general-footer' %}
+
+  <!-- Scripts -->
+  {{ 'jquery-1.10.0.min.js' | asset_url | script_tag }}
+  {{ 'api.jquery.js' | shopify_asset_url | script_tag }}
+
+  {% if template contains 'cart' %}
+    {{ '/services/javascripts/countries.js' | script_tag }}
+    {{ "shopify_common.js" | shopify_asset_url | script_tag }}
+    {{ 'jquery.cart.min.js' | asset_url | script_tag }}
+  {% endif %}
+
+  {% if template contains 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+    {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
+  {% endif %}
+
+  {% if settings.show-currency-switcher %}
+    {{ "//cdn.shopify.com/s/javascripts/currencies.js" | script_tag }}
+    {{ "jquery.currencies.js" | asset_url | script_tag }}
+  {% endif %}
+
+  {{ 'plugins.js'  | asset_url | script_tag }}
+  {{ 'theme.js'  | asset_url | script_tag }}
+
+  {% include 'structured-data' %}
+<!-- BEEKETINGSCRIPT CODE START -->{% include 'bk-tracking' %}<!-- BEEKETINGSCRIPT CODE END -->
+</body>
+</html>
