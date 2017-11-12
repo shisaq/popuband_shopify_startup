@@ -85,8 +85,11 @@ data-main-content >
 {{ 'customer_area.js'  | shopify_asset_url | script_tag }}
 {% endif %}
 {% if settings.show-currency-switcher %}
+{% comment %}{% include 'guru-script-currencies_js-e74e4450-3603-4789-a0ad-c256acab33d7' %}
 {% include 'guru-script-currencies_js-e74e4450-3603-4789-a0ad-c256acab33d7' %}
-{% include 'guru-script-currencies_js-e74e4450-3603-4789-a0ad-c256acab33d7' %}
+{% endcomment %}
+{{ "//cdn.shopify.com/s/javascripts/currencies.js" | script_tag }}
+{{ "jquery.currencies.js" | asset_url | script_tag }}
 {% endif %}
 {% include 'guru-script-plugins_js-79788801-4dbf-49b2-8992-b57dde5bf4f2' %}
 {% include 'guru-script-theme_js-a352a739-0d39-47c8-b822-c4251370b966' %}
