@@ -418,6 +418,10 @@ $prefix-for-spec: true; // required for keyframe mixin
   @if $point == s-up {
     @media (min-width: 721px) { @content; }
   }
+
+  @if $point == xs {
+    @media (max-width: 390px) { @content; }
+  }
 }
 
 @mixin flexbox() {
@@ -2254,7 +2258,7 @@ $local-grey: #333;
 
   @include breakpoint(s) {
     height: auto;
-    padding: $gutter;
+    padding: 10px;
     text-align: center;
   }
 }
@@ -2280,10 +2284,19 @@ $local-grey: #333;
 }
 
 .branding {
+  float: left;
+  width: 150px;
   @include transition(height 0.2s $ease-out-quad);
+
+  @include breakpoint(xs) {
+    float: none;
+    width: 200px;
+    margin: 0 auto;
+  }
+
   @include breakpoint(s-up) {
-    float: left;
     height: $header-height;
+    width: 300px;
 
     .sticky-header-scrolled & { height: $header-height-small; }
   }
@@ -2346,7 +2359,7 @@ $local-grey: #333;
   padding: 10px 0;
 
   @include breakpoint(s) {
-    padding-top: 0;
+    padding: 0;
     margin: 0 auto;
   }
 
@@ -2494,8 +2507,14 @@ input.header-search-input {
   }
 
   @include breakpoint(s) {
+    float: right;
+    margin-top: 0;
+  }
+
+  @include breakpoint(xs) {
     float: none;
-    margin-top: $gutter/2;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
