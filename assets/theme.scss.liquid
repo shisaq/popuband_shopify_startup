@@ -1220,6 +1220,11 @@ body {
   padding: 0 $gutter;
   margin: $gutter-vertical-large auto;
 
+  @include breakpoint(s) {
+    padding: 0 $gutter / 2;
+    margin: $gutter-vertical-small auto;
+  }
+
   .section-title {
     max-width: 500px;
     margin: $gutter-vertical-large auto;
@@ -6581,7 +6586,7 @@ input[type="text"].search-input {
   @include breakpoint(s) {
     @include order(1);
     padding: 0;
-    margin-bottom: $gutter;
+    margin-bottom: $gutter / 2;
     text-align: center;
   }
 }
