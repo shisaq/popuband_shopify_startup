@@ -81,8 +81,8 @@
           "color_override": "default",
           "header_logo_alternate": "",
           "promotion_style": "accent-style",
-          "promotion_text": "",
-          "promotion_url": ""
+          "promotion_text": "<p>Use&nbsp;coupon code \"POPULELE10\" to save $10!<\/p>",
+          "promotion_url": "shopify:\/\/products\/populele-with-accessory"
         }
       },
       "mailchimp-newsletter": {
