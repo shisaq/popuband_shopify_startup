@@ -502,18 +502,6 @@
           "content_image": "shopify:\/\/shop_images\/11.2_c2e837d5-4fb8-4d45-b71a-dced23a9d8fa.jpg"
         }
       },
-      "1499800394698": {
-        "type": "home-image-with-text-overlay",
-        "settings": {
-          "style": "black-style",
-          "title": "Smart & Slim",
-          "caption": "<p><\/p>\n<p>&nbsp;<\/p>\n<p><\/p>\n<p><\/p>\n<p><\/p>\n<p><\/p>",
-          "button_text": "",
-          "button_link": "",
-          "image": "shopify:\/\/shop_images\/banner2_a08a954a-9490-4529-9482-16aabd284a30.jpg",
-          "overlay_opacity": "0"
-        }
-      },
       "1499822079571": {
         "type": "app-record-and-share",
         "settings": {
@@ -521,8 +509,8 @@
           "title": "Premium Quality",
           "subtitle": "Wireless LED Learning",
           "text": "<p>Populele&rsquo;s fretboard lights up to show you exactly where your fingers go.<\/p>",
-          "button_text": "",
-          "button_link": "",
+          "button_text": "buy now",
+          "button_link": "shopify:\/\/collections\/frontpage",
           "content_image": "shopify:\/\/shop_images\/Screen_Shot_2017-07-12_at_10.38.37_PM.png"
         }
       },
@@ -917,6 +905,16 @@
           "style": "default",
           "title": "Testimonials"
         }
+      },
+      "1510873922473": {
+        "type": "customize-home-image-with-button-only",
+        "settings": {
+          "style": "default-style",
+          "button_text": "shop now",
+          "button_link": "shopify:\/\/collections\/frontpage",
+          "image": "shopify:\/\/shop_images\/populele-blackfriday-1920x1080.jpg",
+          "overlay_opacity": "0"
+        }
       }
     },
     "content_for_index": [
@@ -927,12 +925,12 @@
       "1499198570990",
       "1499209845662",
       "1499980640341",
-      "1499800394698",
       "1499822079571",
       "1501474121966",
       "1499487791316",
       "home-featured-product",
-      "1499211987304"
+      "1499211987304",
+      "1510873922473"
     ]
   },
   "presets": {
