@@ -1,0 +1,23 @@
+{
+  "name": "shopify_startup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shisaq/popuband_shopify_startup.git"
+  },
+  "author": "shisaq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shisaq/popuband_shopify_startup/issues"
+  },
+  "homepage": "https://github.com/shisaq/popuband_shopify_startup#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0"
+  }
+}
