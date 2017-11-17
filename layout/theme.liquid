@@ -40,9 +40,9 @@
 function loadAsyncStyleSheets() {
 var head = document.getElementsByTagName('head')[0];
 var asyncStyleSheets = [
+"{{ 'theme.scss.css' | asset_url }}",
 "{{ 'customize.scss.css' | asset_url }}",
-"{{ 'gift-card.scss.css' | asset_url }}",
-"{{ 'theme.scss.css' | asset_url }}"
+"{{ 'gift-card.scss.css' | asset_url }}"
 ]
 for (var i = 0; i < asyncStyleSheets.length; i++)
 {
