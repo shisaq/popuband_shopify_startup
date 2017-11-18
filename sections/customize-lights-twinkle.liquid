@@ -9,16 +9,16 @@
         <h1 class="feature-title">{{ section.settings.title | escape }}</h1>
       {% endif %}
 
+      {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+        <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_text | escape }}</a>
+      {% endif %}
+
       {% if section.settings.subtitle != blank %}
         <h2 class="feature-subtitle">{{ section.settings.subtitle | escape }}</h2>
       {% endif %}
 
       {% if section.settings.text != blank %}
         {{ section.settings.text }}
-      {% endif %}
-
-      {% if section.settings.button_text != blank and section.settings.button_link != blank %}
-        <a class="button" href="{{ section.settings.button_link }}">{{ section.settings.button_text | escape }}</a>
       {% endif %}
 
       {% if section.settings.android_link != blank and section.settings.ios_link != blank %}
