@@ -1221,7 +1221,7 @@ body {
   margin: $gutter-vertical-large auto;
 
   @include breakpoint(s) {
-    padding: 0 $gutter / 2;
+    padding: 0 $gutter-half;
     margin: $gutter-vertical-small auto;
   }
 
@@ -6348,12 +6348,17 @@ input[type="text"].search-input {
     overflow: hidden;
     background: {
       repeat: no-repeat;
-      size: contain;
+      size: cover;
     }
 
     .feature-image {
-      max-height: 100vh;
       opacity: 0;
+    }
+
+    @include breakpoint(s) {
+      .button {
+        padding: 5px 15px;
+      }
     }
   }
 }
