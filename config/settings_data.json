@@ -81,7 +81,7 @@
           "color_override": "default",
           "header_logo_alternate": "",
           "promotion_style": "standard-style",
-          "promotion_text": "<p>Use&nbsp;coupon code \"POPULELE10\" to save $10!<\/p>",
+          "promotion_text": "<p>Cyber Week Offer - Grab 25% OFF for A Limited Time!<\/p>",
           "promotion_url": "shopify:\/\/collections\/frontpage"
         }
       },
@@ -918,6 +918,7 @@
       }
     },
     "content_for_index": [
+      "1510873922473",
       "1496270902201",
       "1499131033415",
       "1499093515292",
@@ -929,8 +930,7 @@
       "1501474121966",
       "1499487791316",
       "home-featured-product",
-      "1499211987304",
-      "1510873922473"
+      "1499211987304"
     ]
   },
   "presets": {
