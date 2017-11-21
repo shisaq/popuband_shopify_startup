@@ -81,8 +81,8 @@
           "color_override": "default",
           "header_logo_alternate": "",
           "promotion_style": "standard-style",
-          "promotion_text": "<p>Cyber Week Offer - Grab 25% OFF for A Limited Time!<\/p>",
-          "promotion_url": "shopify:\/\/collections\/frontpage"
+          "promotion_text": "",
+          "promotion_url": ""
         }
       },
       "mailchimp-newsletter": {
