@@ -67,7 +67,7 @@
       "general-header": {
         "type": "general-header",
         "settings": {
-          "header_sticky": true,
+          "header_sticky": false,
           "show_cart": true,
           "show_search": true,
           "header_logo": "shopify:\/\/shop_images\/populele_logo_Haiquan.png",
