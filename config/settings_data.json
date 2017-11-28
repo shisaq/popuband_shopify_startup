@@ -67,7 +67,7 @@
       "general-header": {
         "type": "general-header",
         "settings": {
-          "header_sticky": false,
+          "header_sticky": true,
           "show_cart": true,
           "show_search": true,
           "header_logo": "shopify:\/\/shop_images\/populele_logo_Haiquan.png",
@@ -80,9 +80,9 @@
           "mega_nav_menu_4": "",
           "color_override": "default",
           "header_logo_alternate": "",
-          "promotion_style": "standard-style",
-          "promotion_text": "",
-          "promotion_url": ""
+          "promotion_style": "accent-style",
+          "promotion_text": "<p>Grab your Populele for up to 30% off!<\/p>",
+          "promotion_url": "shopify:\/\/collections\/frontpage"
         }
       },
       "mailchimp-newsletter": {
@@ -905,20 +905,9 @@
           "style": "default",
           "title": "Testimonials"
         }
-      },
-      "1510873922473": {
-        "type": "customize-home-image-with-button-only",
-        "settings": {
-          "style": "default-style",
-          "button_text": "shop now",
-          "button_link": "shopify:\/\/collections\/frontpage",
-          "image": "shopify:\/\/shop_images\/populele-blackfriday-1920x791.jpg",
-          "overlay_opacity": "0"
-        }
       }
     },
     "content_for_index": [
-      "1510873922473",
       "1496270902201",
       "1499131033415",
       "1499093515292",
