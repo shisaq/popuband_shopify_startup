@@ -81,8 +81,8 @@
           "color_override": "default",
           "header_logo_alternate": "",
           "promotion_style": "accent-style",
-          "promotion_text": "<p>Grab your Populele for up to 30% off!<\/p>",
-          "promotion_url": "shopify:\/\/collections\/frontpage"
+          "promotion_text": "",
+          "promotion_url": ""
         }
       },
       "mailchimp-newsletter": {
