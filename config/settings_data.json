@@ -81,8 +81,8 @@
           "color_override": "default",
           "header_logo_alternate": "",
           "promotion_style": "accent-style",
-          "promotion_text": "<p>Order by 12\/18 to guarantee Christmas delivery (U.S. only)<\/p>",
-          "promotion_url": "shopify:\/\/collections\/frontpage"
+          "promotion_text": "",
+          "promotion_url": ""
         }
       },
       "mailchimp-newsletter": {
