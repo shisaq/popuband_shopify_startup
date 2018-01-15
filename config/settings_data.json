@@ -773,6 +773,26 @@
       "press-testimonials": {
         "type": "press-testimonials",
         "blocks": {
+          "1515201327969": {
+            "type": "testimonial",
+            "settings": {
+              "caption": "The Populele is a gamified smart ukulele that promises to make music (more) fun",
+              "content": "Of the many legions of smart devices that will be making their debut at CES 2018, few are likely to be as smile-inducing as the Populele.",
+              "button_text": "Read More",
+              "button_link": "https:\/\/www.digitaltrends.com\/music\/popuband-populele-smart-ukulele\/",
+              "avatar": "shopify:\/\/shop_images\/Digital_Trends_logo.jpg"
+            }
+          },
+          "1515122085965": {
+            "type": "testimonial",
+            "settings": {
+              "caption": "Populele Review: Learn to Play the Ukulele in 15 Minutes",
+              "content": "Imagine learning to play the ukulele without paying for classes, scouring YouTube for tutorial videos, or deciphering utterly confusing chord sheets.",
+              "button_text": "Read More",
+              "button_link": "https:\/\/www.makeuseof.com\/tag\/populele-review\/",
+              "avatar": "shopify:\/\/shop_images\/muo.jpg"
+            }
+          },
           "1508418654725": {
             "type": "testimonial",
             "settings": {
@@ -832,19 +852,10 @@
               "button_link": "https:\/\/techcrunch.com\/2017\/03\/20\/if-you-like-to-linger-where-its-shady-the-populele-wants-to-linger-too\/",
               "avatar": "shopify:\/\/shop_images\/techcrunch.png"
             }
-          },
-          "1515122085965": {
-            "type": "testimonial",
-            "settings": {
-              "caption": "Populele Review: Learn to Play the Ukulele in 15 Minutes",
-              "content": "Imagine learning to play the ukulele without paying for classes, scouring YouTube for tutorial videos, or deciphering utterly confusing chord sheets.",
-              "button_text": "Read More",
-              "button_link": "https:\/\/www.makeuseof.com\/tag\/populele-review\/",
-              "avatar": "shopify:\/\/shop_images\/muo.jpg"
-            }
           }
         },
         "block_order": [
+          "1515201327969",
           "1515122085965",
           "1508418654725",
           "1503193601217",
